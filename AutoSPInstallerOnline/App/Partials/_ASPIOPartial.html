@@ -150,8 +150,12 @@
                     </li>
                 </ul>
             </li>
+            <li>&nbsp;</li>
             <li ng-click="setView('Review')" ng-class="{ 'tree-active': view === 'Review' }">
                 <a href=""><i class="fa fa-cloud-download"></i> Review & Download <i ng-if="mainForm.$invalid" class="fa fa-exclamation-triangle text-danger"></i></a>
+            </li>
+            <li>
+                <a href=""ng-click="clearConfig()"><i class="fa fa-trash-o"></i> Reset Configuration</a>
             </li>
         </ul>
     </div>
