@@ -153,7 +153,7 @@
     <Content Include="App\Partials\_newsPartial.html" />
     <Content Include="App\Partials\_privacyPartial.html" />
     <Content Include="Prerender.io.dll" />
-    <Content Include="Schema\jsonix-schema-compiler-full-2.3.6.jar" />
+    <None Include="Schema\jsonix-schema-compiler-full-2.3.6.jar" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\ConfigModel398.js" />
     <Content Include="Scripts\ConfigModel399.js" />
@@ -198,6 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
+    <None Include="Properties\PublishProfiles\AutoSPInstallerDev.pubxml" />
     <None Include="Schema\AutoSPInstallerInput_3.98.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -207,7 +208,7 @@
     <None Include="Schema\AutoSPInstallerInput_3.99.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Schema\build.bat" />
+    <None Include="Schema\build.bat" />
     <Content Include="tsd.json" />
     <Content Include="tslint.json" />
   </ItemGroup>
