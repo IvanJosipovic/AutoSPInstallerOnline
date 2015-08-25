@@ -1,0 +1,12 @@
+﻿.tree {
+    list-style: none;
+    padding-left: 30px;
+}
+
+.tree-active {
+    background-color: #dff0d8;
+}
+
+body {
+    overflow-y: scroll;
+}

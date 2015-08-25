@@ -1,0 +1,93 @@
+﻿<span class="h2">News</span>
+<hr />
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">Update</h2>
+        on Thu Jun 18 2015
+    </div>
+    <div class="panel-body">
+        <p>Hi Everyone,</p>
+        <p>Welcome to AutoSPInstaller Online, as you may know this site has been live for about a month. 
+        We haven't had any formal communication as to what is new or changing in the site. 
+        We decided to have a quiet launch so that we can fix any major bugs (there were a bunch, thanks to all that have reported them!) and to make sure the site performed as expected.</p>
+
+        <p>
+            <b>New Features:</b>
+            <ul>
+                <li>Automatic Schema upgrade from 3.98 > 3.99
+                    <ul>
+                        <li>Simply load your 3.98 XML file and it will be upgrade to 3.99.</li>
+                        <li>We decided to update the Schema in order to make it more readable and easier to do side by side comparisons.</li>
+                        <li>We plan to have this feature available for all future Schema updates.</li>
+                    </ul>
+                </li>
+                <li>
+                    Alert when leaving the site
+                    <ul>
+                        <li>As the Farm Configuration is only retained in the browsers memory, it will be lost if the user accidentally navigates away from the site.</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Planned Features:</b>
+            <ul>
+                <li>
+                    XML Validation using XSD (XML Schema Definition)
+                    <ul>
+                        <li>There are many scenarios where the XML file is invalid to the point the site will not accept it.</li>
+                        <li>One example is boolean values, in the XML world "True" is not a valid value, even though PowerShell accept it.</li>
+                        <li>The XSD will return very detailed reason on why the XML fails. For example, ERROR: Element 'ClaimsToWindowsTokenService', attribute 'UpdateAccount': 'True' is not a valid value of the atomic type 'xs:boolean'.</li>
+                    </ul>
+                </li>
+                <li>
+                    Server Rename
+                    <ul>
+                        <li>Allow a Server to be renamed and retain all configuration which was mapped to that server.</li>
+                    </ul>
+                </li>
+                <li>
+                    Predefined Templates
+                    <ul>
+                        <li>Allow the ability to select predefined Farm Templates with recommended topologies, ie 3 Server and 4 Server Farms etc.</li>
+                    </ul>
+                </li>
+                <li>
+                    More Validation
+                    <ul>
+                        <li>There are a lot more places where validation is required.</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        
+        <br />
+        <p>As always, any feedback is appreciated, we are always looking for ideas on how to make things better.</p>
+
+        <p>Stay tuned for more,<br />AutoSPInstaller Team</p>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">Introducing AutoSPInstaller Online</h2>
+        on Thu Jun 18 2015
+    </div>
+    <div class="panel-body">
+        <p>From Brian Lalancette, creator of AutoSPInstaller.</p>
+
+        <p>Since I launched <a href="http://autospinstaller.codeplex.com/">AutoSPInstaller, the PowerShell-based process for installing Microsoft SharePoint Server</a> back in 2010, I've always felt it needed a little something "more". While I and many in the SharePoint community were pretty comfortable hand-editing the input XML file that contained all the farm parameters and settings, a lot of folks weren't necessarily keen on it. In addition, even someone experienced in editing the XML and building SharePoint farms could quite easily miss something or make a simple typo which could lead to pain & confusion at build time (trust me, I know). Not only that, but the process of hand-editing the XML had no rules built into it to help folks adhere to best practices, or even hard dependencies among SharePoint services and service apps. Sure, the script itself helped out with some of this, but it became a bit of a burden to try to capture all these rules within AutoSPInstaller itself plus handling them at run-time isn't optimal IMO.</p>
+
+        <p>Then <a href="https://twitter.com/IvanJosipovic/">Ivan</a> created <a href="http://autospinstallergui.codeplex.com/">AutoSPInstallerGUI</a> - a user-friendly tool that allowed for much easier creation and editing of XML input files for AutoSPInstaller. While this tool was both promising and popular, I personally never got into it much for one reason or another. Maybe hand-editing the XML made me nostalgic for my brief days as a web dev, or maybe Ivan's UI at the time lacked the total control I wanted over the farm config - not sure. Regardless it was an overall well-received tool that certainly helped a lot of folks get their head around using AutoSPInstaller.</p>
+
+        <p>Then came the 2014 SharePoint Conference in Las Vegas. There, I finally met Ivan in person, and we got to talking: What if, instead of a UI tool that users needed to download and keep current (bug fixes, new functionality etc.), we provided them with a slick web UI that captured and extended the functionality of AutoSPInstallerGUI, with lots more automation and validation? We felt this would be a huge win for both AutoSPInstaller and the SharePoint community in general. So slowly but surely we (well, mostly Ivan) went to work on it...</p>
+
+        <p>A year or so later, we're proud to introduce <a href="https://autospinstaller.com/">AutoSPInstaller Online</a> - a slick, responsive web-based interface for creating, editing and validating AutoSPInstaller input XML files. AutoSPInstaller Online is the first such utility to have my full support and ongoing input, so I'm very excited about its potential and value.</p>
+
+        <p>Give it a try - we're eager to hear your feedback and plan to continue to improve the site in the coming weeks and months.</p>
+
+        Cheers,<br />
+        Brian
+    </div>
+</div>

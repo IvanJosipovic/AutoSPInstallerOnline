@@ -1,0 +1,82 @@
+﻿<span class="h2">Frequently Asked Questions</span>
+<hr />
+
+<ul>
+    <li>
+        <b>Is this thing safe/ready/appropriate for Production?</b>
+        <ul>
+            <li>It sure is! Brian and Ivan have personally set up many live customer farms with AutoSPInstaller in the past few years. In fact it's even been used by organizations like CloudShare to create SharePoint VM templates. The standard caveats apply though: As the importance of your target farm increases, so should your level of knowledge about how to properly size, architect and build SharePoint. AutoSPInstaller does not mitigate this, it merely eases, standardizes and accelerates the process.</li>            
+            <li>
+                Microsoft Employee Blogs:
+                <ul>
+                    <li><a href="http://blogs.technet.com/b/privatecloud/archive/2013/04/03/application-management-example-deploying-a-service-to-your-private-cloud-part-1.aspx" target="_blank">Application Management-Example-Deploying a Service to Your Private Cloud (Part 1)</a></li>
+                    <li><a href="http://blogs.technet.com/b/privatecloud/archive/2013/04/05/application-management-example-deploying-a-service-to-your-private-cloud-part-2.aspx" target="_blank">Application Management-Example-Deploying a Service to Your Private Cloud (Part 2)</a></li>
+                    <li><a href="http://blogs.technet.com/b/privatecloud/archive/2013/04/23/application-management-example-deploying-a-service-to-your-private-cloud-part-3.aspx" target="_blank">Application Management-Example-Deploying a Service to Your Private Cloud (Part 3)</a></li>
+                    <li><a href="http://blogs.technet.com/b/heyscriptingguy/archive/2010/03/23/hey-scripting-guy-march-23-2010.aspx" target="_blank">Hey, Scripting Guy! The AutoSPInstaller Windows PowerShell Script</a></li>
+                    <li><a href="http://blogs.technet.com/b/heyscriptingguy/archive/2014/02/01/weekend-scripter-using-autospinstaller-and-autospsourcebuilder.aspx" target="_blank">Weekend Scripter: Using AutoSpInstaller and AutoSpSourceBuilder</a></li>
+                    <li><a href="http://blogs.technet.com/b/meamcs/archive/2014/12/02/autospinstaller-for-beginners.aspx" target="_blank">AutoSPInstaller for beginners</a></li>
+                    <li><a href="http://blogs.technet.com/b/mspfe/archive/2012/04/02/how_2d00_to_2d00_automate_2d00_sharepoint_2d00_2010_2d00_installation_2d00_using_2d00_autospinstaller.aspx" target="_blank">How To Automate SharePoint 2010 Installation Using AutoSPInstaller</a></li>
+                    <li><a href="http://blogs.technet.com/b/seanearp/archive/2011/03/17/scripting-a-sharepoint-2010-install-with-powershell.aspx" target="_blank">Scripting a SharePoint 2010 install with Powershell</a></li>
+                </ul>
+            </li>
+            <li><a href="http://www.cisco.com/c/en/us/solutions/collateral/data-center-virtualization/unified-computing/whitepaper_C11-730383.html" target="_blank">CISCO white-paper</a> featuring AutoSPInstaller </li>
+        </ul>
+    </li>
+    <li>
+        <b>Does AutoSPInstaller support SharePoint Foundation?</b>
+        <ul>
+            <li>
+                As of changeset <a href="http://autospinstaller.codeplex.com/SourceControl/changeset/112238" target="_blank">112238</a>, AutoSPInstaller provides experimental support for SharePoint Foundation.
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>What about the Request Management service (in SharePoint 2013)? Will it be included in AutoSPInstaller?</b>
+        <ul>
+            <li>
+                After a discussion with <a href="http://www.harbar.net/" target="_blank">Spencer Harbar</a>, it was agreed that it might be best to leave it out, as there can be some ramifications with provisioning it without full awareness of its intended use - e.g. by folks who want to blindly "turn everything on" in SharePoint 2013.
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>Where's all the #@)%#$ documentation??</b>
+        <ul>
+            <li>
+                Well, this FAQ is part of it I suppose :) I've written up a few pointers and gotchas which you can review here, but in addition, several AutoSPInstaller supporters have provided some great step-by-step guidance on their various blogs. For example:
+                <ul>
+                    <li>
+                        We have put together a <a href="/Guide">Guide</a> on this site with some pointers
+                    </li>
+                    <li>
+                        Tobias Lekman's step-by-step: <a href="http://blog.lekman.com/2010/11/automated-sharepoint-2010-installations.html" target="_blank">Link</a>
+                    </li>
+                    <li>
+                        Wahid Saleemi's series on AutoSPInstaller: <a href="http://www.wahidsaleemi.com/series/autospinstaller" target="_blank">Link</a>
+                    </li>
+                    <li>
+                        Another step-by-step with some important prep items by Noorez Khamis: <a href="http://www.khamis.net/Blog/Post/315/Step-by-Step-SharePoint-2013-installation-instructions-using-AutoSPInstaller-V3-and-AutoSPInstallerGUI-–-System-Setup" target="_blank">Link</a>
+                    </li>
+                    <li>
+                        An article that helps clear up the steps & requirements for remote installations by Kartik Vega: <a href="http://sharepointjournal.com/2014/04/21/sharepoint-2013-remote-installation-using-autospinstaller-multi-server-farm" target="_blank">Link</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>I want to make a single/isolated configuration change to an existing SharePoint farm (e.g. provision a service application). Do I really need to re-run the whole script?</b>
+        <ul>
+            <li>
+                No - in fact you can usually just run individual functions to achieve what you're after by following the instructions <a href="http://spinsiders.com/brianlala/2014/04/30/autospinstaller-for-specific-config-changes/" target="_blank">here</a>.
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>Is AutoSPInstaller Online Open Source?</b>
+        <ul>
+            <li>
+                Yes its on GitHub <a href="https://github.com/IvanJosipovic/AutoSPInstallerOnline" target="_blank">IvanJosipovic/AutoSPInstallerOnline</a>.
+            </li>
+        </ul>
+    </li>
+</ul>
