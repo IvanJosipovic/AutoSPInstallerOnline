@@ -154,6 +154,7 @@
     <Content Include="App\Partials\_newsPartial.html" />
     <Content Include="App\Partials\_privacyPartial.html" />
     <Content Include="Prerender.io.dll" />
+    <None Include="Properties\PublishProfiles\AutoSPInstallerDev.pubxml" />
     <None Include="Schema\jsonix-schema-compiler-full-2.3.6.jar" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\ConfigModel398.js" />
@@ -199,7 +200,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
-    <None Include="Properties\PublishProfiles\AutoSPInstallerDev.pubxml" />
     <None Include="Schema\AutoSPInstallerInput_3.98.xsd">
       <SubType>Designer</SubType>
     </None>
