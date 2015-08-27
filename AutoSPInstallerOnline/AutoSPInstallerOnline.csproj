@@ -144,7 +144,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="googlec99e9106d22e9b86.html" />
-    <Content Include="Gruntfile.js" />
+    <None Include="Gruntfile.js" />
     <Content Include="App\Partials\_ASPIOPartial.html" />
     <Content Include="App\Partials\_contactPartial.html" />
     <Content Include="App\Partials\_downloadPartial.html" />
@@ -153,7 +153,7 @@
     <Content Include="App\Partials\_homePartial.html" />
     <Content Include="App\Partials\_newsPartial.html" />
     <Content Include="App\Partials\_privacyPartial.html" />
-    <Content Include="Prerender.io.dll" />
+    <None Include="Prerender.io.dll" />
     <None Include="Properties\PublishProfiles\AutoSPInstallerDev.pubxml" />
     <None Include="Schema\jsonix-schema-compiler-full-2.3.6.jar" />
     <Content Include="Scripts\App.js" />
@@ -210,8 +210,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Schema\build.bat" />
-    <Content Include="tsd.json" />
-    <Content Include="tslint.json" />
+    <None Include="tsd.json" />
+    <None Include="tslint.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App\App.ts" />

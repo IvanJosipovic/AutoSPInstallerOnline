@@ -1,4 +1,5 @@
-﻿<div ng-if="config === null">
+﻿
+<div ng-if="config === null">
     <span class="h2">Farm Configuration Options</span>
     <h4>Choose an option below to begin</h4>
     <hr />
@@ -50,7 +51,10 @@
                     <li ng-click="addWebApp();">
                         <a href=""><i class="fa fa-plus"></i> Add New </a>
                     </li>
-                    <li ng-if="mainForm.WebApps.webAppCountCheck.$invalid" class="text-danger">One Web App is Required! <i class="fa fa-exclamation-triangle text-danger"></i></li>
+                    <li ng-if="mainForm.WebApps.webAppCountCheck.$invalid" class="text-danger">
+                        One Web App is Required!
+                        <i class="fa fa-exclamation-triangle text-danger"></i>
+                    </li>
                     <li ng-repeat="wa in config.value.webApplications.webApplication" ng-click="setView('WebApp' + $index)" ng-init="subForm = 'formWebApp' + $index" ng-class="{ 'tree-active': view === 'WebApp' + $index }">
                         <a href=""><i class="fa fa-sitemap"></i> {{ wa.name }} <i ng-if="mainForm[subForm].$invalid" class="fa fa-exclamation-triangle text-danger"></i></a>
                     </li>
@@ -300,7 +304,7 @@
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': installForm.config_value_install_sku.$invalid }" tooltip="SKU can be either Foundation, Standard or Enterprise. You are responsible for ensuring the PIDKey matches the SKU selected, the script won't/can't validate this.">
                         <label class="control-label col-md-3">SKU:</label>
                         <div class="col-md-9">
-                            <label class="radio-inline" ng-if="config.value.install.spVersion !== '2016'">
+                            <label class="radio-inline" ng-show="config.value.install.spVersion !== '2016'">
                                 <input type="radio" ng-model="config.value.install.sku" name="config_value_install_sku" value="Foundation" />Foundation
                             </label>
                             <label class="radio-inline">
@@ -355,8 +359,7 @@
                             <input type="checkbox" ng-model="config.value.farm.account.leaveInLocalAdmins" />
                         </div>
                     </div>
-                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_account_username.$invalid }"
-                         tooltip="The Farm Account Username. DOMAIN\Account.">
+                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_account_username.$invalid }" tooltip="The Farm Account Username. DOMAIN\Account.">
                         <label class="control-label col-md-3">Username:</label>
                         <div class="col-md-9">
                             <input type="text" ng-model="config.value.farm.account.username" name="config_value_farm_account_username" class="form-control"
@@ -382,8 +385,7 @@
                             <input type="checkbox" ng-model="config.value.farm.database.dbAlias.create" />
                         </div>
                     </div>
-                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_database_dbServer.$invalid }"
-                         tooltip="The name of the Database server. If Create Alias is enabled, this will be the name of the Alias.">
+                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_database_dbServer.$invalid }" tooltip="The name of the Database server. If Create Alias is enabled, this will be the name of the Alias.">
                         <div ng-show="config.value.farm.database.dbAlias.create === false">
                             <label class="control-label col-md-3">Database Server:</label>
                         </div>
@@ -398,19 +400,16 @@
                         </div>
                     </div>
                     <div ng-show="config.value.farm.database.dbAlias.create">
-                        <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_database_dbAlias_dbInstance.$invalid }"
-                             tooltip="The Database Server. Name\Instance.">
+                        <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_database_dbAlias_dbInstance.$invalid }" tooltip="The Database Server. Name\Instance.">
                             <label class="control-label col-md-3">Database Server Instance:</label>
                             <div class="col-md-9">
-                                <input type="text" ng-model="config.value.farm.database.dbAlias.dbInstance" name="config_value_farm_database_dbAlias_dbInstance"
-                                       class="form-control" ng-required="config.value.farm.database.dbAlias.create" />
+                                <input type="text" ng-model="config.value.farm.database.dbAlias.dbInstance" name="config_value_farm_database_dbAlias_dbInstance" class="form-control" ng-required="config.value.farm.database.dbAlias.create" />
                                 <div ng-messages="farmMainForm.config_value_farm_database_dbAlias_dbInstance.$error" class="text-danger">
                                     <div ng-messages-include="error-messages"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_database_dbAlias_dbPort.$invalid }"
-                             tooltip="The Database Server Port, if left blank it will use the default port value of 1433.">
+                        <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_database_dbAlias_dbPort.$invalid }" tooltip="The Database Server Port, if left blank it will use the default port value of 1433.">
                             <label class="control-label col-md-3">Database Server Port:</label>
                             <div class="col-md-9">
                                 <input type="number" ng-model="config.value.farm.database.dbAlias.dbPort" name="config_value_farm_database_dbAlias_dbPort" integer string-to-number min="1" max="65535" placeholder="1433" class="form-control" />
@@ -422,8 +421,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_database_dbPrefix.$invalid }"
-                         tooltip="The DBPrefix is perpended to all database names. e.g. If you set this to TEST, your config DB will be TEST_Config. If you set the prefix to localhost, script will perpend each database with the name of the server on which the script is run. Leave this blank for no prefix. NOTE: If you are installing a multi-server farm, it is recommended that you do not use localhost as services provisioned on different servers will have different prefixes.">
+                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_database_dbPrefix.$invalid }" tooltip="The DBPrefix is perpended to all database names. e.g. If you set this to TEST, your config DB will be TEST_Config. If you set the prefix to localhost, script will perpend each database with the name of the server on which the script is run. Leave this blank for no prefix. NOTE: If you are installing a multi-server farm, it is recommended that you do not use localhost as services provisioned on different servers will have different prefixes.">
                         <label class="control-label col-md-3">Database Prefix:</label>
                         <div class="col-md-9">
                             <input type="text" ng-model="config.value.farm.database.dbPrefix" name="config_value_farm_database_dbPrefix" class="form-control" />
@@ -432,8 +430,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_database_configDB.$invalid }"
-                         tooltip="The name of the Farm Configuration Database. The Database Prefix will be perpended to this name.">
+                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_database_configDB.$invalid }" tooltip="The name of the Farm Configuration Database. The Database Prefix will be perpended to this name.">
                         <label class="control-label col-md-3">Config Database Name:</label>
                         <div class="col-md-9">
                             <div class="input-group input-group-sm">
@@ -448,8 +445,7 @@
                 </fieldset>
                 <fieldset>
                     <legend>Central Administration</legend>
-                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_centralAdmin_provision.$invalid }"
-                         tooltip="Which server(s) to provision Central Admin on.">
+                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_centralAdmin_provision.$invalid }" tooltip="Which server(s) to provision Central Admin on.">
                         <label class="control-label col-md-3">Central Administration:</label>
                         <div class="col-md-9">
                             <input type="hidden" ng-model="config.value.farm.centralAdmin.provision" name="config_value_farm_centralAdmin_provision" required />
@@ -526,7 +522,10 @@
 
                     <input type="hidden" ng-model="managedAccountsChecks" name="managedAccountsChecks" ensure-expression="{required : validateManagedAccounts()}" ensure-watch-deep="config.value.farm.managedAccounts.managedAccount" />
                     <div ng-messages="farmMainForm.managedAccountsChecks.$error" class="text-danger">
-                        <div ng-message="required"><i class="fa fa-exclamation-triangle text-danger"></i>There must be one Managed Account with the Common Name spservice<br />If Search is being Provisioned, there must be a Managed Account with the Common Name SearchService</div>
+                        <div ng-message="required">
+                            <i class="fa fa-exclamation-triangle text-danger"></i>There must be one Managed Account with the Common Name spservice
+                            <br />If Search is being Provisioned, there must be a Managed Account with the Common Name SearchService
+                        </div>
                         <div ng-messages-include="error-messages"></div>
                     </div>
 
@@ -711,8 +710,11 @@
                     <span class="h2">Mini Roles</span>
                     <h4>Configure the Mini Roles</h4>
                     <hr />
-                    <h5>More info on <a href="https://technet.microsoft.com/EN-US/library/mt346114%28v=office.16%29.aspx" target="_blank">Mini Roles</a></h5>
-                    <h5>Please note: A server can only be one role.</h5>
+                    <h5>
+                        More info on
+                        <a href="https://technet.microsoft.com/EN-US/library/mt346114%28v=office.16%29.aspx" target="_blank">Mini Roles</a>
+                    </h5>
+                    <h5>Please note: A server can only be one role. We have not completed the validation for this section, so please double check.</h5>
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_webFrontEnd_provision.$invalid }" tooltip="Service applications, services, and components that serve user requests belong on Front-end web servers. These servers are optimized for low latency.">
                         <label class="control-label col-md-3">Front-end:</label>
                         <div class="col-md-9">
@@ -1089,7 +1091,9 @@
 
                         <input type="hidden" ng-model="siteCollCountCheck" name="siteCollCountCheck" ensure-expression="{required : wa.siteCollections.siteCollection.length !== 0}" ensure-watch-collection="wa.siteCollections.siteCollection" />
                         <div ng-messages="this[subForm].siteCollCountCheck.$error" class="text-danger">
-                            <div ng-message="required"><i class="fa fa-exclamation-triangle text-danger"></i> There must be at least one Site Collection!</div>
+                            <div ng-message="required">
+                                <i class="fa fa-exclamation-triangle text-danger"></i> There must be at least one Site Collection!
+                            </div>
                             <div ng-messages-include="error-messages"></div>
                         </div>
 
@@ -3554,7 +3558,7 @@
             </ng-form>
             <!--OWA 2010-->
             <ng-form ng-show="view === 'ProjectServer'" name="formProjectServer">
-                <div ng-if="config.value.install.spVersion !== '2010'">
+                <div ng-if="config.value.install.spVersion !== '2010' && config.value.install.sku !== 'Foundation'">
                     <span class="h2">Project Server</span>
                     <h4>Configure Project Server</h4>
                     <hr />
@@ -3713,7 +3717,8 @@
             <hr />
             <h4>We highly suggest that your review our Guide, if you have not already.</h4>
             <div ng-if="mainForm.$invalid" class="text-danger h4">
-                Please Note: There are issues with your configuration. Navigate through all of the sections which contain a <i class="fa fa-exclamation-triangle text-danger"></i> and resolve the issues. Otherwise, the script may fail!
+                Please Note: There are issues with your configuration. Navigate through all of the sections which contain a
+                <i class="fa fa-exclamation-triangle text-danger"></i> and resolve the issues. Otherwise, the script may fail!
             </div>
             <textarea ng-model="output" rows="20" class="form-control"></textarea>
         </div>
