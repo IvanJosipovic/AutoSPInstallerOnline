@@ -119,7 +119,7 @@ class DBAlias {
 
 angular.module("ASPIO", ["ngRoute", "ngMessages", "customDirectives", "ui.bootstrap"])
     .config(["$tooltipProvider", function ($tooltipProvider) {
-        $tooltipProvider.options({ appendToBody: true });
+    $tooltipProvider.options({ appendToBody: true, popupDelay: 500 });
     }])
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider
