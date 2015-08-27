@@ -459,7 +459,7 @@
                             </div>
                         </div>
                     </div>
-                    <div ng-show="config.value.farm.centralAdmin.provision !== 'false' && config.value.farm.centralAdmin.provision !== ''">
+                    <div ng-if="config.value.farm.centralAdmin.provision !== 'false' && config.value.farm.centralAdmin.provision !== ''">
                         <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMainForm.config_value_farm_centralAdmin_database.$invalid }"
                              tooltip="The name of the Farm Configuration Database. The Database Prefix will be perpended to this name.">
                             <label class="control-label col-md-3">Database Name:</label>
@@ -592,7 +592,7 @@
                             </div>
                         </div>
                     </div>
-                    <div ng-show="config.value.install.spVersion !== '2010'">
+                    <div ng-if="config.value.install.spVersion !== '2010'">
                         <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_distributedCache_start.$invalid }"
                              tooltip="Which server(s) to provision Distributed Cache Service on.">
                             <label class="control-label col-md-3">Distributed Cache Service:</label>
@@ -668,7 +668,7 @@
                             <input type="checkbox" ng-model="config.value.farm.services.outgoingEmail.configure" />
                         </div>
                     </div>
-                    <div ng-show="config.value.farm.services.outgoingEmail.configure">
+                    <div ng-if="config.value.farm.services.outgoingEmail.configure">
                         <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_outgoingEmail_smtpServer.$invalid }"
                              tooltip="The SMTP Server which SharePoint will send Outgoing Email to.">
                             <label class="control-label col-md-3">SMTP Server:</label>
@@ -1407,7 +1407,7 @@
                                 <input type="checkbox" ng-model="config.value.serviceApps.userProfileServiceApp.createDefaultSyncConnection" />
                             </div>
                         </div>
-                        <div ng-show="config.value.serviceApps.userProfileServiceApp.createDefaultSyncConnection">
+                        <div ng-if="config.value.serviceApps.userProfileServiceApp.createDefaultSyncConnection">
                             <div class="form-group form-group-sm" ng-class="{ 'has-error': formServiceAppsUPS.config_value_serviceApps_userProfileServiceApp_syncConnectionAccount.$invalid }"
                                  tooltip="The Sync Account Username. In format Domain\Account.">
                                 <label class="control-label col-md-3">Sync Account:</label>
@@ -1885,7 +1885,7 @@
                                         <input type="checkbox" ng-model="config.value.serviceApps.enterpriseSearchService.enterpriseSearchServiceApplications.enterpriseSearchServiceApplication.partitioned" />
                                     </div>
                                 </div>
-                                <div ng-show="config.value.serviceApps.enterpriseSearchService.enterpriseSearchServiceApplications.enterpriseSearchServiceApplication.partitioned">
+                                <div ng-if="config.value.serviceApps.enterpriseSearchService.enterpriseSearchServiceApplications.enterpriseSearchServiceApplication.partitioned">
                                     <div class="form-group form-group-sm" ng-class="{ 'has-error': formServiceAppsSearch.config_value_serviceApps_enterpriseSearchService_enterpriseSearchServiceApplications_enterpriseSearchServiceApplication_partitions.$invalid }"
                                          tooltip="The number of partitions to create.">
                                         <label class="control-label col-md-3">Number of Partitions:</label>
