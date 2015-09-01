@@ -424,6 +424,36 @@ angular.module("ASPIO", ["ngRoute", "ngMessages", "customDirectives", "ui.bootst
             }
             return valid;
         };
+        $scope.validateMiniRoles = function () {
+            var serversArray = [];
+            var valid = false;
+            function validate(provisionField: string) {
+                if (provisionField !== null && provisionField.toLowerCase() !== "false" && provisionField.toLowerCase() !== "") {
+                    var tempArray = provisionField.replace(/ /g, ",").toUpperCase().split(",");
+                    for (var i = 0, len = tempArray.length; i < len; i++) {
+                        if (serversArray.indexOf(tempArray[i]) === -1) {
+                            serversArray.push(tempArray[i]);
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+
+            valid = validate(this.config.value.farm.serverRoles.webFrontEnd.provision);
+            if (!valid) { return false; }
+            valid = validate(this.config.value.farm.serverRoles.application.provision);
+            if (!valid) { return false; }
+            valid = validate(this.config.value.farm.serverRoles.distributedCache.provision);
+            if (!valid) { return false; }
+            valid = validate(this.config.value.farm.serverRoles.search.provision);
+            if (!valid) { return false; }
+            valid = validate(this.config.value.farm.serverRoles.specialLoad.provision);
+            if (!valid) { return false; }
+            valid = validate(this.config.value.farm.serverRoles.singleServerFarm.provision);
+            return valid;
+        };
         $scope.validateManagedAccounts = function () {
             if (this.config.value.farm.managedAccounts.managedAccount.length === 0) {
                 return false;

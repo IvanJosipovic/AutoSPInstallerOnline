@@ -22,8 +22,8 @@ app.directive("ngProvision", [function () {
                 ngModel: "=",
                 servers: "="
             },
-            template: "<label class='checkbox-inline' tooltip='Do not Provision'>" +
-                "<input type='checkbox' ng-model='model.provision' ng-true-value='\"false\"' /> Do not Provision" +
+            template: "<label class='radio-inline' tooltip='Do not Provision'>" +
+                "<input type='radio' ng-model='model.provision' value='false' /> Do not Provision" +
                 "</label>" +
                 "<br />" +
                 "<label class='checkbox-inline' ng-repeat='server in servers' tooltip='Provision on {{ server }}'>" +
@@ -60,9 +60,7 @@ app.directive("ngProvision", [function () {
                         $scope.model.provision = $scope.ngModel.toLowerCase();
                     }
                     else {
-                        // Assume we are dealing with a list of servers
-                        var configServers = $scope.ngModel.replace(" ", ",").toUpperCase().split(",");
-                        var resetModel = true;
+                        var configServers = $scope.ngModel.replace(/ /g, ",").toUpperCase().split(",");
                         var tempValue = "";
                         for (var i = 0, len = configServers.length; i < len; i++) {
                             if ($scope.servers.indexOf(configServers[i]) !== -1) {
@@ -73,15 +71,14 @@ app.directive("ngProvision", [function () {
                                 else {
                                     tempValue = configServers[i];
                                 }
-                                resetModel = false;
                             }
                         }
                         // Reset the Model if no servers match the current value
-                        if (resetModel) {
+                        if (tempValue === "") {
                             $scope.ngModel = "";
                         }
                         else {
-                            // Set the Model to the current list of matched servers. In cause the field had a server not found in server list
+                            // Set the Model to the current list of matched servers. In case the field had a server not found in server list
                             $scope.ngModel = tempValue;
                         }
                     }
@@ -91,46 +88,38 @@ app.directive("ngProvision", [function () {
                 $scope.$watchCollection("servers", function () {
                     updateControls();
                 });
-                $scope.$watch("model.provision", function (newValue, oldValue) {
-                    if (newValue === oldValue || newValue === "") {
-                        return;
-                    }
-                    $scope.ngModel = $scope.model.provision;
-                    // All others should be unchecked
-                    for (var i = 0, len = $scope.servers.length; i < len; i++) {
-                        $scope.model.servers[$scope.servers[i]] = false;
-                    }
-                });
                 $scope.$watchCollection("model.servers", function (newValue, oldValue) {
                     if (angular.equals(oldValue, newValue)) {
                         return;
                     }
-                    // Check if any Servers are Checked, otherwise we wont run
-                    var shouldRun = false;
-                    for (var i = 0, len = $scope.servers.length; i < len; i++) {
-                        if ($scope.model.servers[$scope.servers[i]] === true) {
-                            shouldRun = true;
-                        }
-                    }
-                    if (shouldRun) {
-                        // All others should be unchecked
-                        $scope.model.provision = "";
-                        var tempValue = "";
-                        for (var i2 = 0, len2 = $scope.servers.length; i2 < len2; i2++) {
-                            if ($scope.model.servers[$scope.servers[i2]] === true) {
-                                if (tempValue.length >= 1) {
-                                    tempValue += "," + $scope.servers[i2];
-                                }
-                                else {
-                                    tempValue = $scope.servers[i2];
-                                }
+                    var tempValue = "";
+                    for (var i2 = 0, len2 = $scope.servers.length; i2 < len2; i2++) {
+                        if ($scope.model.servers[$scope.servers[i2]] === true) {
+                            if (tempValue.length >= 1) {
+                                tempValue += "," + $scope.servers[i2];
+                            }
+                            else {
+                                tempValue = $scope.servers[i2];
                             }
                         }
-                        $scope.ngModel = tempValue;
                     }
-                    else if ($scope.model.provision === "") {
-                        // Provision Radio is unchecked, and all Server checkboxes are unchecked
+                    if (tempValue !== "") {
+                        $scope.ngModel = tempValue;
+                        $scope.model.provision = "";
+                    }
+                    else if ($scope.model.provision !== "false") {
                         $scope.ngModel = "";
+                    }
+                });
+                $scope.$watch("model.provision", function (newValue, oldValue) {
+                    if (newValue === oldValue || newValue === "") {
+                        return;
+                    }
+                    else if (newValue === "false") {
+                        $scope.ngModel = "false";
+                        for (var i = 0, len = $scope.servers.length; i < len; i++) {
+                            $scope.model.servers[$scope.servers[i]] = false;
+                        }
                     }
                 });
             }
