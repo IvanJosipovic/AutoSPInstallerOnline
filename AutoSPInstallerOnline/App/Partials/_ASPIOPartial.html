@@ -724,6 +724,9 @@
                         <div class="col-md-9">
                             <input type="hidden" ng-model="config.value.farm.serverRoles.webFrontEnd.provision" name="config_value_farm_serverRoles_webFrontEnd_provision" required />
                             <ng-provision ng-model="config.value.farm.serverRoles.webFrontEnd.provision" servers="serversArray"></ng-provision>
+                            <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_webFrontEnd_provision.$error" class="text-danger">
+                                <div ng-messages-include="error-messages"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_application_provision.$invalid }" tooltip="Service applications, services, and components that serve backend requests (such as background jobs or search crawl requests) belong on Application servers. These servers are optimized for high throughput.">
@@ -731,6 +734,9 @@
                         <div class="col-md-9">
                             <input type="hidden" ng-model="config.value.farm.serverRoles.application.provision" name="config_value_farm_serverRoles_application_provision" required />
                             <ng-provision ng-model="config.value.farm.serverRoles.application.provision" servers="serversArray"></ng-provision>
+                            <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_application_provision.$error" class="text-danger">
+                                <div ng-messages-include="error-messages"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_distributedCache_provision.$invalid }" tooltip="Service applications, services, and components that are required for a distributed cache belong on Distributed Cache servers.">
@@ -738,6 +744,9 @@
                         <div class="col-md-9">
                             <input type="hidden" ng-model="config.value.farm.serverRoles.distributedCache.provision" name="config_value_farm_serverRoles_distributedCache_provision" required />
                             <ng-provision ng-model="config.value.farm.serverRoles.distributedCache.provision" servers="serversArray"></ng-provision>
+                            <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_distributedCache_provision.$error" class="text-danger">
+                                <div ng-messages-include="error-messages"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_search_provision.$invalid }" tooltip="Service applications, services, and components that are required for searching belong on Search servers.">
@@ -745,6 +754,9 @@
                         <div class="col-md-9">
                             <input type="hidden" ng-model="config.value.farm.serverRoles.search.provision" name="config_value_farm_serverRoles_search_provision" required />
                             <ng-provision ng-model="config.value.farm.serverRoles.search.provision" servers="serversArray"></ng-provision>
+                            <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_search_provision.$error" class="text-danger">
+                                <div ng-messages-include="error-messages"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_specialLoad_provision.$invalid }" tooltip="Custom service applications, services, and components that do not integrate with MinRole belong on Custom servers. The farm administrator has full control over which service instances can run on servers assigned to the Custom role. MinRole does not control which service instances are provisioned on this role.">
@@ -752,6 +764,9 @@
                         <div class="col-md-9">
                             <input type="hidden" ng-model="config.value.farm.serverRoles.specialLoad.provision" name="config_value_farm_serverRoles_specialLoad_provision" required />
                             <ng-provision ng-model="config.value.farm.serverRoles.specialLoad.provision" servers="serversArray"></ng-provision>
+                            <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_specialLoad_provision.$error" class="text-danger">
+                                <div ng-messages-include="error-messages"></div>
+                            </div>
                         </div>
                     </div>
                     <div ng-hide="serversArray.length > 1">
@@ -762,6 +777,9 @@
                                 <div class="col-md-9">
                                     <input type="hidden" ng-model="config.value.farm.serverRoles.singleServerFarm.provision" name="config_value_farm_serverRoles_singleServerFarm_provision" required />
                                     <ng-provision ng-model="config.value.farm.serverRoles.singleServerFarm.provision" servers="serversArray"></ng-provision>
+                                    <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_singleServerFarm_provision.$error" class="text-danger">
+                                        <div ng-messages-include="error-messages"></div>
+                                    </div>
                                 </div>
                             </div>
                         </fieldset>

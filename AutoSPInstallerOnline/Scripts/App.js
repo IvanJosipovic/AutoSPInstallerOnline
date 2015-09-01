@@ -356,9 +356,10 @@ angular.module("ASPIO", ["ngRoute", "ngMessages", "customDirectives", "ui.bootst
         // Custom Validators
         $scope.validateMiniRoles = function () {
             var serversArray = [];
-            var valid = false;
-            function validate(provisionField) {
-                if (provisionField !== null && provisionField.toLowerCase() !== "false" && provisionField.toLowerCase() !== "") {
+            var valid = true;
+            // validate that each server is only selected once.
+            function validateSingleUse(provisionField) {
+                if (provisionField !== undefined && provisionField !== null && provisionField.toLowerCase() !== "false" && provisionField.toLowerCase() !== "") {
                     var tempArray = provisionField.replace(/ /g, ",").toUpperCase().split(",");
                     for (var i = 0, len = tempArray.length; i < len; i++) {
                         if (serversArray.indexOf(tempArray[i]) === -1) {
@@ -371,27 +372,30 @@ angular.module("ASPIO", ["ngRoute", "ngMessages", "customDirectives", "ui.bootst
                 }
                 return true;
             }
-            valid = validate(this.config.value.farm.serverRoles.webFrontEnd.provision);
+            valid = validateSingleUse(this.config.value.farm.serverRoles.webFrontEnd.provision);
             if (!valid) {
                 return false;
             }
-            valid = validate(this.config.value.farm.serverRoles.application.provision);
+            valid = validateSingleUse(this.config.value.farm.serverRoles.application.provision);
             if (!valid) {
                 return false;
             }
-            valid = validate(this.config.value.farm.serverRoles.distributedCache.provision);
+            valid = validateSingleUse(this.config.value.farm.serverRoles.distributedCache.provision);
             if (!valid) {
                 return false;
             }
-            valid = validate(this.config.value.farm.serverRoles.search.provision);
+            valid = validateSingleUse(this.config.value.farm.serverRoles.search.provision);
             if (!valid) {
                 return false;
             }
-            valid = validate(this.config.value.farm.serverRoles.specialLoad.provision);
+            valid = validateSingleUse(this.config.value.farm.serverRoles.specialLoad.provision);
             if (!valid) {
                 return false;
             }
-            valid = validate(this.config.value.farm.serverRoles.singleServerFarm.provision);
+            valid = validateSingleUse(this.config.value.farm.serverRoles.singleServerFarm.provision);
+            if (!valid) {
+                return false;
+            }
             return valid;
         };
         $scope.validateManagedAccounts = function () {
