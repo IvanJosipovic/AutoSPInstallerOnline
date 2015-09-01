@@ -21,7 +21,13 @@ app.directive("ngProvision", [function () {
             ngModel: "=",
             servers: "="
         },
-        template: "<label class='radio-inline' tooltip='Do not Provision'>" +
+        template: "<label class='radio-inline' ng-if='servers.length === 0' tooltip='Provision'>" +
+        "<input type='radio' ng-model='model.provision' value='localhost' /> Provision" +
+        "</label>" +
+        "<label class='radio-inline' ng-if='servers.length > 0' tooltip='Provision on all'>" +
+        "<input type='radio' ng-model='model.provision' value='localhost' /> Provision on all" +
+        "</label>" +
+        "<label class='radio-inline' tooltip='Do not Provision'>" +
         "<input type='radio' ng-model='model.provision' value='false' /> Do not Provision" +
         "</label>" +
         "<br />" +
@@ -36,7 +42,7 @@ app.directive("ngProvision", [function () {
 
             // Grab current values from the provision fields and it to the servers collection
             // Ignore if it equals any of the following keywords
-            if ($scope.ngModel !== undefined && $scope.ngModel.toLowerCase() !== "false" && $scope.ngModel.toLowerCase() !== "") {
+            if ($scope.ngModel !== undefined && $scope.ngModel.toLowerCase() !== "false" && $scope.ngModel.toLowerCase() !== "localhost" && $scope.ngModel.toLowerCase() !== "") {
                 var serversArray = $scope.ngModel.replace(/ /g, ",").toUpperCase().split(",");
                 for (var i = 0, len = serversArray.length; i < len; i++) {
                     if ($scope.servers.indexOf(serversArray[i]) === -1) {
@@ -58,7 +64,7 @@ app.directive("ngProvision", [function () {
                 if ($scope.ngModel === undefined) {
                     return;
                 }
-                if ($scope.ngModel.toLowerCase() === "false") {
+                if ($scope.ngModel.toLowerCase() === "localhost" || $scope.ngModel.toLowerCase() === "false") {
                     $scope.model.provision = $scope.ngModel.toLowerCase();
                 } else {
                     const configServers = $scope.ngModel.replace(/ /g, ",").toUpperCase().split(",");
@@ -116,11 +122,11 @@ app.directive("ngProvision", [function () {
             $scope.$watch("model.provision", function (newValue, oldValue) {
                 if (newValue === oldValue || newValue === "") {
                     return;
-                } else if (newValue === "false") {
-                    $scope.ngModel = "false";
-                    for (var i = 0, len = $scope.servers.length; i < len; i++) {
-                        $scope.model.servers[$scope.servers[i]] = false;
-                    }
+                }
+                $scope.ngModel = $scope.model.provision;
+                // All others should be unchecked
+                for (var i = 0, len = $scope.servers.length; i < len; i++) {
+                    $scope.model.servers[$scope.servers[i]] = false;
                 }
             });
         }

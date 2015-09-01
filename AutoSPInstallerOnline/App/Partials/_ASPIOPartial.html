@@ -168,21 +168,15 @@
             <ng-form name="serversForm" ng-show="view === 'Servers'">
                 <span class="h2">Servers</span>
                 <h4>Enter the Hostnames of the SharePoint Servers Only!</h4>
-                <h4>If it's a Single Server Farm, you can use localhost</h4>
+                <h4>If it's a Single Server Farm, you can use leave this empty</h4>
                 <hr />
-                <div class="form-group" tooltip="Enter the hostnames of the SharePoint servers. If you are deploying a Single Server Farm, you can either enter localhost or hostname.">
+                <div class="form-group" tooltip="Enter the hostnames of the SharePoint servers. If you are deploying a Single Server Farm, you can either enter the hostname or leave this empty.">
                     <label class="control-label col-md-3" tooltip="">Servers List:</label>
                     <div class="col-md-9">
                         <select ng-model="selectedServer" name="config_value_farm_servers_servers" ng-options="item for item in serversArray" size="10" class="form-control"></select>
                         <input type="text" ng-model="newServer" class="form-control input-sm" tooltip="Enter a Hostname, not FQDN" placeholder="Enter Hostname">
                         <input ng-click="addServer(newServer)" type="button" value="Add" class="btn btn-primary btn-sm" />
                         <input ng-click="removeServer()" type="button" value="Remove Selected" class="btn btn-danger btn-sm"/>
-
-                        <input type="hidden" ng-model="serversArray" name="serverCountCheck" ensure-expression="{required : serversArray.length !== 0, localhost: validateLocalHost()}" ensure-watch-collection="serversArray"/>
-                        <div ng-messages="serversForm.serverCountCheck.$error" class="text-danger">
-                            <div ng-message="localhost">localhost can not be used with more than one server!</div>
-                            <div ng-messages-include="error-messages"></div>
-                        </div>
                     </div>
                 </div>
             </ng-form>
@@ -720,59 +714,44 @@
                         More info on <a href="https://technet.microsoft.com/EN-US/library/mt346114%28v=office.16%29.aspx" target="_blank">Mini Roles</a>
                     </h5>
                     <h5>Please note: Each server must have a role assigned. We have not completed the validation for this section, so please double check.</h5>
+                    <input type="hidden" name="miniRoleValidator" ng-model="miniRoleValidator" ensure-expression="{minirole: validateMiniRoles()}" ensure-watch-deep="config.value.farm.serverRoles" />
+                    <div ng-messages="farmMiniRolesForm.miniRoleValidator.$error" class="text-danger">
+                        <div ng-message="minirole">A server can only be assigned one role!</div>
+                        <div ng-messages-include="error-messages"></div>
+                    </div>
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_webFrontEnd_provision.$invalid }" tooltip="Service applications, services, and components that serve user requests belong on Front-end web servers. These servers are optimized for low latency.">
                         <label class="control-label col-md-3">Front-end:</label>
                         <div class="col-md-9">
-                            <input type="hidden" ng-model="config.value.farm.serverRoles.webFrontEnd.provision" name="config_value_farm_serverRoles_webFrontEnd_provision" required ensure-expression="{minirole: validateMiniRoles()}" />
+                            <input type="hidden" ng-model="config.value.farm.serverRoles.webFrontEnd.provision" name="config_value_farm_serverRoles_webFrontEnd_provision" required />
                             <ng-provision ng-model="config.value.farm.serverRoles.webFrontEnd.provision" servers="serversArray"></ng-provision>
-                            <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_webFrontEnd_provision.$error" class="text-danger">
-                                <div ng-message="minirole">A server can only be assigned one role!</div>
-                                <div ng-messages-include="error-messages"></div>
-                            </div>
                         </div>
                     </div>
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_application_provision.$invalid }" tooltip="Service applications, services, and components that serve backend requests (such as background jobs or search crawl requests) belong on Application servers. These servers are optimized for high throughput.">
                         <label class="control-label col-md-3">Application:</label>
                         <div class="col-md-9">
-                            <input type="hidden" ng-model="config.value.farm.serverRoles.application.provision" name="config_value_farm_serverRoles_application_provision" required ensure-expression="{minirole: validateMiniRoles()}" />
+                            <input type="hidden" ng-model="config.value.farm.serverRoles.application.provision" name="config_value_farm_serverRoles_application_provision" required />
                             <ng-provision ng-model="config.value.farm.serverRoles.application.provision" servers="serversArray"></ng-provision>
-                            <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_application_provision.$error" class="text-danger">
-                                <div ng-message="minirole">A server can only be assigned one role!</div>
-                                <div ng-messages-include="error-messages"></div>
-                            </div>
                         </div>
                     </div>
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_distributedCache_provision.$invalid }" tooltip="Service applications, services, and components that are required for a distributed cache belong on Distributed Cache servers.">
                         <label class="control-label col-md-3">Distributed cache:</label>
                         <div class="col-md-9">
-                            <input type="hidden" ng-model="config.value.farm.serverRoles.distributedCache.provision" name="config_value_farm_serverRoles_distributedCache_provision" required ensure-expression="{minirole: validateMiniRoles()}" />
+                            <input type="hidden" ng-model="config.value.farm.serverRoles.distributedCache.provision" name="config_value_farm_serverRoles_distributedCache_provision" required />
                             <ng-provision ng-model="config.value.farm.serverRoles.distributedCache.provision" servers="serversArray"></ng-provision>
-                            <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_distributedCache_provision.$error" class="text-danger">
-                                <div ng-message="minirole">A server can only be assigned one role!</div>
-                                <div ng-messages-include="error-messages"></div>
-                            </div>
                         </div>
                     </div>
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_search_provision.$invalid }" tooltip="Service applications, services, and components that are required for searching belong on Search servers.">
                         <label class="control-label col-md-3">Search:</label>
                         <div class="col-md-9">
-                            <input type="hidden" ng-model="config.value.farm.serverRoles.search.provision" name="config_value_farm_serverRoles_search_provision" required ensure-expression="{minirole: validateMiniRoles()}" />
+                            <input type="hidden" ng-model="config.value.farm.serverRoles.search.provision" name="config_value_farm_serverRoles_search_provision" required />
                             <ng-provision ng-model="config.value.farm.serverRoles.search.provision" servers="serversArray"></ng-provision>
-                            <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_search_provision.$error" class="text-danger">
-                                <div ng-message="minirole">A server can only be assigned one role!</div>
-                                <div ng-messages-include="error-messages"></div>
-                            </div>
                         </div>
                     </div>
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_specialLoad_provision.$invalid }" tooltip="Custom service applications, services, and components that do not integrate with MinRole belong on Custom servers. The farm administrator has full control over which service instances can run on servers assigned to the Custom role. MinRole does not control which service instances are provisioned on this role.">
                         <label class="control-label col-md-3">Custom:</label>
                         <div class="col-md-9">
-                            <input type="hidden" ng-model="config.value.farm.serverRoles.specialLoad.provision" name="config_value_farm_serverRoles_specialLoad_provision" required ensure-expression="{minirole: validateMiniRoles()}" />
+                            <input type="hidden" ng-model="config.value.farm.serverRoles.specialLoad.provision" name="config_value_farm_serverRoles_specialLoad_provision" required />
                             <ng-provision ng-model="config.value.farm.serverRoles.specialLoad.provision" servers="serversArray"></ng-provision>
-                            <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_specialLoad_provision.$error" class="text-danger">
-                                <div ng-message="minirole">A server can only be assigned one role!</div>
-                                <div ng-messages-include="error-messages"></div>
-                            </div>
                         </div>
                     </div>
                     <div ng-hide="serversArray.length > 1">
@@ -781,12 +760,8 @@
                             <div class="form-group form-group-sm" ng-class="{ 'has-error': farmMiniRolesForm.config_value_farm_serverRoles_singleServerFarm_provision.$invalid }" tooltip="Service applications, services, and components required for a single machine farm belong on a Single-Server Farm. A Single-Server Farm is meant for development, testing, and very limited production use. A SharePoint farm with the Single-Server Farm role cannot have more than one SharePoint server in the farm.">
                                 <label class="control-label col-md-3">Single-server Farm:</label>
                                 <div class="col-md-9">
-                                    <input type="hidden" ng-model="config.value.farm.serverRoles.singleServerFarm.provision" name="config_value_farm_serverRoles_singleServerFarm_provision" required ensure-expression="{minirole: validateMiniRoles()}" />
+                                    <input type="hidden" ng-model="config.value.farm.serverRoles.singleServerFarm.provision" name="config_value_farm_serverRoles_singleServerFarm_provision" required />
                                     <ng-provision ng-model="config.value.farm.serverRoles.singleServerFarm.provision" servers="serversArray"></ng-provision>
-                                    <div ng-messages="farmMiniRolesForm.config_value_farm_serverRoles_singleServerFarm_provision.$error" class="text-danger">
-                                        <div ng-message="minirole">A server can only be assigned one role!</div>
-                                        <div ng-messages-include="error-messages"></div>
-                                    </div>
                                 </div>
                             </div>
                         </fieldset>

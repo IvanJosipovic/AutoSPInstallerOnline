@@ -278,7 +278,7 @@ angular.module("ASPIO", ["ngRoute", "ngMessages", "customDirectives", "ui.bootst
         $scope.selectedServer = "";
         $scope.serversArray = [];
         $scope.addServer = function (server) {
-            if (!server) {
+            if (!server || server.toUpperCase() === "LOCALHOST") {
                 return;
             }
             server = server.toUpperCase().trim();
@@ -343,9 +343,9 @@ angular.module("ASPIO", ["ngRoute", "ngMessages", "customDirectives", "ui.bootst
                 this.config.value.farm.services.claimsToWindowsTokenService.start = "false";
                 this.config.value.farm.services.incomingEmail.start = "false";
                 this.config.value.enterpriseServiceApps.excelServices.provision = "false";
-                if ($scope.serversArray.length === 1) {
+                if ($scope.serversArray.length < 1) {
                     // Single Server Farm
-                    $scope.config.value.farm.serverRoles.singleServerFarm.provision = $scope.serversArray[0];
+                    $scope.config.value.farm.serverRoles.singleServerFarm.provision = "localhost";
                 }
                 else if ($scope.serversArray.length > 1) {
                     // Multi Server Farm
@@ -354,13 +354,6 @@ angular.module("ASPIO", ["ngRoute", "ngMessages", "customDirectives", "ui.bootst
             }
         };
         // Custom Validators
-        $scope.validateLocalHost = function () {
-            var valid = true;
-            if ($scope.serversArray.length > 1 && $scope.serversArray.indexOf("LOCALHOST") > -1) {
-                valid = false;
-            }
-            return valid;
-        };
         $scope.validateMiniRoles = function () {
             var serversArray = [];
             var valid = false;
