@@ -408,7 +408,7 @@ angular.module("ASPIO", ["ngRoute", "ngMessages", "customDirectives", "ui.bootst
                 this.config.value.enterpriseServiceApps.excelServices.provision = "false";
                 if ($scope.serversArray.length < 1) {
                     // Single Server Farm
-                    $scope.config.value.farm.serverRoles.singleServerFarm.provision = "localhost";
+                    $scope.config.value.farm.serverRoles.singleServerFarm.provision = "false";
                 } else if ($scope.serversArray.length > 1) {
                     // Multi Server Farm
                     $scope.config.value.farm.serverRoles.singleServerFarm.provision = "false";
@@ -423,11 +423,15 @@ angular.module("ASPIO", ["ngRoute", "ngMessages", "customDirectives", "ui.bootst
 
             // validate that each server is only selected once.
             function validateSingleUse(provisionField: string) {
-                if (provisionField !== undefined && provisionField !== null && provisionField.toLowerCase() !== "false" && provisionField.toLowerCase() !== "") {
-                    var tempArray = provisionField.replace(/ /g, ",").toUpperCase().split(",");
+                if (provisionField !== undefined && provisionField !== null && provisionField !== "" && provisionField.toLowerCase() !== "false") {
+                    const tempArray = provisionField.replace(/ /g, ",").toUpperCase().split(",");
                     for (var i = 0, len = tempArray.length; i < len; i++) {
                         if (serversArray.indexOf(tempArray[i]) === -1) {
-                            serversArray.push(tempArray[i]);
+                            if (serversArray.length === 0 || (serversArray.length !== 0 && tempArray[i] !== "LOCALHOST" && serversArray.indexOf("LOCALHOST") === -1)) {
+                                serversArray.push(tempArray[i]);
+                            } else {
+                                return false;
+                            }
                         } else {
                             return false;
                         }
@@ -449,6 +453,10 @@ angular.module("ASPIO", ["ngRoute", "ngMessages", "customDirectives", "ui.bootst
             valid = validateSingleUse(this.config.value.farm.serverRoles.singleServerFarm.provision);
             if (!valid) { return false; }
 
+            // Validate that each server is used once.
+            if (serversArray.length === 0 || serversArray.indexOf("LOCALHOST") === -1 && serversArray.length !== $scope.serversArray.length) {
+                valid = false;
+            }
 
             return valid;
         };
