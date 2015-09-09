@@ -156,11 +156,15 @@
     <None Include="Prerender.io.dll" />
     <None Include="Properties\PublishProfiles\AutoSPInstaller.pubxml" />
     <None Include="Properties\PublishProfiles\AutoSPInstallerDev.pubxml" />
+    <None Include="Schema\AutoSPInstallerInput_3.99.51.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Schema\jsonix-schema-compiler-full-2.3.6.jar" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\ConfigModel398.js" />
     <Content Include="Scripts\ConfigModel399.js" />
     <Content Include="Scripts\ConfigModel3995.js" />
+    <Content Include="Scripts\ConfigModel.js" />
     <Content Include="Scripts\Directives.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="sitemap.xml" />
