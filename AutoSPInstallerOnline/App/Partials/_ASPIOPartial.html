@@ -36,7 +36,7 @@
                     </li>
                     <div ng-if="config.value.install.spVersion === '2016'">
                         <li ng-click="setView('FarmMinRoles')" ng-class="{ 'tree-active': view === 'FarmMinRoles' }">
-                            <a href=""><i class="fa fa-cog"></i> Min Roles <i ng-if="FarmMinRolesForm.$invalid" class="fa fa-exclamation-triangle text-danger"></i></a>
+                            <a href=""><i class="fa fa-cog"></i> MinRoles <i ng-if="FarmMinRolesForm.$invalid" class="fa fa-exclamation-triangle text-danger"></i></a>
                         </li>
                     </div>
                     <li ng-click="setView('FarmLogging')" ng-class="{ 'tree-active': view === 'FarmLogging' }">
@@ -712,11 +712,11 @@
             <!--Service-->
             <ng-form ng-show="view === 'FarmMinRoles'" name="FarmMinRolesForm">
                 <div ng-if="config.value.install.spVersion === '2016'">
-                    <span class="h2">Min Roles</span>
-                    <h4>Configure the Min Roles</h4>
+                    <span class="h2">MinRoles</span>
+                    <h4>Configure the MinRoles</h4>
                     <hr />
                     <h5>
-                        More info on <a href="https://technet.microsoft.com/EN-US/library/mt346114%28v=office.16%29.aspx" target="_blank">Min Roles</a>
+                        More info on <a href="https://technet.microsoft.com/EN-US/library/mt346114%28v=office.16%29.aspx" target="_blank">MinRoles</a>
                     </h5>
                     <input type="hidden" name="minroleValidator" ng-model="minroleValidator" ensure-expression="{minrole: validateminroles()}" ensure-watch-deep="config.value.farm.serverRoles" />
                     <div ng-messages="FarmMinRolesForm.minroleValidator.$error" class="text-danger">
