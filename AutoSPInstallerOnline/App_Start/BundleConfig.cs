@@ -11,9 +11,13 @@ namespace AutoSPInstallerOnline
             bundles.Add(new ScriptBundle("~/bundles/javascript").Include(
                         "~/bower_components/jsonix/dist/Jsonix-min.js",
                         "~/bower_components/vkBeautify-wrapper/dist/vkbeautify.0.99.00.beta.js",
-                        "~/Scripts/ConfigModel*",
-                        "~/Scripts/Directives.js",
-                        "~/Scripts/App.js"));
+                        "~/Scripts/App.js",
+                        "~/Scripts/Models/*.js",
+                        "~/Scripts/Directives/*.js",
+                        "~/Scripts/Services/*.js",
+                        "~/Scripts/Controllers/*.js",
+                        "~/Scripts/Config.js",
+                        "~/Scripts/ConfigModel*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

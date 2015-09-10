@@ -5,7 +5,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('bower.json'),
         watch: {
             scripts: {
-                files: ['App/*.ts', 'App/Services/*.ts', 'App/Controllers/*.ts', 'Scripts/ConfigModel*.js', 'Gruntfile.js'],
+                files: ['App/*.ts', 'App/Services/*.ts', 'App/Controllers/*.ts', 'App/Directives/*.ts', 'Scripts/ConfigModel*.js', 'Gruntfile.js'],
                 tasks: ['jshint','tslint', 'typescript'],
                 options: {
                     spawn: false
@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         },
         typescript: {
             base: {
-                src: ['App/*.ts', 'App/Services/*.ts', 'App/Controllers/*.ts'],
+                src: ['App/*.ts', 'App/Services/*.ts', 'App/Controllers/*.ts', 'App/Directives/*.ts'],
                 dest: 'Scripts',
                 options: {
                     module: 'amd', //or commonjs 
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
                 configuration: grunt.file.readJSON("tslint.json")
             },
             files: {
-                src: ['App/*.ts', 'App/Services/*.ts', 'App/Controllers/*.ts']
+                src: ['App/*.ts', 'App/Services/*.ts', 'App/Controllers/*.ts', 'App/Directives/*.ts']
             }
         },
         jshint: {

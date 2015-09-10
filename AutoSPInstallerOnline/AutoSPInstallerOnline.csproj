@@ -134,6 +134,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App\Directives\provisionDirective.ts" />
+    <None Include="App\Directives\ensureExpressionDirective.ts" />
+    <None Include="App\Directives\onReadFileDirective.ts" />
+    <None Include="App\Directives\integerDirective.ts" />
+    <None Include="App\Directives\stringToNumberDirective.ts" />
+    <None Include="App\Controllers\FarmConfigurationController.ts" />
+    <None Include="App\Controllers\BlankController.ts" />
+    <None Include="App\App.ts" />
+    <None Include="App\Models\Models.ts" />
     <Content Include="bower_components\jsonix\dist\Jsonix-all.js" />
     <Content Include="bower_components\jsonix\dist\Jsonix-min.js" />
     <Content Include="bower_components\vkBeautify-wrapper\dist\vkbeautify.0.99.00.beta.js" />
@@ -161,11 +170,20 @@
     </None>
     <None Include="Schema\jsonix-schema-compiler-full-2.3.6.jar" />
     <Content Include="Scripts\App.js" />
+    <Content Include="Scripts\Config.js" />
     <Content Include="Scripts\ConfigModel398.js" />
     <Content Include="Scripts\ConfigModel399.js" />
     <Content Include="Scripts\ConfigModel3995.js" />
     <Content Include="Scripts\ConfigModel.js" />
-    <Content Include="Scripts\Directives.js" />
+    <Content Include="Scripts\Controllers\BlankController.js" />
+    <Content Include="Scripts\Controllers\FarmConfigurationController.js" />
+    <Content Include="Scripts\Directives\ensureExpressionDirective.js" />
+    <Content Include="Scripts\Directives\integerDirective.js" />
+    <Content Include="Scripts\Directives\onReadFileDirective.js" />
+    <Content Include="Scripts\Directives\ProvisionDirective.js" />
+    <Content Include="Scripts\Directives\stringToNumberDirective.js" />
+    <Content Include="Scripts\Models\Models.js" />
+    <Content Include="Scripts\Services\xmlService.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="sitemap.xml" />
     <Content Include="Web.config">
@@ -223,8 +241,8 @@
     <None Include="tslint.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App\App.ts" />
-    <None Include="App\Directives.ts" />
+    <None Include="App\Config.ts" />
+    <None Include="App\Services\xmlService.ts" />
     <TypeScriptCompile Include="typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
