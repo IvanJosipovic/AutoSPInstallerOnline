@@ -27,13 +27,10 @@
                             xmlService.UpgrdeXml3995to39951(xml);
                             alert("Your XML Schema was upgraded from 3.99.5 to 3.99.51. Please download the latest version of AutoSPInstaller in order to use this configuration.");
                         } else if (xml.indexOf("Version='3.99'") !== -1 || xml.indexOf("Version=\"3.99\"") !== -1) {
-                            xml = xmlService.UpgrdeXml399to3995(xml);
-                            xmlService.UpgrdeXml3995to39951(xml);
+                            xmlService.UpgrdeXml399to39951(xml);
                             alert("Your XML Schema was upgraded from 3.99 to 3.99.5. Please download the latest version of AutoSPInstaller in order to use this configuration.");
                         } else if (xml.indexOf("Version='3.98'") !== -1 || xml.indexOf("Version=\"3.98\"") !== -1) {
-                            xml = xmlService.UpgrdeXml398to399(xml);
-                            xml = xmlService.UpgrdeXml399to3995(xml);
-                            xmlService.UpgrdeXml3995to39951(xml);
+                            xmlService.UpgrdeXml398to39951(xml);
                             alert("Your XML Schema was upgraded from 3.98 to 3.99.5. Please download the latest version of AutoSPInstaller in order to use this configuration.");
                         } else if (xml.indexOf("Version='3.99.5'") === -1 && xml.indexOf("Version=\"3.99.5\"") === -1) {
                             alert("This XML Version is not supported. We only support the latest version 3.99.5. Please download the latest version of AutoSPInstaller or manually update the XML to reflect the new changes.");
