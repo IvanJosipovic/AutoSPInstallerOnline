@@ -837,10 +837,10 @@
                          uib-tooltip="Log Disk Usage specifies the maximum amount of disk space (GB) to use. If you specify a value here, LogMaxDiskSpaceUsageEnabled will automatically be enabled. Leave empty to have no space restriction (dangerous!).">
                         <label class="control-label col-md-3">Log Disk Usage:</label>
                         <div class="col-md-9">
-                            <input type="number" ng-model="config.value.farm.logging.ulsLogs.logDiskSpaceUsageGB" name="config_value_farm_logging_ulsLogs_logDiskSpaceUsageGB" integer string-to-number min="1" max="2147483647" placeholder="2,147,483,647 GB" class="form-control" />
+                            <input type="number" ng-model="config.value.farm.logging.ulsLogs.logDiskSpaceUsageGB" name="config_value_farm_logging_ulsLogs_logDiskSpaceUsageGB" integer string-to-number min="1" max="1000" placeholder="1,000 GB" class="form-control" />
                             <div ng-messages="farmLoggingForm.config_value_farm_logging_ulsLogs_logDiskSpaceUsageGB.$error" class="text-danger">
-                                <div ng-message="min">The size should be between 1 - 2147483647.</div>
-                                <div ng-message="max">The size should be between 1 - 2147483647.</div>
+                                <div ng-message="min">The size should be between 1 - 1000.</div>
+                                <div ng-message="max">The size should be between 1 - 1000.</div>
                                 <div ng-messages-include="error-messages"></div>
                             </div>
                         </div>
