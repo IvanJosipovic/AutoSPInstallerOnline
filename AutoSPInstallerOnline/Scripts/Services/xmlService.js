@@ -1,9 +1,7 @@
 /// <reference path="../../typings/tsd.d.ts" />
 (function () {
     "use strict";
-    angular
-        .module("ASPIO")
-        .service("xmlService", function () {
+    function xmlService() {
         this.config = null;
         this.context = new Jsonix.Context([ConfigModel]);
         this.LoadXml = function (xml) {
@@ -18,19 +16,19 @@
         this.UpgrdeXml398to399 = function (xml) {
             var context = new Jsonix.Context([ConfigModel398]);
             var unmarshaller = context.createUnmarshaller();
-            this.config = unmarshaller.unmarshalString(xml); // Schema change Fix
+            this.config = unmarshaller.unmarshalString(xml);
             this.Upgrde398to399();
         };
         this.UpgrdeXml399to3995 = function (xml) {
             var context = new Jsonix.Context([ConfigModel399]);
             var unmarshaller = context.createUnmarshaller();
-            this.config = unmarshaller.unmarshalString(xml); // Schema change Fix
+            this.config = unmarshaller.unmarshalString(xml);
             this.Upgrde399to3995();
         };
         this.UpgrdeXml3995to39951 = function (xml) {
             var context = new Jsonix.Context([ConfigModel3995]);
             var unmarshaller = context.createUnmarshaller();
-            this.config = unmarshaller.unmarshalString(xml); // Schema change Fix
+            this.config = unmarshaller.unmarshalString(xml);
             this.Upgrde3995to39951();
         };
         // Multi version jumps
@@ -73,5 +71,9 @@
             this.config.value.farm.serverRoles.custom = new Object;
             this.config.value.farm.serverRoles.custom.provision = this.config.value.farm.serverRoles.specialLoad.provision;
         };
-    });
+    }
+    ;
+    angular
+        .module("ASPIO")
+        .service("xmlService", xmlService);
 })();

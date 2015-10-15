@@ -4,12 +4,11 @@
 
     angular
         .module("ASPIO")
-        .config([
-            "$tooltipProvider", function($tooltipProvider) {
+        .config(["$tooltipProvider", function($tooltipProvider) {
                 $tooltipProvider.options({ appendToBody: true, popupDelay: 500 });
             }
         ])
-        .config(function($routeProvider, $locationProvider) {
+        .config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
             $routeProvider
                 .when("/", {
                     title: "Home - AutoSPInstaller Online",
@@ -68,7 +67,7 @@
                 requireBase: false
             });
             $locationProvider.hashPrefix("!");
-        })
+        }])
         .run(["$location", "$rootScope", function($location, $rootScope) {
                 $rootScope.$on("$routeChangeSuccess", function(event, current, previous) {
                     if (current.hasOwnProperty("$$route")) {
