@@ -10,17 +10,17 @@
                     ngModel: "=",
                     servers: "="
                 },
-                template: "<label class='radio-inline' ng-if='servers.length === 0' tooltip='Provision'>" +
+                template: "<label class='radio-inline' ng-if='servers.length === 0' uib-tooltip='Provision'>" +
                 "<input type='radio' ng-model='model.provision' value='localhost' /> Provision" +
                 "</label>" +
-                "<label class='radio-inline' ng-if='servers.length > 0' tooltip='Provision on all'>" +
+                "<label class='radio-inline' ng-if='servers.length > 0' uib-tooltip='Provision on all'>" +
                 "<input type='radio' ng-model='model.provision' value='localhost' /> Provision on all" +
                 "</label>" +
-                "<label class='radio-inline' tooltip='Do not Provision'>" +
+                "<label class='radio-inline' uib-tooltip='Do not Provision'>" +
                 "<input type='radio' ng-model='model.provision' value='false' /> Do not Provision" +
                 "</label>" +
                 "<br />" +
-                "<label class='checkbox-inline' ng-repeat='server in servers' tooltip='Provision on {{ server }}'>" +
+                "<label class='checkbox-inline' ng-repeat='server in servers' uib-tooltip='Provision on {{ server }}'>" +
                 "<input type='checkbox' ng-model='model.servers[server]' /> {{ server }}" +
                 "</label>",
                 controller: function ($scope) {
