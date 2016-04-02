@@ -573,70 +573,68 @@
                 <span class="h2">Farm Services</span>
                 <h4>Configure the Farm Services</h4>
                 <hr />
-                <div ng-if="config.value.install.spVersion !== '2016'">
-                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_foundationWebApplication_start.$invalid }"
-                         uib-tooltip="Which server(s) to provision Web Application Service on.">
-                        <label class="control-label col-md-3">Web Application Service:</label>
+                <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_foundationWebApplication_start.$invalid }"
+                        uib-tooltip="Which server(s) to provision Web Application Service on.">
+                    <label class="control-label col-md-3">Web Application Service:</label>
+                    <div class="col-md-9">
+                        <input type="hidden" ng-model="config.value.farm.services.foundationWebApplication.start" name="config_value_farm_services_foundationWebApplication_start" required />
+                        <ng-provision ng-model="config.value.farm.services.foundationWebApplication.start" servers="serversArray"></ng-provision>
+                        <div ng-messages="farmServicesForm.config_value_farm_services_foundationWebApplication_start.$error" class="text-danger">
+                            <div ng-messages-include="error-messages"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_workflowTimer_start.$invalid }"
+                        uib-tooltip="Which server(s) to provision Workflow Timer Service on.">
+                    <label class="control-label col-md-3">Workflow Timer Service:</label>
+                    <div class="col-md-9">
+                        <input type="hidden" ng-model="config.value.farm.services.workflowTimer.start" name="config_value_farm_services_workflowTimer_start" required />
+                        <ng-provision ng-model="config.value.farm.services.workflowTimer.start" servers="serversArray"></ng-provision>
+                        <div ng-messages="farmServicesForm.config_value_farm_services_workflowTimer_start.$error" class="text-danger">
+                            <div ng-messages-include="error-messages"></div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="config.value.install.spVersion !== '2010'">
+                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_distributedCache_start.$invalid }"
+                            uib-tooltip="Which server(s) to provision Distributed Cache Service on.">
+                        <label class="control-label col-md-3">Distributed Cache Service:</label>
                         <div class="col-md-9">
-                            <input type="hidden" ng-model="config.value.farm.services.foundationWebApplication.start" name="config_value_farm_services_foundationWebApplication_start" required />
-                            <ng-provision ng-model="config.value.farm.services.foundationWebApplication.start" servers="serversArray"></ng-provision>
-                            <div ng-messages="farmServicesForm.config_value_farm_services_foundationWebApplication_start.$error" class="text-danger">
+                            <input type="hidden" ng-model="config.value.farm.services.distributedCache.start" name="config_value_farm_services_distributedCache_start" required />
+                            <ng-provision ng-model="config.value.farm.services.distributedCache.start" servers="serversArray"></ng-provision>
+                            <div ng-messages="farmServicesForm.config_value_farm_services_distributedCache_start.$error" class="text-danger">
                                 <div ng-messages-include="error-messages"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_workflowTimer_start.$invalid }"
-                         uib-tooltip="Which server(s) to provision Workflow Timer Service on.">
-                        <label class="control-label col-md-3">Workflow Timer Service:</label>
+                </div>
+                <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_claimsToWindowsTokenService_start.$invalid }"
+                        uib-tooltip="Which server(s) to provision Claims To Windows Service on.">
+                    <label class="control-label col-md-3">Claims To Windows Service:</label>
+                    <div class="col-md-9">
+                        <input type="hidden" ng-model="config.value.farm.services.claimsToWindowsTokenService.start" name="config_value_farm_services_claimsToWindowsTokenService_start" required />
+                        <ng-provision ng-model="config.value.farm.services.claimsToWindowsTokenService.start" servers="serversArray"></ng-provision>
+                        <div ng-messages="farmServicesForm.config_value_farm_services_claimsToWindowsTokenService_start.$error" class="text-danger">
+                            <div ng-messages-include="error-messages"></div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="config.value.farm.services.claimsToWindowsTokenService.start !== 'false' && config.value.farm.services.claimsToWindowsTokenService.start !== ''">
+                    <div class="form-group form-group-sm" uib-tooltip="If enabled, the Claims To Windows Token Service (C2WTS) will run under an account other than the default Local System (the general spservice account), and thus avoid a Health Analyzer warning. However it will break things like PowerPivot and Excel Services so best bet is to leave it disabled.">
+                        <label class="control-label col-md-3">Update Claims To Windows Service Account:</label>
                         <div class="col-md-9">
-                            <input type="hidden" ng-model="config.value.farm.services.workflowTimer.start" name="config_value_farm_services_workflowTimer_start" required />
-                            <ng-provision ng-model="config.value.farm.services.workflowTimer.start" servers="serversArray"></ng-provision>
-                            <div ng-messages="farmServicesForm.config_value_farm_services_workflowTimer_start.$error" class="text-danger">
-                                <div ng-messages-include="error-messages"></div>
-                            </div>
+                            <input type="checkbox" ng-model="config.value.farm.services.claimsToWindowsTokenService.updateAccount" />
                         </div>
                     </div>
-                    <div ng-if="config.value.install.spVersion !== '2010'">
-                        <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_distributedCache_start.$invalid }"
-                             uib-tooltip="Which server(s) to provision Distributed Cache Service on.">
-                            <label class="control-label col-md-3">Distributed Cache Service:</label>
-                            <div class="col-md-9">
-                                <input type="hidden" ng-model="config.value.farm.services.distributedCache.start" name="config_value_farm_services_distributedCache_start" required />
-                                <ng-provision ng-model="config.value.farm.services.distributedCache.start" servers="serversArray"></ng-provision>
-                                <div ng-messages="farmServicesForm.config_value_farm_services_distributedCache_start.$error" class="text-danger">
-                                    <div ng-messages-include="error-messages"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_claimsToWindowsTokenService_start.$invalid }"
-                         uib-tooltip="Which server(s) to provision Claims To Windows Service on.">
-                        <label class="control-label col-md-3">Claims To Windows Service:</label>
-                        <div class="col-md-9">
-                            <input type="hidden" ng-model="config.value.farm.services.claimsToWindowsTokenService.start" name="config_value_farm_services_claimsToWindowsTokenService_start" required />
-                            <ng-provision ng-model="config.value.farm.services.claimsToWindowsTokenService.start" servers="serversArray"></ng-provision>
-                            <div ng-messages="farmServicesForm.config_value_farm_services_claimsToWindowsTokenService_start.$error" class="text-danger">
-                                <div ng-messages-include="error-messages"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div ng-if="config.value.farm.services.claimsToWindowsTokenService.start !== 'false' && config.value.farm.services.claimsToWindowsTokenService.start !== ''">
-                        <div class="form-group form-group-sm" uib-tooltip="If enabled, the Claims To Windows Token Service (C2WTS) will run under an account other than the default Local System (the general spservice account), and thus avoid a Health Analyzer warning. However it will break things like PowerPivot and Excel Services so best bet is to leave it disabled.">
-                            <label class="control-label col-md-3">Update Claims To Windows Service Account:</label>
-                            <div class="col-md-9">
-                                <input type="checkbox" ng-model="config.value.farm.services.claimsToWindowsTokenService.updateAccount" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_sandboxedCodeService_start.$invalid }"
-                         uib-tooltip="Which server(s) to provision Claims To Sandbox Code Service on.">
-                        <label class="control-label col-md-3">Sandbox Code Service:</label>
-                        <div class="col-md-9">
-                            <input type="hidden" ng-model="config.value.farm.services.sandboxedCodeService.start" name="config_value_farm_services_sandboxedCodeService_start" required />
-                            <ng-provision ng-model="config.value.farm.services.sandboxedCodeService.start" servers="serversArray"></ng-provision>
-                            <div ng-messages="farmServicesForm.config_value_farm_services_sandboxedCodeService_start.$error" class="text-danger">
-                                <div ng-messages-include="error-messages"></div>
-                            </div>
+                </div>
+                <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_sandboxedCodeService_start.$invalid }"
+                        uib-tooltip="Which server(s) to provision Claims To Sandbox Code Service on.">
+                    <label class="control-label col-md-3">Sandbox Code Service:</label>
+                    <div class="col-md-9">
+                        <input type="hidden" ng-model="config.value.farm.services.sandboxedCodeService.start" name="config_value_farm_services_sandboxedCodeService_start" required />
+                        <ng-provision ng-model="config.value.farm.services.sandboxedCodeService.start" servers="serversArray"></ng-provision>
+                        <div ng-messages="farmServicesForm.config_value_farm_services_sandboxedCodeService_start.$error" class="text-danger">
+                            <div ng-messages-include="error-messages"></div>
                         </div>
                     </div>
                 </div>
@@ -653,16 +651,14 @@
                             </div>
                         </div>
                     </div>
-                    <div ng-if="config.value.install.spVersion !== '2016'">
-                        <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_incomingEmail_start.$invalid }"
-                             uib-tooltip="Which server(s) to provision Incoming Email Service on.">
-                            <label class="control-label col-md-3">Incoming Email Service:</label>
-                            <div class="col-md-9">
-                                <input type="hidden" ng-model="config.value.farm.services.incomingEmail.start" name="config_value_farm_services_incomingEmail_start" required />
-                                <ng-provision ng-model="config.value.farm.services.incomingEmail.start" servers="serversArray"></ng-provision>
-                                <div ng-messages="farmServicesForm.config_value_farm_services_incomingEmail_start.$error" class="text-danger">
-                                    <div ng-messages-include="error-messages"></div>
-                                </div>
+                    <div class="form-group form-group-sm" ng-class="{ 'has-error': farmServicesForm.config_value_farm_services_incomingEmail_start.$invalid }"
+                            uib-tooltip="Which server(s) to provision Incoming Email Service on.">
+                        <label class="control-label col-md-3">Incoming Email Service:</label>
+                        <div class="col-md-9">
+                            <input type="hidden" ng-model="config.value.farm.services.incomingEmail.start" name="config_value_farm_services_incomingEmail_start" required />
+                            <ng-provision ng-model="config.value.farm.services.incomingEmail.start" servers="serversArray"></ng-provision>
+                            <div ng-messages="farmServicesForm.config_value_farm_services_incomingEmail_start.$error" class="text-danger">
+                                <div ng-messages-include="error-messages"></div>
                             </div>
                         </div>
                     </div>
