@@ -58,10 +58,6 @@
                                 $scope.config.value.webApplications.webApplication[i].siteCollections.siteCollection = [];
                             }
                         }
-
-                        // Run SP Version Fixes
-                        $scope.spVersionChange($scope.config.value.install.spVersion);
-
                     } catch (err) {
                         alert("There is an issue with the XML. Please check that its a valid XML and that it is at least version 3.98. Error: " + err.message);
                         return;
@@ -122,9 +118,6 @@
                     if ($scope.serversArray.length > 0) {
                         $scope.selectedServer = $scope.serversArray[0];
                     }
-                    if ($scope.config) {
-                        $scope.spVersionChange($scope.config.value.install.spVersion);
-                    }
                 });
 
                 // Add/Remove Components
@@ -162,18 +155,6 @@
                 };
                 $scope.removeManagedPath = function(managedPaths: Array<ManagedPath>, index: number) {
                     managedPaths.splice(index, 1);
-                };
-
-                $scope.spVersionChange = function(version: string) {
-                    if (version === "2016") {
-                        //Apply fixes needed for 2016
-                        this.config.value.farm.services.foundationWebApplication.start = "false";
-                        this.config.value.farm.services.workflowTimer.start = "false";
-                        this.config.value.farm.services.distributedCache.start = "false";
-                        this.config.value.farm.services.claimsToWindowsTokenService.start = "false";
-                        this.config.value.farm.services.incomingEmail.start = "false";
-                        this.config.value.farm.serverRoles.singleServerFarm.provision = "false";
-                    }
                 };
 
                 // Custom Validators

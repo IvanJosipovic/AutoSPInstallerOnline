@@ -200,13 +200,13 @@
                     <label class="control-label col-md-3">SharePoint Version:</label>
                     <div class="col-md-9">
                         <label class="radio-inline" uib-tooltip="SharePoint 2010">
-                            <input type="radio" ng-model="config.value.install.spVersion" name="config_value_install_spVersion" value="2010" ng-change="spVersionChange('2010')" />2010
+                            <input type="radio" ng-model="config.value.install.spVersion" name="config_value_install_spVersion" value="2010" />2010
                         </label>
                         <label class="radio-inline" uib-tooltip="SharePoint 2013">
-                            <input type="radio" ng-model="config.value.install.spVersion" name="config_value_install_spVersion" value="2013" ng-change="spVersionChange('2013')"   />2013
+                            <input type="radio" ng-model="config.value.install.spVersion" name="config_value_install_spVersion" value="2013" />2013
                         </label>
                         <label class="radio-inline" uib-tooltip="SharePoint 2016">
-                            <input type="radio" ng-model="config.value.install.spVersion" name="config_value_install_spVersion" value="2016" ng-change="spVersionChange('2016')"  ensure-expression="{required: config.value.install.spVersion === '2010' || config.value.install.spVersion === '2013' || config.value.install.spVersion === '2016'}" />2016 (Beta)
+                            <input type="radio" ng-model="config.value.install.spVersion" name="config_value_install_spVersion" value="2016" ensure-expression="{required: config.value.install.spVersion === '2010' || config.value.install.spVersion === '2013' || config.value.install.spVersion === '2016'}" />2016 (Beta)
                         </label>
                         <div ng-messages="installForm.config_value_install_spVersion.$error" class="text-danger">
                             <div ng-messages-include="error-messages"></div>
