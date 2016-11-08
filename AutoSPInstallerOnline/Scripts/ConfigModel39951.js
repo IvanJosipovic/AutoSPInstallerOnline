@@ -1,6 +1,6 @@
-var ConfigModel3995_Module_Factory = function () {
-  var ConfigModel3995 = {
-    name: 'ConfigModel3995',
+var ConfigModel39951_Module_Factory = function () {
+  var ConfigModel39951 = {
+    name: 'ConfigModel39951',
     typeInfos: [{
         localName: 'Configuration.Farm.Account',
         typeName: null,
@@ -1999,11 +1999,11 @@ var ConfigModel3995_Module_Factory = function () {
         localName: 'Configuration.Farm.ServerRoles',
         typeName: null,
         propertyInfos: [{
-            name: 'specialLoad',
+            name: 'custom',
             elementName: {
-              localPart: 'SpecialLoad'
+              localPart: 'Custom'
             },
-            typeInfo: '.Configuration.Farm.ServerRoles.SpecialLoad'
+            typeInfo: '.Configuration.Farm.ServerRoles.Custom'
           }, {
             name: 'webFrontEnd',
             elementName: {
@@ -2746,7 +2746,7 @@ var ConfigModel3995_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.Farm.ServerRoles.SpecialLoad',
+        localName: 'Configuration.Farm.ServerRoles.Custom',
         typeName: null,
         propertyInfos: [{
             name: 'provision',
@@ -2789,18 +2789,18 @@ var ConfigModel3995_Module_Factory = function () {
       }]
   };
   return {
-    ConfigModel3995: ConfigModel3995
+    ConfigModel39951: ConfigModel39951
   };
 };
 if (typeof define === 'function' && define.amd) {
-  define([], ConfigModel3995_Module_Factory);
+  define([], ConfigModel39951_Module_Factory);
 }
 else {
-  var ConfigModel3995_Module = ConfigModel3995_Module_Factory();
+  var ConfigModel39951_Module = ConfigModel39951_Module_Factory();
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports.ConfigModel3995 = ConfigModel3995_Module.ConfigModel3995;
+    module.exports.ConfigModel39951 = ConfigModel39951_Module.ConfigModel39951;
   }
   else {
-    var ConfigModel3995 = ConfigModel3995_Module.ConfigModel3995;
+    var ConfigModel39951 = ConfigModel39951_Module.ConfigModel39951;
   }
 }

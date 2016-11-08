@@ -2,66 +2,88 @@ var ConfigModel398_Module_Factory = function () {
   var ConfigModel398 = {
     name: 'ConfigModel398',
     typeInfos: [{
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Database.DBAlias',
+        localName: 'Configuration.ServiceApps.ManagedMetadataServiceApp',
         typeName: null,
         propertyInfos: [{
-            name: 'create',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Create'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbInstance',
-            attributeName: {
-              localPart: 'DBInstance'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbPort',
-            attributeName: {
-              localPart: 'DBPort'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ProjectServer',
-        typeName: null,
-        propertyInfos: [{
-            name: 'serviceApp',
+            name: 'database',
             elementName: {
-              localPart: 'ServiceApp'
+              localPart: 'Database'
             },
-            typeInfo: '.Configuration.ProjectServer.ServiceApp'
+            typeInfo: '.Configuration.ServiceApps.ManagedMetadataServiceApp.Database'
           }, {
-            name: 'install',
-            typeInfo: 'Boolean',
+            name: 'provision',
             attributeName: {
-              localPart: 'Install'
-            },
-            type: 'attribute'
-          }, {
-            name: 'configFile',
-            attributeName: {
-              localPart: 'ConfigFile'
+              localPart: 'Provision'
             },
             type: 'attribute'
           }, {
-            name: 'pidKeyProjectServer',
+            name: 'name',
             attributeName: {
-              localPart: 'PIDKeyProjectServer'
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
             },
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.Farm.Services.WorkflowTimer',
+        localName: 'Configuration.EnterpriseServiceApps',
         typeName: null,
         propertyInfos: [{
-            name: 'start',
-            attributeName: {
-              localPart: 'Start'
+            name: 'excelServices',
+            elementName: {
+              localPart: 'ExcelServices'
             },
-            type: 'attribute'
+            typeInfo: '.Configuration.EnterpriseServiceApps.ExcelServices'
+          }, {
+            name: 'visioService',
+            elementName: {
+              localPart: 'VisioService'
+            },
+            typeInfo: '.Configuration.EnterpriseServiceApps.VisioService'
+          }, {
+            name: 'accessService',
+            elementName: {
+              localPart: 'AccessService'
+            },
+            typeInfo: '.Configuration.EnterpriseServiceApps.AccessService'
+          }, {
+            name: 'accessServices',
+            elementName: {
+              localPart: 'AccessServices'
+            },
+            typeInfo: '.Configuration.EnterpriseServiceApps.AccessServices'
+          }, {
+            name: 'performancePointService',
+            elementName: {
+              localPart: 'PerformancePointService'
+            },
+            typeInfo: '.Configuration.EnterpriseServiceApps.PerformancePointService'
+          }]
+      }, {
+        localName: 'Configuration.AdobePDF',
+        typeName: null,
+        propertyInfos: [{
+            name: 'iFilter',
+            elementName: {
+              localPart: 'iFilter'
+            },
+            typeInfo: '.Configuration.AdobePDF.IFilter'
+          }, {
+            name: 'icon',
+            elementName: {
+              localPart: 'Icon'
+            },
+            typeInfo: '.Configuration.AdobePDF.Icon'
+          }, {
+            name: 'mimeType',
+            elementName: {
+              localPart: 'MIMEType'
+            },
+            typeInfo: '.Configuration.AdobePDF.MIMEType'
           }]
       }, {
         localName: 'Configuration.ServiceApps.ManagedMetadataServiceApp.Database',
@@ -84,15 +106,29 @@ var ConfigModel398_Module_Factory = function () {
             typeInfo: '.Configuration.ServiceApps.ManagedMetadataServiceApp.Database.DBAlias'
           }]
       }, {
-        localName: 'Configuration.ServiceApps.SubscriptionSettingsService',
+        localName: 'Configuration.ServiceApps.SubscriptionSettingsService.Database',
         typeName: null,
         propertyInfos: [{
-            name: 'database',
+            name: 'name',
             elementName: {
-              localPart: 'Database'
-            },
-            typeInfo: '.Configuration.ServiceApps.SubscriptionSettingsService.Database'
+              localPart: 'Name'
+            }
           }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ServiceApps.SubscriptionSettingsService.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.EnterpriseServiceApps.ExcelServices',
+        typeName: null,
+        propertyInfos: [{
             name: 'provision',
             attributeName: {
               localPart: 'Provision'
@@ -105,22 +141,266 @@ var ConfigModel398_Module_Factory = function () {
             },
             type: 'attribute'
           }, {
-            name: 'appSiteSubscriptionName',
+            name: 'unattendedIDUser',
             attributeName: {
-              localPart: 'AppSiteSubscriptionName'
+              localPart: 'UnattendedIDUser'
+            },
+            type: 'attribute'
+          }, {
+            name: 'unattendedIDPassword',
+            attributeName: {
+              localPart: 'UnattendedIDPassword'
             },
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.ServiceApps.UserProfileServiceApp',
+        localName: 'Configuration.Farm.Logging',
+        typeName: null,
+        propertyInfos: [{
+            name: 'iisLogs',
+            elementName: {
+              localPart: 'IISLogs'
+            },
+            typeInfo: '.Configuration.Farm.Logging.IISLogs'
+          }, {
+            name: 'ulsLogs',
+            elementName: {
+              localPart: 'ULSLogs'
+            },
+            typeInfo: '.Configuration.Farm.Logging.ULSLogs'
+          }, {
+            name: 'usageLogs',
+            elementName: {
+              localPart: 'UsageLogs'
+            },
+            typeInfo: '.Configuration.Farm.Logging.UsageLogs'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.ContentProcessingComponent',
+        typeName: null,
+        propertyInfos: [{
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.WordAutomationService.Database.DBAlias',
+        typeName: null,
+        propertyInfos: [{
+            name: 'create',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Create'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'name',
+            elementName: {
+              localPart: 'Name'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.UserProfileServiceApp.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'profileDB',
+            elementName: {
+              localPart: 'ProfileDB'
+            }
+          }, {
+            name: 'syncDB',
+            elementName: {
+              localPart: 'SyncDB'
+            }
+          }, {
+            name: 'socialDB',
+            elementName: {
+              localPart: 'SocialDB'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ServiceApps.UserProfileServiceApp.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.CrawlComponent',
+        typeName: null,
+        propertyInfos: [{
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Farm.Services.OutgoingEmail',
+        typeName: null,
+        propertyInfos: [{
+            name: 'smtpServer',
+            elementName: {
+              localPart: 'SMTPServer'
+            }
+          }, {
+            name: 'emailAddress',
+            elementName: {
+              localPart: 'EmailAddress'
+            }
+          }, {
+            name: 'replyToEmail',
+            elementName: {
+              localPart: 'ReplyToEmail'
+            }
+          }, {
+            name: 'configure',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Configure'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.AppManagementService.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'name',
+            elementName: {
+              localPart: 'Name'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ServiceApps.AppManagementService.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.Farm.Logging.ULSLogs',
+        typeName: null,
+        propertyInfos: [{
+            name: 'logLocation',
+            elementName: {
+              localPart: 'LogLocation'
+            }
+          }, {
+            name: 'logDiskSpaceUsageGB',
+            elementName: {
+              localPart: 'LogDiskSpaceUsageGB'
+            }
+          }, {
+            name: 'daysToKeepLogs',
+            elementName: {
+              localPart: 'DaysToKeepLogs'
+            }
+          }, {
+            name: 'logCutInterval',
+            elementName: {
+              localPart: 'LogCutInterval'
+            }
+          }, {
+            name: 'compress',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Compress'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.EnterpriseServiceApps.AccessServices.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'name',
+            elementName: {
+              localPart: 'Name'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.EnterpriseServiceApps.AccessServices.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.QueryComponent',
+        typeName: null,
+        propertyInfos: [{
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.SPUsageService',
         typeName: null,
         propertyInfos: [{
             name: 'database',
             elementName: {
               localPart: 'Database'
             },
-            typeInfo: '.Configuration.ServiceApps.UserProfileServiceApp.Database'
+            typeInfo: '.Configuration.ServiceApps.SPUsageService.Database'
           }, {
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.OfficeWebApps.PowerPointService',
+        typeName: null,
+        propertyInfos: [{
             name: 'provision',
             attributeName: {
               localPart: 'Provision'
@@ -138,49 +418,137 @@ var ConfigModel398_Module_Factory = function () {
               localPart: 'ProxyName'
             },
             type: 'attribute'
-          }, {
-            name: 'mySiteHostLocation',
-            attributeName: {
-              localPart: 'MySiteHostLocation'
-            },
-            type: 'attribute'
-          }, {
-            name: 'mySiteManagedPath',
-            attributeName: {
-              localPart: 'MySiteManagedPath'
-            },
-            type: 'attribute'
-          }, {
-            name: 'enableNetBIOSDomainNames',
+          }]
+      }, {
+        localName: 'Configuration.Farm.Database.DBAlias',
+        typeName: null,
+        propertyInfos: [{
+            name: 'create',
             typeInfo: 'Boolean',
             attributeName: {
-              localPart: 'EnableNetBIOSDomainNames'
+              localPart: 'Create'
             },
             type: 'attribute'
           }, {
-            name: 'startProfileSync',
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Proxy',
+        typeName: null,
+        propertyInfos: [{
+            name: 'proxyGroup',
+            elementName: {
+              localPart: 'ProxyGroup'
+            },
+            typeInfo: '.Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Proxy.ProxyGroup'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'partitioned',
             typeInfo: 'Boolean',
             attributeName: {
-              localPart: 'StartProfileSync'
+              localPart: 'Partitioned'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.WebApplications.WebApplication.ManagedPaths.ManagedPath',
+        typeName: null,
+        propertyInfos: [{
+            name: 'relativeUrl',
+            attributeName: {
+              localPart: 'relativeUrl'
             },
             type: 'attribute'
           }, {
-            name: 'createDefaultSyncConnection',
+            name: 'explicit',
             typeInfo: 'Boolean',
             attributeName: {
-              localPart: 'CreateDefaultSyncConnection'
+              localPart: 'explicit'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration',
+        typeName: null,
+        propertyInfos: [{
+            name: 'install',
+            elementName: {
+              localPart: 'Install'
+            },
+            typeInfo: '.Configuration.Install'
+          }, {
+            name: 'farm',
+            elementName: {
+              localPart: 'Farm'
+            },
+            typeInfo: '.Configuration.Farm'
+          }, {
+            name: 'webApplications',
+            elementName: {
+              localPart: 'WebApplications'
+            },
+            typeInfo: '.Configuration.WebApplications'
+          }, {
+            name: 'serviceApps',
+            elementName: {
+              localPart: 'ServiceApps'
+            },
+            typeInfo: '.Configuration.ServiceApps'
+          }, {
+            name: 'enterpriseServiceApps',
+            elementName: {
+              localPart: 'EnterpriseServiceApps'
+            },
+            typeInfo: '.Configuration.EnterpriseServiceApps'
+          }, {
+            name: 'officeWebApps',
+            elementName: {
+              localPart: 'OfficeWebApps'
+            },
+            typeInfo: '.Configuration.OfficeWebApps'
+          }, {
+            name: 'projectServer',
+            elementName: {
+              localPart: 'ProjectServer'
+            },
+            typeInfo: '.Configuration.ProjectServer'
+          }, {
+            name: 'adobePDF',
+            elementName: {
+              localPart: 'AdobePDF'
+            },
+            typeInfo: '.Configuration.AdobePDF'
+          }, {
+            name: 'foreFront',
+            elementName: {
+              localPart: 'ForeFront'
+            },
+            typeInfo: '.Configuration.ForeFront'
+          }, {
+            name: 'environment',
+            attributeName: {
+              localPart: 'Environment'
             },
             type: 'attribute'
           }, {
-            name: 'syncConnectionAccount',
+            name: 'version',
             attributeName: {
-              localPart: 'SyncConnectionAccount'
-            },
-            type: 'attribute'
-          }, {
-            name: 'syncConnectionAccountPassword',
-            attributeName: {
-              localPart: 'SyncConnectionAccountPassword'
+              localPart: 'Version'
             },
             type: 'attribute'
           }]
@@ -256,206 +624,6 @@ var ConfigModel398_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.EnterpriseServiceApps.ExcelServices',
-        typeName: null,
-        propertyInfos: [{
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'unattendedIDUser',
-            attributeName: {
-              localPart: 'UnattendedIDUser'
-            },
-            type: 'attribute'
-          }, {
-            name: 'unattendedIDPassword',
-            attributeName: {
-              localPart: 'UnattendedIDPassword'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.AdobePDF.IFilter',
-        typeName: null,
-        propertyInfos: [{
-            name: 'install',
-            attributeName: {
-              localPart: 'Install'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.QueryComponent',
-        typeName: null,
-        propertyInfos: [{
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.StateService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'database',
-            elementName: {
-              localPart: 'Database'
-            },
-            typeInfo: '.Configuration.ServiceApps.StateService.Database'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Proxy',
-        typeName: null,
-        propertyInfos: [{
-            name: 'proxyGroup',
-            elementName: {
-              localPart: 'ProxyGroup'
-            },
-            typeInfo: '.Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Proxy.ProxyGroup'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'partitioned',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Partitioned'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.Farm.Logging.IISLogs',
-        typeName: null,
-        propertyInfos: [{
-            name: 'path',
-            elementName: {
-              localPart: 'Path'
-            }
-          }, {
-            name: 'compress',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Compress'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.AnalyticsProcessingComponent',
-        typeName: null,
-        propertyInfos: [{
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.Farm.Account',
-        typeName: null,
-        propertyInfos: [{
-            name: 'username',
-            elementName: {
-              localPart: 'Username'
-            }
-          }, {
-            name: 'password',
-            elementName: {
-              localPart: 'Password'
-            }
-          }, {
-            name: 'addToLocalAdminsDuringSetup',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'AddToLocalAdminsDuringSetup'
-            },
-            type: 'attribute'
-          }, {
-            name: 'leaveInLocalAdmins',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'LeaveInLocalAdmins'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.Farm.Logging.ULSLogs',
-        typeName: null,
-        propertyInfos: [{
-            name: 'logLocation',
-            elementName: {
-              localPart: 'LogLocation'
-            }
-          }, {
-            name: 'logDiskSpaceUsageGB',
-            elementName: {
-              localPart: 'LogDiskSpaceUsageGB'
-            }
-          }, {
-            name: 'daysToKeepLogs',
-            elementName: {
-              localPart: 'DaysToKeepLogs'
-            }
-          }, {
-            name: 'logCutInterval',
-            elementName: {
-              localPart: 'LogCutInterval'
-            }
-          }, {
-            name: 'compress',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Compress'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.AdminComponent',
-        typeName: null,
-        propertyInfos: [{
-            name: 'applicationPool',
-            elementName: {
-              localPart: 'ApplicationPool'
-            },
-            typeInfo: '.Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.AdminComponent.ApplicationPool'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }]
-      }, {
         localName: 'Configuration.ServiceApps.SPUsageService.Database',
         typeName: null,
         propertyInfos: [{
@@ -476,43 +644,53 @@ var ConfigModel398_Module_Factory = function () {
             typeInfo: '.Configuration.ServiceApps.SPUsageService.Database.DBAlias'
           }]
       }, {
-        localName: 'Configuration.ForeFront',
+        localName: 'Configuration.ProjectServer.ServiceApp',
         typeName: null,
         propertyInfos: [{
-            name: 'install',
+            name: 'database',
+            elementName: {
+              localPart: 'Database'
+            },
+            typeInfo: '.Configuration.ProjectServer.ServiceApp.Database'
+          }, {
+            name: 'provision',
             attributeName: {
-              localPart: 'Install'
+              localPart: 'Provision'
             },
             type: 'attribute'
           }, {
-            name: 'configFile',
-            attributeName: {
-              localPart: 'ConfigFile'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.Farm.Services.SMTP',
-        typeName: null,
-        propertyInfos: [{
-            name: 'install',
-            attributeName: {
-              localPart: 'Install'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Proxy.ProxyGroup',
-        typeName: null,
-        propertyInfos: [{
             name: 'name',
             attributeName: {
               localPart: 'Name'
             },
             type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
+            },
+            type: 'attribute'
+          }, {
+            name: 'managedPath',
+            attributeName: {
+              localPart: 'ManagedPath'
+            },
+            type: 'attribute'
+          }, {
+            name: 'serviceAccount',
+            attributeName: {
+              localPart: 'ServiceAccount'
+            },
+            type: 'attribute'
+          }, {
+            name: 'serviceAccountPassword',
+            attributeName: {
+              localPart: 'ServiceAccountPassword'
+            },
+            type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.ServiceApps.AppManagementService.Database.DBAlias',
+        localName: 'Configuration.ServiceApps.SecureStoreService.Database.DBAlias',
         typeName: null,
         propertyInfos: [{
             name: 'create',
@@ -569,31 +747,28 @@ var ConfigModel398_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.Farm.ObjectCacheAccounts',
+        localName: 'Configuration.AdobePDF.Icon',
         typeName: null,
         propertyInfos: [{
-            name: 'superUser',
-            elementName: {
-              localPart: 'SuperUser'
-            }
-          }, {
-            name: 'superReader',
-            elementName: {
-              localPart: 'SuperReader'
-            }
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications',
-        typeName: null,
-        propertyInfos: [{
-            name: 'enterpriseSearchServiceApplication',
-            elementName: {
-              localPart: 'EnterpriseSearchServiceApplication'
+            name: 'configure',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Configure'
             },
-            typeInfo: '.Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication'
+            type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.ServiceApps.SPUsageService.Database.DBAlias',
+        localName: 'Configuration.Farm.Services.WorkflowTimer',
+        typeName: null,
+        propertyInfos: [{
+            name: 'start',
+            attributeName: {
+              localPart: 'Start'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.StateService.Database.DBAlias',
         typeName: null,
         propertyInfos: [{
             name: 'create',
@@ -616,55 +791,215 @@ var ConfigModel398_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.ProjectServer.ServiceApp.Database',
+        localName: 'Configuration.WebApplications.WebApplication.Database.DBAlias',
         typeName: null,
         propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
+            name: 'create',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Create'
             },
-            typeInfo: '.Configuration.ProjectServer.ServiceApp.Database.DBAlias'
+            type: 'attribute'
+          }, {
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.Farm.ManagedAccounts',
+        localName: 'Configuration.OfficeWebApps',
         typeName: null,
         propertyInfos: [{
-            name: 'managedAccount',
-            collection: true,
+            name: 'excelService',
             elementName: {
-              localPart: 'ManagedAccount'
+              localPart: 'ExcelService'
             },
-            typeInfo: '.Configuration.Farm.ManagedAccounts.ManagedAccount'
+            typeInfo: '.Configuration.OfficeWebApps.ExcelService'
+          }, {
+            name: 'wordViewingService',
+            elementName: {
+              localPart: 'WordViewingService'
+            },
+            typeInfo: '.Configuration.OfficeWebApps.WordViewingService'
+          }, {
+            name: 'powerPointService',
+            elementName: {
+              localPart: 'PowerPointService'
+            },
+            typeInfo: '.Configuration.OfficeWebApps.PowerPointService'
+          }, {
+            name: 'install',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Install'
+            },
+            type: 'attribute'
+          }, {
+            name: 'configFile',
+            attributeName: {
+              localPart: 'ConfigFile'
+            },
+            type: 'attribute'
+          }, {
+            name: 'pidKeyOWA',
+            attributeName: {
+              localPart: 'PIDKeyOWA'
+            },
+            type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.ServiceApps.AppManagementService.Database',
+        localName: 'Configuration.EnterpriseServiceApps.AccessServices',
         typeName: null,
         propertyInfos: [{
-            name: 'name',
+            name: 'database',
             elementName: {
-              localPart: 'Name'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
+              localPart: 'Database'
             },
-            typeInfo: '.Configuration.ServiceApps.AppManagementService.Database.DBAlias'
+            typeInfo: '.Configuration.EnterpriseServiceApps.AccessServices.Database'
+          }, {
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.BusinessDataConnectivity.Database.DBAlias',
+        typeName: null,
+        propertyInfos: [{
+            name: 'create',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Create'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Install.AutoAdminLogon',
+        typeName: null,
+        propertyInfos: [{
+            name: 'enable',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Enable'
+            },
+            type: 'attribute'
+          }, {
+            name: 'password',
+            attributeName: {
+              localPart: 'Password'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.SecureStoreService',
+        typeName: null,
+        propertyInfos: [{
+            name: 'database',
+            elementName: {
+              localPart: 'Database'
+            },
+            typeInfo: '.Configuration.ServiceApps.SecureStoreService.Database'
+          }, {
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.SubscriptionSettingsService.Database.DBAlias',
+        typeName: null,
+        propertyInfos: [{
+            name: 'create',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Create'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.StateService',
+        typeName: null,
+        propertyInfos: [{
+            name: 'database',
+            elementName: {
+              localPart: 'Database'
+            },
+            typeInfo: '.Configuration.ServiceApps.StateService.Database'
+          }, {
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
+            },
+            type: 'attribute'
           }]
       }, {
         localName: 'Configuration.Farm.Database',
@@ -692,7 +1027,120 @@ var ConfigModel398_Module_Factory = function () {
             }
           }]
       }, {
-        localName: 'Configuration.Farm.Services.FoundationWebApplication',
+        localName: 'Configuration.Install',
+        typeName: null,
+        propertyInfos: [{
+            name: 'configFile',
+            elementName: {
+              localPart: 'ConfigFile'
+            }
+          }, {
+            name: 'installDir',
+            elementName: {
+              localPart: 'InstallDir'
+            }
+          }, {
+            name: 'dataDir',
+            elementName: {
+              localPart: 'DataDir'
+            }
+          }, {
+            name: 'pidKey',
+            elementName: {
+              localPart: 'PIDKey'
+            }
+          }, {
+            name: 'sku',
+            elementName: {
+              localPart: 'SKU'
+            }
+          }, {
+            name: 'offlineInstall',
+            elementName: {
+              localPart: 'OfflineInstall'
+            },
+            typeInfo: 'Boolean'
+          }, {
+            name: 'pauseAfterInstall',
+            elementName: {
+              localPart: 'PauseAfterInstall'
+            },
+            typeInfo: 'Boolean'
+          }, {
+            name: 'remoteInstall',
+            elementName: {
+              localPart: 'RemoteInstall'
+            },
+            typeInfo: '.Configuration.Install.RemoteInstall'
+          }, {
+            name: 'autoAdminLogon',
+            elementName: {
+              localPart: 'AutoAdminLogon'
+            },
+            typeInfo: '.Configuration.Install.AutoAdminLogon'
+          }, {
+            name: 'disable',
+            elementName: {
+              localPart: 'Disable'
+            },
+            typeInfo: '.Configuration.Install.Disable'
+          }, {
+            name: 'spVersion',
+            attributeName: {
+              localPart: 'SPVersion'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.AdminComponent.ApplicationPool',
+        typeName: null,
+        propertyInfos: [{
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.EnterpriseServiceApps.AccessService',
+        typeName: null,
+        propertyInfos: [{
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Farm.Logging.IISLogs',
+        typeName: null,
+        propertyInfos: [{
+            name: 'path',
+            elementName: {
+              localPart: 'Path'
+            }
+          }, {
+            name: 'compress',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Compress'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Farm.Services.IncomingEmail',
         typeName: null,
         propertyInfos: [{
             name: 'start',
@@ -702,9 +1150,73 @@ var ConfigModel398_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.OfficeWebApps.ExcelService',
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.ApplicationPool',
         typeName: null,
         propertyInfos: [{
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.PowerPointConversionService',
+        typeName: null,
+        propertyInfos: [{
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Farm.Logging.UsageLogs',
+        typeName: null,
+        propertyInfos: [{
+            name: 'usageLogDir',
+            elementName: {
+              localPart: 'UsageLogDir'
+            }
+          }, {
+            name: 'usageLogMaxSpaceGB',
+            elementName: {
+              localPart: 'UsageLogMaxSpaceGB'
+            }
+          }, {
+            name: 'usageLogCutTime',
+            elementName: {
+              localPart: 'UsageLogCutTime'
+            }
+          }, {
+            name: 'compress',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Compress'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.EnterpriseServiceApps.PerformancePointService',
+        typeName: null,
+        propertyInfos: [{
+            name: 'database',
+            elementName: {
+              localPart: 'Database'
+            },
+            typeInfo: '.Configuration.EnterpriseServiceApps.PerformancePointService.Database'
+          }, {
             name: 'provision',
             attributeName: {
               localPart: 'Provision'
@@ -736,66 +1248,12 @@ var ConfigModel398_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.EnterpriseServiceApps.AccessServices.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.EnterpriseServiceApps.AccessServices.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.PowerPointConversionService',
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.IndexComponent',
         typeName: null,
         propertyInfos: [{
             name: 'provision',
             attributeName: {
               localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.OfficeWebApps.PowerPointService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
             },
             type: 'attribute'
           }]
@@ -811,547 +1269,114 @@ var ConfigModel398_Module_Factory = function () {
             typeInfo: '.Configuration.WebApplications.WebApplication.ManagedPaths.ManagedPath'
           }]
       }, {
-        localName: 'Configuration.Install.RemoteInstall',
+        localName: 'Configuration.Farm',
         typeName: null,
         propertyInfos: [{
-            name: 'parallelInstall',
+            name: 'passphrase',
             elementName: {
-              localPart: 'ParallelInstall'
-            },
-            typeInfo: 'Boolean'
+              localPart: 'Passphrase'
+            }
           }, {
-            name: 'enable',
+            name: 'account',
+            elementName: {
+              localPart: 'Account'
+            },
+            typeInfo: '.Configuration.Farm.Account'
+          }, {
+            name: 'centralAdmin',
+            elementName: {
+              localPart: 'CentralAdmin'
+            },
+            typeInfo: '.Configuration.Farm.CentralAdmin'
+          }, {
+            name: 'database',
+            elementName: {
+              localPart: 'Database'
+            },
+            typeInfo: '.Configuration.Farm.Database'
+          }, {
+            name: 'services',
+            elementName: {
+              localPart: 'Services'
+            },
+            typeInfo: '.Configuration.Farm.Services'
+          }, {
+            name: 'managedAccounts',
+            elementName: {
+              localPart: 'ManagedAccounts'
+            },
+            typeInfo: '.Configuration.Farm.ManagedAccounts'
+          }, {
+            name: 'objectCacheAccounts',
+            elementName: {
+              localPart: 'ObjectCacheAccounts'
+            },
+            typeInfo: '.Configuration.Farm.ObjectCacheAccounts'
+          }, {
+            name: 'logging',
+            elementName: {
+              localPart: 'Logging'
+            },
+            typeInfo: '.Configuration.Farm.Logging'
+          }]
+      }, {
+        localName: 'Configuration.ProjectServer',
+        typeName: null,
+        propertyInfos: [{
+            name: 'serviceApp',
+            elementName: {
+              localPart: 'ServiceApp'
+            },
+            typeInfo: '.Configuration.ProjectServer.ServiceApp'
+          }, {
+            name: 'install',
             typeInfo: 'Boolean',
             attributeName: {
-              localPart: 'Enable'
+              localPart: 'Install'
             },
             type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.SearchQueryAndSiteSettingsComponent',
-        typeName: null,
-        propertyInfos: [{
-            name: 'provision',
+          }, {
+            name: 'configFile',
             attributeName: {
-              localPart: 'Provision'
+              localPart: 'ConfigFile'
             },
             type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.SecureStoreService.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
-            }
           }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.ServiceApps.SecureStoreService.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.StateService.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.ServiceApps.StateService.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.Install.AutoAdminLogon',
-        typeName: null,
-        propertyInfos: [{
-            name: 'enable',
-            typeInfo: 'Boolean',
+            name: 'pidKeyProjectServer',
             attributeName: {
-              localPart: 'Enable'
+              localPart: 'PIDKeyProjectServer'
             },
             type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Farm.Services.DistributedCache',
+        typeName: null,
+        propertyInfos: [{
+            name: 'start',
+            attributeName: {
+              localPart: 'Start'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Farm.ManagedAccounts.ManagedAccount',
+        typeName: null,
+        propertyInfos: [{
+            name: 'username',
+            elementName: {
+              localPart: 'Username'
+            }
           }, {
             name: 'password',
-            attributeName: {
+            elementName: {
               localPart: 'Password'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.OfficeWebApps.WordViewingService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.MachineTranslationService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'database',
-            elementName: {
-              localPart: 'Database'
-            },
-            typeInfo: '.Configuration.ServiceApps.MachineTranslationService.Database'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.WebApplications.WebApplication.SiteCollections',
-        typeName: null,
-        propertyInfos: [{
-            name: 'siteCollection',
-            collection: true,
-            elementName: {
-              localPart: 'SiteCollection'
-            },
-            typeInfo: '.Configuration.WebApplications.WebApplication.SiteCollections.SiteCollection'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.StateService.Database.DBAlias',
-        typeName: null,
-        propertyInfos: [{
-            name: 'create',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Create'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbInstance',
-            attributeName: {
-              localPart: 'DBInstance'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbPort',
-            attributeName: {
-              localPart: 'DBPort'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.BusinessDataConnectivity',
-        typeName: null,
-        propertyInfos: [{
-            name: 'database',
-            elementName: {
-              localPart: 'Database'
-            },
-            typeInfo: '.Configuration.ServiceApps.BusinessDataConnectivity.Database'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.WordAutomationService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'database',
-            elementName: {
-              localPart: 'Database'
-            },
-            typeInfo: '.Configuration.ServiceApps.WordAutomationService.Database'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.WordAutomationService.Database.DBAlias',
-        typeName: null,
-        propertyInfos: [{
-            name: 'create',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Create'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbInstance',
-            attributeName: {
-              localPart: 'DBInstance'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbPort',
-            attributeName: {
-              localPart: 'DBPort'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.EnterpriseServiceApps.AccessServices.Database.DBAlias',
-        typeName: null,
-        propertyInfos: [{
-            name: 'create',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Create'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbInstance',
-            attributeName: {
-              localPart: 'DBInstance'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbPort',
-            attributeName: {
-              localPart: 'DBPort'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.EnterpriseServiceApps.PerformancePointService.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
             }
           }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.EnterpriseServiceApps.PerformancePointService.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps',
-        typeName: null,
-        propertyInfos: [{
-            name: 'managedMetadataServiceApp',
-            elementName: {
-              localPart: 'ManagedMetadataServiceApp'
-            },
-            typeInfo: '.Configuration.ServiceApps.ManagedMetadataServiceApp'
-          }, {
-            name: 'userProfileServiceApp',
-            elementName: {
-              localPart: 'UserProfileServiceApp'
-            },
-            typeInfo: '.Configuration.ServiceApps.UserProfileServiceApp'
-          }, {
-            name: 'enterpriseSearchService',
-            elementName: {
-              localPart: 'EnterpriseSearchService'
-            },
-            typeInfo: '.Configuration.ServiceApps.EnterpriseSearchService'
-          }, {
-            name: 'stateService',
-            elementName: {
-              localPart: 'StateService'
-            },
-            typeInfo: '.Configuration.ServiceApps.StateService'
-          }, {
-            name: 'webAnalyticsService',
-            elementName: {
-              localPart: 'WebAnalyticsService'
-            },
-            typeInfo: '.Configuration.ServiceApps.WebAnalyticsService'
-          }, {
-            name: 'spUsageService',
-            elementName: {
-              localPart: 'SPUsageService'
-            },
-            typeInfo: '.Configuration.ServiceApps.SPUsageService'
-          }, {
-            name: 'secureStoreService',
-            elementName: {
-              localPart: 'SecureStoreService'
-            },
-            typeInfo: '.Configuration.ServiceApps.SecureStoreService'
-          }, {
-            name: 'businessDataConnectivity',
-            elementName: {
-              localPart: 'BusinessDataConnectivity'
-            },
-            typeInfo: '.Configuration.ServiceApps.BusinessDataConnectivity'
-          }, {
-            name: 'wordAutomationService',
-            elementName: {
-              localPart: 'WordAutomationService'
-            },
-            typeInfo: '.Configuration.ServiceApps.WordAutomationService'
-          }, {
-            name: 'appManagementService',
-            elementName: {
-              localPart: 'AppManagementService'
-            },
-            typeInfo: '.Configuration.ServiceApps.AppManagementService'
-          }, {
-            name: 'subscriptionSettingsService',
-            elementName: {
-              localPart: 'SubscriptionSettingsService'
-            },
-            typeInfo: '.Configuration.ServiceApps.SubscriptionSettingsService'
-          }, {
-            name: 'workManagementService',
-            elementName: {
-              localPart: 'WorkManagementService'
-            },
-            typeInfo: '.Configuration.ServiceApps.WorkManagementService'
-          }, {
-            name: 'machineTranslationService',
-            elementName: {
-              localPart: 'MachineTranslationService'
-            },
-            typeInfo: '.Configuration.ServiceApps.MachineTranslationService'
-          }, {
-            name: 'powerPointConversionService',
-            elementName: {
-              localPart: 'PowerPointConversionService'
-            },
-            typeInfo: '.Configuration.ServiceApps.PowerPointConversionService'
-          }]
-      }, {
-        localName: 'Configuration.WebApplications.WebApplication.ManagedPaths.ManagedPath',
-        typeName: null,
-        propertyInfos: [{
-            name: 'relativeUrl',
+            name: 'commonName',
             attributeName: {
-              localPart: 'relativeUrl'
+              localPart: 'CommonName'
             },
             type: 'attribute'
-          }, {
-            name: 'explicit',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'explicit'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ProjectServer.ServiceApp',
-        typeName: null,
-        propertyInfos: [{
-            name: 'database',
-            elementName: {
-              localPart: 'Database'
-            },
-            typeInfo: '.Configuration.ProjectServer.ServiceApp.Database'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
-            },
-            type: 'attribute'
-          }, {
-            name: 'managedPath',
-            attributeName: {
-              localPart: 'ManagedPath'
-            },
-            type: 'attribute'
-          }, {
-            name: 'serviceAccount',
-            attributeName: {
-              localPart: 'ServiceAccount'
-            },
-            type: 'attribute'
-          }, {
-            name: 'serviceAccountPassword',
-            attributeName: {
-              localPart: 'ServiceAccountPassword'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.CrawlComponent',
-        typeName: null,
-        propertyInfos: [{
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.Farm.Database.DBAlias',
-        typeName: null,
-        propertyInfos: [{
-            name: 'create',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Create'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbInstance',
-            attributeName: {
-              localPart: 'DBInstance'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbPort',
-            attributeName: {
-              localPart: 'DBPort'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.AdobePDF.Icon',
-        typeName: null,
-        propertyInfos: [{
-            name: 'configure',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Configure'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.WebApplications',
-        typeName: null,
-        propertyInfos: [{
-            name: 'webApplication',
-            collection: true,
-            elementName: {
-              localPart: 'WebApplication'
-            },
-            typeInfo: '.Configuration.WebApplications.WebApplication'
-          }, {
-            name: 'addURLsToHOSTS',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'AddURLsToHOSTS'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.WebApplications.WebApplication.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.WebApplications.WebApplication.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.MachineTranslationService.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.ServiceApps.MachineTranslationService.Database.DBAlias'
           }]
       }, {
         localName: 'Configuration.WebApplications.WebApplication',
@@ -1448,6 +1473,463 @@ var ConfigModel398_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
+        localName: 'Configuration.ServiceApps.WordAutomationService.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'name',
+            elementName: {
+              localPart: 'Name'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ServiceApps.WordAutomationService.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.SPUsageService.Database.DBAlias',
+        typeName: null,
+        propertyInfos: [{
+            name: 'create',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Create'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.MachineTranslationService',
+        typeName: null,
+        propertyInfos: [{
+            name: 'database',
+            elementName: {
+              localPart: 'Database'
+            },
+            typeInfo: '.Configuration.ServiceApps.MachineTranslationService.Database'
+          }, {
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.WebApplications',
+        typeName: null,
+        propertyInfos: [{
+            name: 'webApplication',
+            collection: true,
+            elementName: {
+              localPart: 'WebApplication'
+            },
+            typeInfo: '.Configuration.WebApplications.WebApplication'
+          }, {
+            name: 'addURLsToHOSTS',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'AddURLsToHOSTS'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.WebApplications.WebApplication.SiteCollections',
+        typeName: null,
+        propertyInfos: [{
+            name: 'siteCollection',
+            collection: true,
+            elementName: {
+              localPart: 'SiteCollection'
+            },
+            typeInfo: '.Configuration.WebApplications.WebApplication.SiteCollections.SiteCollection'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.SecureStoreService.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'name',
+            elementName: {
+              localPart: 'Name'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ServiceApps.SecureStoreService.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.WebAnalyticsService.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'reportingDB',
+            elementName: {
+              localPart: 'ReportingDB'
+            }
+          }, {
+            name: 'stagingDB',
+            elementName: {
+              localPart: 'StagingDB'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ServiceApps.WebAnalyticsService.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.AdobePDF.MIMEType',
+        typeName: null,
+        propertyInfos: [{
+            name: 'configure',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Configure'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.WebAnalyticsService',
+        typeName: null,
+        propertyInfos: [{
+            name: 'database',
+            elementName: {
+              localPart: 'Database'
+            },
+            typeInfo: '.Configuration.ServiceApps.WebAnalyticsService.Database'
+          }, {
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.BusinessDataConnectivity',
+        typeName: null,
+        propertyInfos: [{
+            name: 'database',
+            elementName: {
+              localPart: 'Database'
+            },
+            typeInfo: '.Configuration.ServiceApps.BusinessDataConnectivity.Database'
+          }, {
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Farm.Services.SMTP',
+        typeName: null,
+        propertyInfos: [{
+            name: 'install',
+            attributeName: {
+              localPart: 'Install'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Farm.ManagedAccounts',
+        typeName: null,
+        propertyInfos: [{
+            name: 'managedAccount',
+            collection: true,
+            elementName: {
+              localPart: 'ManagedAccount'
+            },
+            typeInfo: '.Configuration.Farm.ManagedAccounts.ManagedAccount'
+          }]
+      }, {
+        localName: 'Configuration.Farm.Account',
+        typeName: null,
+        propertyInfos: [{
+            name: 'username',
+            elementName: {
+              localPart: 'Username'
+            }
+          }, {
+            name: 'password',
+            elementName: {
+              localPart: 'Password'
+            }
+          }, {
+            name: 'addToLocalAdminsDuringSetup',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'AddToLocalAdminsDuringSetup'
+            },
+            type: 'attribute'
+          }, {
+            name: 'leaveInLocalAdmins',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'LeaveInLocalAdmins'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications',
+        typeName: null,
+        propertyInfos: [{
+            name: 'enterpriseSearchServiceApplication',
+            elementName: {
+              localPart: 'EnterpriseSearchServiceApplication'
+            },
+            typeInfo: '.Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication'
+          }]
+      }, {
+        localName: 'Configuration.Farm.CentralAdmin',
+        typeName: null,
+        propertyInfos: [{
+            name: 'database',
+            elementName: {
+              localPart: 'Database'
+            }
+          }, {
+            name: 'port',
+            elementName: {
+              localPart: 'Port'
+            }
+          }, {
+            name: 'useSSL',
+            elementName: {
+              localPart: 'UseSSL'
+            },
+            typeInfo: 'Boolean'
+          }, {
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.AdminComponent',
+        typeName: null,
+        propertyInfos: [{
+            name: 'applicationPool',
+            elementName: {
+              localPart: 'ApplicationPool'
+            },
+            typeInfo: '.Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.AdminComponent.ApplicationPool'
+          }, {
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.OfficeWebApps.ExcelService',
+        typeName: null,
+        propertyInfos: [{
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
+            },
+            type: 'attribute'
+          }, {
+            name: 'unattendedIDUser',
+            attributeName: {
+              localPart: 'UnattendedIDUser'
+            },
+            type: 'attribute'
+          }, {
+            name: 'unattendedIDPassword',
+            attributeName: {
+              localPart: 'UnattendedIDPassword'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.AdobePDF.IFilter',
+        typeName: null,
+        propertyInfos: [{
+            name: 'install',
+            attributeName: {
+              localPart: 'Install'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ProjectServer.ServiceApp.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'name',
+            elementName: {
+              localPart: 'Name'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ProjectServer.ServiceApp.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.AppManagementService.Database.DBAlias',
+        typeName: null,
+        propertyInfos: [{
+            name: 'create',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Create'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.MachineTranslationService.Database.DBAlias',
+        typeName: null,
+        propertyInfos: [{
+            name: 'create',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Create'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.ManagedMetadataServiceApp.Database.DBAlias',
+        typeName: null,
+        propertyInfos: [{
+            name: 'create',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Create'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Install.RemoteInstall',
+        typeName: null,
+        propertyInfos: [{
+            name: 'parallelInstall',
+            elementName: {
+              localPart: 'ParallelInstall'
+            },
+            typeInfo: 'Boolean'
+          }, {
+            name: 'enable',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Enable'
+            },
+            type: 'attribute'
+          }]
+      }, {
         localName: 'Configuration.ServiceApps.UserProfileServiceApp.Database.DBAlias',
         typeName: null,
         propertyInfos: [{
@@ -1471,25 +1953,18 @@ var ConfigModel398_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.WebApplications.WebApplication.SiteCollections.SiteCollection',
+        localName: 'Configuration.ServiceApps.SubscriptionSettingsService',
         typeName: null,
         propertyInfos: [{
-            name: 'siteUrl',
-            attributeName: {
-              localPart: 'siteUrl'
+            name: 'database',
+            elementName: {
+              localPart: 'Database'
             },
-            type: 'attribute'
+            typeInfo: '.Configuration.ServiceApps.SubscriptionSettingsService.Database'
           }, {
-            name: 'hostNamedSiteCollection',
-            typeInfo: 'Boolean',
+            name: 'provision',
             attributeName: {
-              localPart: 'HostNamedSiteCollection'
-            },
-            type: 'attribute'
-          }, {
-            name: 'owner',
-            attributeName: {
-              localPart: 'Owner'
+              localPart: 'Provision'
             },
             type: 'attribute'
           }, {
@@ -1499,56 +1974,51 @@ var ConfigModel398_Module_Factory = function () {
             },
             type: 'attribute'
           }, {
-            name: 'description',
+            name: 'appSiteSubscriptionName',
             attributeName: {
-              localPart: 'Description'
-            },
-            type: 'attribute'
-          }, {
-            name: 'customDatabase',
-            attributeName: {
-              localPart: 'CustomDatabase'
-            },
-            type: 'attribute'
-          }, {
-            name: 'searchUrl',
-            attributeName: {
-              localPart: 'SearchUrl'
-            },
-            type: 'attribute'
-          }, {
-            name: 'template',
-            attributeName: {
-              localPart: 'Template'
-            },
-            type: 'attribute'
-          }, {
-            name: 'lcid',
-            attributeName: {
-              localPart: 'LCID'
-            },
-            type: 'attribute'
-          }, {
-            name: 'locale',
-            attributeName: {
-              localPart: 'Locale'
-            },
-            type: 'attribute'
-          }, {
-            name: 'time24',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Time24'
+              localPart: 'AppSiteSubscriptionName'
             },
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.Farm.Services.DistributedCache',
+        localName: 'Configuration.ServiceApps.StateService.Database',
         typeName: null,
         propertyInfos: [{
-            name: 'start',
+            name: 'name',
+            elementName: {
+              localPart: 'Name'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ServiceApps.StateService.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.WorkManagementService',
+        typeName: null,
+        propertyInfos: [{
+            name: 'provision',
             attributeName: {
-              localPart: 'Start'
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
             },
             type: 'attribute'
           }]
@@ -1583,6 +2053,49 @@ var ConfigModel398_Module_Factory = function () {
             name: 'unattendedIDPassword',
             attributeName: {
               localPart: 'UnattendedIDPassword'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.SearchQueryAndSiteSettingsComponent',
+        typeName: null,
+        propertyInfos: [{
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.EnterpriseServiceApps.PerformancePointService.Database.DBAlias',
+        typeName: null,
+        propertyInfos: [{
+            name: 'create',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Create'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.Farm.Services.SandboxedCodeService',
+        typeName: null,
+        propertyInfos: [{
+            name: 'start',
+            attributeName: {
+              localPart: 'Start'
             },
             type: 'attribute'
           }]
@@ -1639,178 +2152,69 @@ var ConfigModel398_Module_Factory = function () {
             typeInfo: '.Configuration.Farm.Services.FoundationWebApplication'
           }]
       }, {
-        localName: 'Configuration.Farm',
+        localName: 'Configuration.Install.Disable',
         typeName: null,
         propertyInfos: [{
-            name: 'passphrase',
+            name: 'loopbackCheck',
             elementName: {
-              localPart: 'Passphrase'
-            }
-          }, {
-            name: 'account',
-            elementName: {
-              localPart: 'Account'
+              localPart: 'LoopbackCheck'
             },
-            typeInfo: '.Configuration.Farm.Account'
+            typeInfo: 'Boolean'
           }, {
-            name: 'centralAdmin',
+            name: 'unusedServices',
             elementName: {
-              localPart: 'CentralAdmin'
+              localPart: 'UnusedServices'
             },
-            typeInfo: '.Configuration.Farm.CentralAdmin'
+            typeInfo: 'Boolean'
           }, {
-            name: 'database',
+            name: 'ieEnhancedSecurity',
             elementName: {
-              localPart: 'Database'
+              localPart: 'IEEnhancedSecurity'
             },
-            typeInfo: '.Configuration.Farm.Database'
+            typeInfo: 'Boolean'
           }, {
-            name: 'services',
+            name: 'certificateRevocationListCheck',
             elementName: {
-              localPart: 'Services'
+              localPart: 'CertificateRevocationListCheck'
             },
-            typeInfo: '.Configuration.Farm.Services'
-          }, {
-            name: 'managedAccounts',
-            elementName: {
-              localPart: 'ManagedAccounts'
-            },
-            typeInfo: '.Configuration.Farm.ManagedAccounts'
-          }, {
-            name: 'objectCacheAccounts',
-            elementName: {
-              localPart: 'ObjectCacheAccounts'
-            },
-            typeInfo: '.Configuration.Farm.ObjectCacheAccounts'
-          }, {
-            name: 'logging',
-            elementName: {
-              localPart: 'Logging'
-            },
-            typeInfo: '.Configuration.Farm.Logging'
+            typeInfo: 'Boolean'
           }]
       }, {
-        localName: 'Configuration.EnterpriseServiceApps',
+        localName: 'Configuration.OfficeWebApps.WordViewingService',
         typeName: null,
         propertyInfos: [{
-            name: 'excelServices',
-            elementName: {
-              localPart: 'ExcelServices'
-            },
-            typeInfo: '.Configuration.EnterpriseServiceApps.ExcelServices'
-          }, {
-            name: 'visioService',
-            elementName: {
-              localPart: 'VisioService'
-            },
-            typeInfo: '.Configuration.EnterpriseServiceApps.VisioService'
-          }, {
-            name: 'accessService',
-            elementName: {
-              localPart: 'AccessService'
-            },
-            typeInfo: '.Configuration.EnterpriseServiceApps.AccessService'
-          }, {
-            name: 'accessServices',
-            elementName: {
-              localPart: 'AccessServices'
-            },
-            typeInfo: '.Configuration.EnterpriseServiceApps.AccessServices'
-          }, {
-            name: 'performancePointService',
-            elementName: {
-              localPart: 'PerformancePointService'
-            },
-            typeInfo: '.Configuration.EnterpriseServiceApps.PerformancePointService'
-          }]
-      }, {
-        localName: 'Configuration.Farm.Logging.UsageLogs',
-        typeName: null,
-        propertyInfos: [{
-            name: 'usageLogDir',
-            elementName: {
-              localPart: 'UsageLogDir'
-            }
-          }, {
-            name: 'usageLogMaxSpaceGB',
-            elementName: {
-              localPart: 'UsageLogMaxSpaceGB'
-            }
-          }, {
-            name: 'usageLogCutTime',
-            elementName: {
-              localPart: 'UsageLogCutTime'
-            }
-          }, {
-            name: 'compress',
-            typeInfo: 'Boolean',
+            name: 'provision',
             attributeName: {
-              localPart: 'Compress'
+              localPart: 'Provision'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'proxyName',
+            attributeName: {
+              localPart: 'ProxyName'
             },
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.ServiceApps.WebAnalyticsService.Database',
+        localName: 'Configuration.Farm.Services.ClaimsToWindowsTokenService',
         typeName: null,
         propertyInfos: [{
-            name: 'reportingDB',
-            elementName: {
-              localPart: 'ReportingDB'
-            }
-          }, {
-            name: 'stagingDB',
-            elementName: {
-              localPart: 'StagingDB'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.ServiceApps.WebAnalyticsService.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.BusinessDataConnectivity.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.ServiceApps.BusinessDataConnectivity.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.Farm.ManagedAccounts.ManagedAccount',
-        typeName: null,
-        propertyInfos: [{
-            name: 'username',
-            elementName: {
-              localPart: 'Username'
-            }
-          }, {
-            name: 'password',
-            elementName: {
-              localPart: 'Password'
-            }
-          }, {
-            name: 'commonName',
+            name: 'start',
             attributeName: {
-              localPart: 'CommonName'
+              localPart: 'Start'
+            },
+            type: 'attribute'
+          }, {
+            name: 'updateAccount',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'UpdateAccount'
             },
             type: 'attribute'
           }]
@@ -1927,230 +2331,24 @@ var ConfigModel398_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.Install',
+        localName: 'Configuration.Farm.Services.FoundationWebApplication',
         typeName: null,
         propertyInfos: [{
-            name: 'configFile',
-            elementName: {
-              localPart: 'ConfigFile'
-            }
-          }, {
-            name: 'installDir',
-            elementName: {
-              localPart: 'InstallDir'
-            }
-          }, {
-            name: 'dataDir',
-            elementName: {
-              localPart: 'DataDir'
-            }
-          }, {
-            name: 'pidKey',
-            elementName: {
-              localPart: 'PIDKey'
-            }
-          }, {
-            name: 'sku',
-            elementName: {
-              localPart: 'SKU'
-            }
-          }, {
-            name: 'offlineInstall',
-            elementName: {
-              localPart: 'OfflineInstall'
-            },
-            typeInfo: 'Boolean'
-          }, {
-            name: 'pauseAfterInstall',
-            elementName: {
-              localPart: 'PauseAfterInstall'
-            },
-            typeInfo: 'Boolean'
-          }, {
-            name: 'remoteInstall',
-            elementName: {
-              localPart: 'RemoteInstall'
-            },
-            typeInfo: '.Configuration.Install.RemoteInstall'
-          }, {
-            name: 'autoAdminLogon',
-            elementName: {
-              localPart: 'AutoAdminLogon'
-            },
-            typeInfo: '.Configuration.Install.AutoAdminLogon'
-          }, {
-            name: 'disable',
-            elementName: {
-              localPart: 'Disable'
-            },
-            typeInfo: '.Configuration.Install.Disable'
-          }, {
-            name: 'spVersion',
+            name: 'start',
             attributeName: {
-              localPart: 'SPVersion'
+              localPart: 'Start'
             },
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.Farm.Services.OutgoingEmail',
-        typeName: null,
-        propertyInfos: [{
-            name: 'smtpServer',
-            elementName: {
-              localPart: 'SMTPServer'
-            }
-          }, {
-            name: 'emailAddress',
-            elementName: {
-              localPart: 'EmailAddress'
-            }
-          }, {
-            name: 'replyToEmail',
-            elementName: {
-              localPart: 'ReplyToEmail'
-            }
-          }, {
-            name: 'configure',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Configure'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.WorkManagementService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration',
-        typeName: null,
-        propertyInfos: [{
-            name: 'install',
-            elementName: {
-              localPart: 'Install'
-            },
-            typeInfo: '.Configuration.Install'
-          }, {
-            name: 'farm',
-            elementName: {
-              localPart: 'Farm'
-            },
-            typeInfo: '.Configuration.Farm'
-          }, {
-            name: 'webApplications',
-            elementName: {
-              localPart: 'WebApplications'
-            },
-            typeInfo: '.Configuration.WebApplications'
-          }, {
-            name: 'serviceApps',
-            elementName: {
-              localPart: 'ServiceApps'
-            },
-            typeInfo: '.Configuration.ServiceApps'
-          }, {
-            name: 'enterpriseServiceApps',
-            elementName: {
-              localPart: 'EnterpriseServiceApps'
-            },
-            typeInfo: '.Configuration.EnterpriseServiceApps'
-          }, {
-            name: 'officeWebApps',
-            elementName: {
-              localPart: 'OfficeWebApps'
-            },
-            typeInfo: '.Configuration.OfficeWebApps'
-          }, {
-            name: 'projectServer',
-            elementName: {
-              localPart: 'ProjectServer'
-            },
-            typeInfo: '.Configuration.ProjectServer'
-          }, {
-            name: 'adobePDF',
-            elementName: {
-              localPart: 'AdobePDF'
-            },
-            typeInfo: '.Configuration.AdobePDF'
-          }, {
-            name: 'foreFront',
-            elementName: {
-              localPart: 'ForeFront'
-            },
-            typeInfo: '.Configuration.ForeFront'
-          }, {
-            name: 'environment',
-            attributeName: {
-              localPart: 'Environment'
-            },
-            type: 'attribute'
-          }, {
-            name: 'version',
-            attributeName: {
-              localPart: 'Version'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.AdminComponent.ApplicationPool',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.BusinessDataConnectivity.Database.DBAlias',
-        typeName: null,
-        propertyInfos: [{
-            name: 'create',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Create'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbInstance',
-            attributeName: {
-              localPart: 'DBInstance'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbPort',
-            attributeName: {
-              localPart: 'DBPort'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.SPUsageService',
+        localName: 'Configuration.ServiceApps.WordAutomationService',
         typeName: null,
         propertyInfos: [{
             name: 'database',
             elementName: {
               localPart: 'Database'
             },
-            typeInfo: '.Configuration.ServiceApps.SPUsageService.Database'
+            typeInfo: '.Configuration.ServiceApps.WordAutomationService.Database'
           }, {
             name: 'provision',
             attributeName: {
@@ -2163,62 +2361,22 @@ var ConfigModel398_Module_Factory = function () {
               localPart: 'Name'
             },
             type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.ManagedMetadataServiceApp.Database.DBAlias',
-        typeName: null,
-        propertyInfos: [{
-            name: 'create',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Create'
-            },
-            type: 'attribute'
           }, {
-            name: 'dbInstance',
+            name: 'proxyName',
             attributeName: {
-              localPart: 'DBInstance'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbPort',
-            attributeName: {
-              localPart: 'DBPort'
+              localPart: 'ProxyName'
             },
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.WebApplications.WebApplication.Database.DBAlias',
-        typeName: null,
-        propertyInfos: [{
-            name: 'create',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Create'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbInstance',
-            attributeName: {
-              localPart: 'DBInstance'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbPort',
-            attributeName: {
-              localPart: 'DBPort'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.EnterpriseServiceApps.AccessServices',
+        localName: 'Configuration.ServiceApps.UserProfileServiceApp',
         typeName: null,
         propertyInfos: [{
             name: 'database',
             elementName: {
               localPart: 'Database'
             },
-            typeInfo: '.Configuration.EnterpriseServiceApps.AccessServices.Database'
+            typeInfo: '.Configuration.ServiceApps.UserProfileServiceApp.Database'
           }, {
             name: 'provision',
             attributeName: {
@@ -2237,77 +2395,79 @@ var ConfigModel398_Module_Factory = function () {
               localPart: 'ProxyName'
             },
             type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.Install.Disable',
-        typeName: null,
-        propertyInfos: [{
-            name: 'loopbackCheck',
-            elementName: {
-              localPart: 'LoopbackCheck'
-            },
-            typeInfo: 'Boolean'
           }, {
-            name: 'unusedServices',
-            elementName: {
-              localPart: 'UnusedServices'
+            name: 'mySiteHostLocation',
+            attributeName: {
+              localPart: 'MySiteHostLocation'
             },
-            typeInfo: 'Boolean'
+            type: 'attribute'
           }, {
-            name: 'ieEnhancedSecurity',
-            elementName: {
-              localPart: 'IEEnhancedSecurity'
+            name: 'mySiteManagedPath',
+            attributeName: {
+              localPart: 'MySiteManagedPath'
             },
-            typeInfo: 'Boolean'
+            type: 'attribute'
           }, {
-            name: 'certificateRevocationListCheck',
-            elementName: {
-              localPart: 'CertificateRevocationListCheck'
-            },
-            typeInfo: 'Boolean'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.MachineTranslationService.Database.DBAlias',
-        typeName: null,
-        propertyInfos: [{
-            name: 'create',
+            name: 'enableNetBIOSDomainNames',
             typeInfo: 'Boolean',
             attributeName: {
-              localPart: 'Create'
+              localPart: 'EnableNetBIOSDomainNames'
             },
             type: 'attribute'
           }, {
-            name: 'dbInstance',
+            name: 'startProfileSync',
+            typeInfo: 'Boolean',
             attributeName: {
-              localPart: 'DBInstance'
+              localPart: 'StartProfileSync'
             },
             type: 'attribute'
           }, {
-            name: 'dbPort',
+            name: 'createDefaultSyncConnection',
+            typeInfo: 'Boolean',
             attributeName: {
-              localPart: 'DBPort'
+              localPart: 'CreateDefaultSyncConnection'
+            },
+            type: 'attribute'
+          }, {
+            name: 'syncConnectionAccount',
+            attributeName: {
+              localPart: 'SyncConnectionAccount'
+            },
+            type: 'attribute'
+          }, {
+            name: 'syncConnectionAccountPassword',
+            attributeName: {
+              localPart: 'SyncConnectionAccountPassword'
             },
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.EnterpriseServiceApps.AccessService',
+        localName: 'Configuration.WebApplications.WebApplication.Database',
         typeName: null,
         propertyInfos: [{
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
+            name: 'name',
+            elementName: {
+              localPart: 'Name'
+            }
           }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.WebApplications.WebApplication.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Proxy.ProxyGroup',
+        typeName: null,
+        propertyInfos: [{
             name: 'name',
             attributeName: {
               localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
             },
             type: 'attribute'
           }]
@@ -2335,29 +2495,97 @@ var ConfigModel398_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.OfficeWebApps',
+        localName: 'Configuration.Farm.ObjectCacheAccounts',
         typeName: null,
         propertyInfos: [{
-            name: 'excelService',
+            name: 'superUser',
             elementName: {
-              localPart: 'ExcelService'
-            },
-            typeInfo: '.Configuration.OfficeWebApps.ExcelService'
+              localPart: 'SuperUser'
+            }
           }, {
-            name: 'wordViewingService',
+            name: 'superReader',
             elementName: {
-              localPart: 'WordViewingService'
+              localPart: 'SuperReader'
+            }
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.AnalyticsProcessingComponent',
+        typeName: null,
+        propertyInfos: [{
+            name: 'provision',
+            attributeName: {
+              localPart: 'Provision'
             },
-            typeInfo: '.Configuration.OfficeWebApps.WordViewingService'
-          }, {
-            name: 'powerPointService',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.EnterpriseServiceApps.PerformancePointService.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'name',
             elementName: {
-              localPart: 'PowerPointService'
-            },
-            typeInfo: '.Configuration.OfficeWebApps.PowerPointService'
+              localPart: 'Name'
+            }
           }, {
-            name: 'install',
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.EnterpriseServiceApps.PerformancePointService.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Database.DBAlias',
+        typeName: null,
+        propertyInfos: [{
+            name: 'create',
             typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Create'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbInstance',
+            attributeName: {
+              localPart: 'DBInstance'
+            },
+            type: 'attribute'
+          }, {
+            name: 'dbPort',
+            attributeName: {
+              localPart: 'DBPort'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps.BusinessDataConnectivity.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'name',
+            elementName: {
+              localPart: 'Name'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ServiceApps.BusinessDataConnectivity.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.ForeFront',
+        typeName: null,
+        propertyInfos: [{
+            name: 'install',
             attributeName: {
               localPart: 'Install'
             },
@@ -2368,15 +2596,189 @@ var ConfigModel398_Module_Factory = function () {
               localPart: 'ConfigFile'
             },
             type: 'attribute'
+          }]
+      }, {
+        localName: 'Configuration.ServiceApps',
+        typeName: null,
+        propertyInfos: [{
+            name: 'managedMetadataServiceApp',
+            elementName: {
+              localPart: 'ManagedMetadataServiceApp'
+            },
+            typeInfo: '.Configuration.ServiceApps.ManagedMetadataServiceApp'
           }, {
-            name: 'pidKeyOWA',
+            name: 'userProfileServiceApp',
+            elementName: {
+              localPart: 'UserProfileServiceApp'
+            },
+            typeInfo: '.Configuration.ServiceApps.UserProfileServiceApp'
+          }, {
+            name: 'enterpriseSearchService',
+            elementName: {
+              localPart: 'EnterpriseSearchService'
+            },
+            typeInfo: '.Configuration.ServiceApps.EnterpriseSearchService'
+          }, {
+            name: 'stateService',
+            elementName: {
+              localPart: 'StateService'
+            },
+            typeInfo: '.Configuration.ServiceApps.StateService'
+          }, {
+            name: 'webAnalyticsService',
+            elementName: {
+              localPart: 'WebAnalyticsService'
+            },
+            typeInfo: '.Configuration.ServiceApps.WebAnalyticsService'
+          }, {
+            name: 'spUsageService',
+            elementName: {
+              localPart: 'SPUsageService'
+            },
+            typeInfo: '.Configuration.ServiceApps.SPUsageService'
+          }, {
+            name: 'secureStoreService',
+            elementName: {
+              localPart: 'SecureStoreService'
+            },
+            typeInfo: '.Configuration.ServiceApps.SecureStoreService'
+          }, {
+            name: 'businessDataConnectivity',
+            elementName: {
+              localPart: 'BusinessDataConnectivity'
+            },
+            typeInfo: '.Configuration.ServiceApps.BusinessDataConnectivity'
+          }, {
+            name: 'wordAutomationService',
+            elementName: {
+              localPart: 'WordAutomationService'
+            },
+            typeInfo: '.Configuration.ServiceApps.WordAutomationService'
+          }, {
+            name: 'appManagementService',
+            elementName: {
+              localPart: 'AppManagementService'
+            },
+            typeInfo: '.Configuration.ServiceApps.AppManagementService'
+          }, {
+            name: 'subscriptionSettingsService',
+            elementName: {
+              localPart: 'SubscriptionSettingsService'
+            },
+            typeInfo: '.Configuration.ServiceApps.SubscriptionSettingsService'
+          }, {
+            name: 'workManagementService',
+            elementName: {
+              localPart: 'WorkManagementService'
+            },
+            typeInfo: '.Configuration.ServiceApps.WorkManagementService'
+          }, {
+            name: 'machineTranslationService',
+            elementName: {
+              localPart: 'MachineTranslationService'
+            },
+            typeInfo: '.Configuration.ServiceApps.MachineTranslationService'
+          }, {
+            name: 'powerPointConversionService',
+            elementName: {
+              localPart: 'PowerPointConversionService'
+            },
+            typeInfo: '.Configuration.ServiceApps.PowerPointConversionService'
+          }]
+      }, {
+        localName: 'Configuration.WebApplications.WebApplication.SiteCollections.SiteCollection',
+        typeName: null,
+        propertyInfos: [{
+            name: 'siteUrl',
             attributeName: {
-              localPart: 'PIDKeyOWA'
+              localPart: 'siteUrl'
+            },
+            type: 'attribute'
+          }, {
+            name: 'hostNamedSiteCollection',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'HostNamedSiteCollection'
+            },
+            type: 'attribute'
+          }, {
+            name: 'owner',
+            attributeName: {
+              localPart: 'Owner'
+            },
+            type: 'attribute'
+          }, {
+            name: 'name',
+            attributeName: {
+              localPart: 'Name'
+            },
+            type: 'attribute'
+          }, {
+            name: 'description',
+            attributeName: {
+              localPart: 'Description'
+            },
+            type: 'attribute'
+          }, {
+            name: 'customDatabase',
+            attributeName: {
+              localPart: 'CustomDatabase'
+            },
+            type: 'attribute'
+          }, {
+            name: 'searchUrl',
+            attributeName: {
+              localPart: 'SearchUrl'
+            },
+            type: 'attribute'
+          }, {
+            name: 'template',
+            attributeName: {
+              localPart: 'Template'
+            },
+            type: 'attribute'
+          }, {
+            name: 'lcid',
+            attributeName: {
+              localPart: 'LCID'
+            },
+            type: 'attribute'
+          }, {
+            name: 'locale',
+            attributeName: {
+              localPart: 'Locale'
+            },
+            type: 'attribute'
+          }, {
+            name: 'time24',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'Time24'
             },
             type: 'attribute'
           }]
       }, {
-        localName: 'Configuration.ServiceApps.SecureStoreService.Database.DBAlias',
+        localName: 'Configuration.ServiceApps.MachineTranslationService.Database',
+        typeName: null,
+        propertyInfos: [{
+            name: 'name',
+            elementName: {
+              localPart: 'Name'
+            }
+          }, {
+            name: 'dbServer',
+            elementName: {
+              localPart: 'DBServer'
+            }
+          }, {
+            name: 'dbAlias',
+            elementName: {
+              localPart: 'DBAlias'
+            },
+            typeInfo: '.Configuration.ServiceApps.MachineTranslationService.Database.DBAlias'
+          }]
+      }, {
+        localName: 'Configuration.EnterpriseServiceApps.AccessServices.Database.DBAlias',
         typeName: null,
         propertyInfos: [{
             name: 'create',
@@ -2397,380 +2799,6 @@ var ConfigModel398_Module_Factory = function () {
               localPart: 'DBPort'
             },
             type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.Farm.Services.ClaimsToWindowsTokenService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'start',
-            attributeName: {
-              localPart: 'Start'
-            },
-            type: 'attribute'
-          }, {
-            name: 'updateAccount',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'UpdateAccount'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.WebAnalyticsService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'database',
-            elementName: {
-              localPart: 'Database'
-            },
-            typeInfo: '.Configuration.ServiceApps.WebAnalyticsService.Database'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.SubscriptionSettingsService.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.ServiceApps.SubscriptionSettingsService.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.EnterpriseServiceApps.PerformancePointService.Database.DBAlias',
-        typeName: null,
-        propertyInfos: [{
-            name: 'create',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Create'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbInstance',
-            attributeName: {
-              localPart: 'DBInstance'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbPort',
-            attributeName: {
-              localPart: 'DBPort'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.ContentProcessingComponent',
-        typeName: null,
-        propertyInfos: [{
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.Farm.Services.SandboxedCodeService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'start',
-            attributeName: {
-              localPart: 'Start'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.ApplicationPool',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.SubscriptionSettingsService.Database.DBAlias',
-        typeName: null,
-        propertyInfos: [{
-            name: 'create',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Create'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbInstance',
-            attributeName: {
-              localPart: 'DBInstance'
-            },
-            type: 'attribute'
-          }, {
-            name: 'dbPort',
-            attributeName: {
-              localPart: 'DBPort'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.Farm.Services.IncomingEmail',
-        typeName: null,
-        propertyInfos: [{
-            name: 'start',
-            attributeName: {
-              localPart: 'Start'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.Farm.Logging',
-        typeName: null,
-        propertyInfos: [{
-            name: 'iisLogs',
-            elementName: {
-              localPart: 'IISLogs'
-            },
-            typeInfo: '.Configuration.Farm.Logging.IISLogs'
-          }, {
-            name: 'ulsLogs',
-            elementName: {
-              localPart: 'ULSLogs'
-            },
-            typeInfo: '.Configuration.Farm.Logging.ULSLogs'
-          }, {
-            name: 'usageLogs',
-            elementName: {
-              localPart: 'UsageLogs'
-            },
-            typeInfo: '.Configuration.Farm.Logging.UsageLogs'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.WordAutomationService.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'name',
-            elementName: {
-              localPart: 'Name'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.ServiceApps.WordAutomationService.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.UserProfileServiceApp.Database',
-        typeName: null,
-        propertyInfos: [{
-            name: 'profileDB',
-            elementName: {
-              localPart: 'ProfileDB'
-            }
-          }, {
-            name: 'syncDB',
-            elementName: {
-              localPart: 'SyncDB'
-            }
-          }, {
-            name: 'socialDB',
-            elementName: {
-              localPart: 'SocialDB'
-            }
-          }, {
-            name: 'dbServer',
-            elementName: {
-              localPart: 'DBServer'
-            }
-          }, {
-            name: 'dbAlias',
-            elementName: {
-              localPart: 'DBAlias'
-            },
-            typeInfo: '.Configuration.ServiceApps.UserProfileServiceApp.Database.DBAlias'
-          }]
-      }, {
-        localName: 'Configuration.Farm.CentralAdmin',
-        typeName: null,
-        propertyInfos: [{
-            name: 'database',
-            elementName: {
-              localPart: 'Database'
-            }
-          }, {
-            name: 'port',
-            elementName: {
-              localPart: 'Port'
-            }
-          }, {
-            name: 'useSSL',
-            elementName: {
-              localPart: 'UseSSL'
-            },
-            typeInfo: 'Boolean'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.EnterpriseSearchService.EnterpriseSearchServiceApplications.EnterpriseSearchServiceApplication.IndexComponent',
-        typeName: null,
-        propertyInfos: [{
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.EnterpriseServiceApps.PerformancePointService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'database',
-            elementName: {
-              localPart: 'Database'
-            },
-            typeInfo: '.Configuration.EnterpriseServiceApps.PerformancePointService.Database'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
-            },
-            type: 'attribute'
-          }, {
-            name: 'unattendedIDUser',
-            attributeName: {
-              localPart: 'UnattendedIDUser'
-            },
-            type: 'attribute'
-          }, {
-            name: 'unattendedIDPassword',
-            attributeName: {
-              localPart: 'UnattendedIDPassword'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.AdobePDF.MIMEType',
-        typeName: null,
-        propertyInfos: [{
-            name: 'configure',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'Configure'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.ManagedMetadataServiceApp',
-        typeName: null,
-        propertyInfos: [{
-            name: 'database',
-            elementName: {
-              localPart: 'Database'
-            },
-            typeInfo: '.Configuration.ServiceApps.ManagedMetadataServiceApp.Database'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.AdobePDF',
-        typeName: null,
-        propertyInfos: [{
-            name: 'iFilter',
-            elementName: {
-              localPart: 'iFilter'
-            },
-            typeInfo: '.Configuration.AdobePDF.IFilter'
-          }, {
-            name: 'icon',
-            elementName: {
-              localPart: 'Icon'
-            },
-            typeInfo: '.Configuration.AdobePDF.Icon'
-          }, {
-            name: 'mimeType',
-            elementName: {
-              localPart: 'MIMEType'
-            },
-            typeInfo: '.Configuration.AdobePDF.MIMEType'
           }]
       }, {
         localName: 'Configuration.ProjectServer.ServiceApp.Database.DBAlias',
@@ -2792,34 +2820,6 @@ var ConfigModel398_Module_Factory = function () {
             name: 'dbPort',
             attributeName: {
               localPart: 'DBPort'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Configuration.ServiceApps.SecureStoreService',
-        typeName: null,
-        propertyInfos: [{
-            name: 'database',
-            elementName: {
-              localPart: 'Database'
-            },
-            typeInfo: '.Configuration.ServiceApps.SecureStoreService.Database'
-          }, {
-            name: 'provision',
-            attributeName: {
-              localPart: 'Provision'
-            },
-            type: 'attribute'
-          }, {
-            name: 'name',
-            attributeName: {
-              localPart: 'Name'
-            },
-            type: 'attribute'
-          }, {
-            name: 'proxyName',
-            attributeName: {
-              localPart: 'ProxyName'
             },
             type: 'attribute'
           }]

@@ -729,6 +729,21 @@
                             </div>
                         </div>
                     </div>
+                    
+
+                    <div class="form-group form-group-sm" ng-class="{ 'has-error': FarmMinRolesForm.config_value_farm_serverRoles_webFrontEndWithDistributedCache_provision.$invalid }" uib-tooltip="Service applications, services, and components that serve user requests belong on Front-end web servers. These servers are optimized for low latency.">
+                        <label class="control-label col-md-3">Front-end With Distributed Cache:</label>
+                        <div class="col-md-9">
+                            <input type="hidden" ng-model="config.value.farm.serverRoles.webFrontEndWithDistributedCache.provision" name="config_value_farm_serverRoles_webFrontEnd_provision" required />
+                            <ng-provision ng-model="config.value.farm.serverRoles.webFrontEndWithDistributedCache.provision" servers="serversArray"></ng-provision>
+                            <div ng-messages="FarmMinRolesForm.config_value_farm_serverRoles_webFrontEndWithDistributedCache_provision.$error" class="text-danger">
+                                <div ng-messages-include="error-messages"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': FarmMinRolesForm.config_value_farm_serverRoles_application_provision.$invalid }" uib-tooltip="Service applications, services, and components that serve backend requests (such as background jobs or search crawl requests) belong on Application servers. These servers are optimized for high throughput.">
                         <label class="control-label col-md-3">Application:</label>
                         <div class="col-md-9">
@@ -739,6 +754,18 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="form-group form-group-sm" ng-class="{ 'has-error': FarmMinRolesForm.config_value_farm_serverRoles_applicationWithSearch_provision.$invalid }" uib-tooltip="Service applications, services, and components that serve backend requests (such as background jobs or search crawl requests) belong on Application servers. These servers are optimized for high throughput.">
+                        <label class="control-label col-md-3">Application with Search:</label>
+                        <div class="col-md-9">
+                            <input type="hidden" ng-model="config.value.farm.serverRoles.applicationWithSearch.provision" name="config_value_farm_serverRoles_application_provision" required />
+                            <ng-provision ng-model="config.value.farm.serverRoles.applicationWithSearch.provision" servers="serversArray"></ng-provision>
+                            <div ng-messages="FarmMinRolesForm.config_value_farm_serverRoles_applicationWithSearch_provision.$error" class="text-danger">
+                                <div ng-messages-include="error-messages"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': FarmMinRolesForm.config_value_farm_serverRoles_distributedCache_provision.$invalid }" uib-tooltip="Service applications, services, and components that are required for a distributed cache belong on Distributed Cache servers.">
                         <label class="control-label col-md-3">Distributed cache:</label>
                         <div class="col-md-9">

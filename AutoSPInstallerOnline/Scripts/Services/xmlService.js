@@ -31,15 +31,28 @@
             this.config = unmarshaller.unmarshalString(xml);
             this.Upgrde3995to39951();
         };
+        this.UpgrdeXml39951to39960 = function (xml) {
+            var context = new Jsonix.Context([ConfigModel39951]);
+            var unmarshaller = context.createUnmarshaller();
+            this.config = unmarshaller.unmarshalString(xml);
+            this.Upgrde39951to39960();
+        };
         // Multi version jumps
-        this.UpgrdeXml398to39951 = function (xml) {
+        this.UpgrdeXml398toLatest = function (xml) {
             this.UpgrdeXml398to399(xml);
             this.Upgrde399to3995();
             this.Upgrde3995to39951();
+            this.Upgrde39951to39960();
         };
-        this.UpgrdeXml399to39951 = function (xml) {
+        this.UpgrdeXml399toLatest = function (xml) {
             this.UpgrdeXml399to3995(xml);
             this.Upgrde3995to39951();
+            this.Upgrde39951to39960();
+        };
+        this.UpgrdeXml3995toLatest = function (xml) {
+            this.UpgrdeXml3995to39951(xml);
+            this.Upgrde3995to39951();
+            this.Upgrde39951to39960();
         };
         // Private Functions
         this.Upgrde398to399 = function () {
@@ -70,6 +83,13 @@
             this.config.value.version = "3.99.51";
             this.config.value.farm.serverRoles.custom = new Object;
             this.config.value.farm.serverRoles.custom.provision = this.config.value.farm.serverRoles.specialLoad.provision;
+        };
+        this.Upgrde39951to39960 = function () {
+            this.config.value.version = "3.99.60";
+            this.config.value.farm.serverRoles.webFrontEndWithDistributedCache = new Object;
+            this.config.value.farm.serverRoles.webFrontEndWithDistributedCache.provision = "false";
+            this.config.value.farm.serverRoles.applicationWithSearch = new Object;
+            this.config.value.farm.serverRoles.applicationWithSearch.provision = "false";
         };
     }
     ;

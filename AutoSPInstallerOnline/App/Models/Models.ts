@@ -3,6 +3,7 @@
 
 declare var Jsonix;
 declare var ConfigModel;
+declare var ConfigModel39951;
 declare var ConfigModel3995;
 declare var ConfigModel399;
 declare var ConfigModel398;
