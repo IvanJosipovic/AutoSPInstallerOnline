@@ -206,7 +206,7 @@
                             <input type="radio" ng-model="config.value.install.spVersion" name="config_value_install_spVersion" value="2013" />2013
                         </label>
                         <label class="radio-inline" uib-tooltip="SharePoint 2016">
-                            <input type="radio" ng-model="config.value.install.spVersion" name="config_value_install_spVersion" value="2016" ensure-expression="{required: config.value.install.spVersion === '2010' || config.value.install.spVersion === '2013' || config.value.install.spVersion === '2016'}" />2016 (Beta)
+                            <input type="radio" ng-model="config.value.install.spVersion" name="config_value_install_spVersion" value="2016" ensure-expression="{required: config.value.install.spVersion === '2010' || config.value.install.spVersion === '2013' || config.value.install.spVersion === '2016'}" />2016
                         </label>
                         <div ng-messages="installForm.config_value_install_spVersion.$error" class="text-danger">
                             <div ng-messages-include="error-messages"></div>
@@ -300,7 +300,7 @@
                             <input type="text" ng-model="config.value.install.installDir" class="form-control" placeholder="C:\Program Files\Microsoft Office Servers">
                         </div>
                     </div>
-                    <div class="form-group form-group-sm" uib-tooltip="The location used to store the SharePoint data files, including (by default) the search index files (on a drive letter that must exist on all SharePoint servers in the farm).If you don't specify a value, the default location of %PROGRAMFILES%\Microsoft Office Servers\14.0\Data or %PROGRAMFILES%\Microsoft Office Servers\15.0\Data (based on SharePoint version) is used.">
+                    <div class="form-group form-group-sm" uib-tooltip="The location used to store the SharePoint data files, including (by default) the search index files and anlayitics data (2013+) (on a drive letter that must exist on all SharePoint servers in the farm).If you don't specify a value, the default location of %PROGRAMFILES%\Microsoft Office Servers\14.0\Data or %PROGRAMFILES%\Microsoft Office Servers\15.0\Data (based on SharePoint version) is used. Please note, the Search Index requires a minimum of 500GB and the Analyitics component requires a minimum of 300GB.">
                         <label class="control-label col-md-3">Data Directory:</label>
                         <div class="col-md-9">
                             <input type="text" ng-model="config.value.install.dataDir" class="form-control" placeholder="C:\Program Files\Microsoft Office Servers\{SharePoint Build}\Data">
@@ -729,8 +729,6 @@
                             </div>
                         </div>
                     </div>
-                    
-
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': FarmMinRolesForm.config_value_farm_serverRoles_webFrontEndWithDistributedCache_provision.$invalid }" uib-tooltip="Service applications, services, and components that serve user requests belong on Front-end web servers. These servers are optimized for low latency.">
                         <label class="control-label col-md-3">Front-end With Distributed Cache:</label>
                         <div class="col-md-9">
@@ -741,9 +739,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
-
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': FarmMinRolesForm.config_value_farm_serverRoles_application_provision.$invalid }" uib-tooltip="Service applications, services, and components that serve backend requests (such as background jobs or search crawl requests) belong on Application servers. These servers are optimized for high throughput.">
                         <label class="control-label col-md-3">Application:</label>
                         <div class="col-md-9">
@@ -754,7 +749,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': FarmMinRolesForm.config_value_farm_serverRoles_applicationWithSearch_provision.$invalid }" uib-tooltip="Service applications, services, and components that serve backend requests (such as background jobs or search crawl requests) belong on Application servers. These servers are optimized for high throughput.">
                         <label class="control-label col-md-3">Application with Search:</label>
                         <div class="col-md-9">
@@ -765,7 +759,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group form-group-sm" ng-class="{ 'has-error': FarmMinRolesForm.config_value_farm_serverRoles_distributedCache_provision.$invalid }" uib-tooltip="Service applications, services, and components that are required for a distributed cache belong on Distributed Cache servers.">
                         <label class="control-label col-md-3">Distributed cache:</label>
                         <div class="col-md-9">
