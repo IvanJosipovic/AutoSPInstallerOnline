@@ -1,0 +1,31 @@
+{
+  "name": "autospinstalleronline",
+  "version": "0.0.0",
+  "description": "AutoSPInstaller GUI SPA",
+  "author": "Ivan Josipovic <IvanJosipovic@outlook.com>",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanJosipovic/AutoSPInstallerOnline.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanJosipovic/AutoSPInstallerOnline/issues"
+  },
+  "homepage": "https://github.com/IvanJosipovic/AutoSPInstallerOnline#readme",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.1",
+    "gulp-ngmin": "0.3.0",
+    "gulp-tsd": "0.1.1",
+    "gulp-tslint": "8.1.3",
+    "gulp-typescript": "4.0.2",
+    "tsd": "0.6.5",
+    "tslint": "5.10.0",
+    "typescript": "2.9.2",
+    "run-sequence": "2.2.1"
+  }
+}

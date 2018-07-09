@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <ApplicationInsightsResourceId>/subscriptions/610de101-7d90-48c6-88fb-e2f72dc99a3e/resourcegroups/PayAsYouGo/providers/microsoft.insights/components/AutoSPInstaller</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/610de101-7d90-48c6-88fb-e2f72dc99a3e/resourcegroups/PayAsYouGo/providers/microsoft.insights/components/AutoSPInstaller</ApplicationInsightsAnnotationResourceId>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>820f1a21-bee9-406a-ab93-d19f27b4cb8b</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="dist\**" />
+    <Content Remove="dist\**" />
+    <EmbeddedResource Remove="dist\**" />
+    <None Remove="dist\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="package-lock.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Partials\_ASPIOPartial.html" />
+    <None Include="wwwroot\Partials\_contactPartial.html" />
+    <None Include="wwwroot\Partials\_downloadPartial.html" />
+    <None Include="wwwroot\Partials\_faqPartial.html" />
+    <None Include="wwwroot\Partials\_guidePartial.html" />
+    <None Include="wwwroot\Partials\_homePartial.html" />
+    <None Include="wwwroot\Partials\_newsPartial.html" />
+    <None Include="wwwroot\Partials\_privacyPartial.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+
+</Project>

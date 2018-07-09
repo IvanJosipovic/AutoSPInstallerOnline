@@ -1,0 +1,14 @@
+{
+	"name": "asp.net",
+	"private": true,
+  "dependencies": {
+    "jsonix": "2.4.1",
+    "vkbeautify": "*",
+    "bootstrap": "3.3.7",
+    "font-awesome": "4.7.0",
+    "angularjs": "1.4.7",
+    "angular-route": "1.4.7",
+    "angular-messages": "1.4.7",
+    "angular-ui-bootstrap-bower": "0.14.2"
+  }
+}

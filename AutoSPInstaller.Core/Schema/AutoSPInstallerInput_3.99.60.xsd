@@ -1,0 +1,950 @@
+﻿<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Configuration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Install" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ConfigFile" type="xs:string" minOccurs="1" maxOccurs="1" />
+              <xs:element name="InstallDir" type="xs:string" minOccurs="1" maxOccurs="1" />
+              <xs:element name="DataDir" type="xs:string" minOccurs="1" maxOccurs="1" />
+              <xs:element name="PIDKey" type="xs:string" minOccurs="1" maxOccurs="1" />
+              <xs:element name="SKU" type="xs:string" minOccurs="1" maxOccurs="1" />
+              <xs:element name="OfflineInstall" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+              <xs:element name="PauseAfterInstall" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+              <xs:element name="RemoteInstall" minOccurs="1" maxOccurs="1" >
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ParallelInstall" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Enable" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="AutoAdminLogon" minOccurs="1" maxOccurs="1" >
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Password" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Enable" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Disable" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="LoopbackCheck" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UnusedServices" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="IEEnhancedSecurity" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="CertificateRevocationListCheck" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="SPVersion" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Farm" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Passphrase" type="xs:string" minOccurs="1" maxOccurs="1" />
+              <xs:element name="Account" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AddToLocalAdminsDuringSetup" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="LeaveInLocalAdmins" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Username" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Password" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CentralAdmin" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Database" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Port" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UseSSL" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                        </xs:sequence>
+                        <xs:attribute name="Create" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DBPrefix" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ConfigDB" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Services" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SandboxedCodeService" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Start" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ClaimsToWindowsTokenService" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Start" type="xs:string" use="required" />
+                        <xs:attribute name="UpdateAccount" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SMTP" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Install" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="OutgoingEmail" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SMTPServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="EmailAddress" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="ReplyToEmail" type="xs:string" minOccurs="1" maxOccurs="1" />
+                        </xs:sequence>
+                        <xs:attribute name="Configure" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="IncomingEmail" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Start" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DistributedCache" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Start" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="WorkflowTimer" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Start" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FoundationWebApplication" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Start" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ServerRoles" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Custom" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Provision" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="WebFrontEnd" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Provision" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="WebFrontEndWithDistributedCache" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Provision" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>					
+                    <xs:element name="SingleServerFarm" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Provision" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Search" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Provision" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Application" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Provision" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ApplicationWithSearch" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Provision" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>					
+                    <xs:element name="DistributedCache" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Provision" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ManagedAccounts" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="ManagedAccount">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Username" type="xs:string" minOccurs="0" maxOccurs="1" />
+                          <xs:element name="Password" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        </xs:sequence>
+                        <xs:attribute name="CommonName" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ObjectCacheAccounts" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SuperUser" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="SuperReader" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Logging" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="IISLogs" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Path" type="xs:string" minOccurs="1" maxOccurs="1" />
+                        </xs:sequence>
+                        <xs:attribute name="Compress" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ULSLogs" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="LogLocation" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="LogDiskSpaceUsageGB" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DaysToKeepLogs" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="LogCutInterval" type="xs:string" minOccurs="1" maxOccurs="1" />
+                        </xs:sequence>
+                        <xs:attribute name="Compress" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="UsageLogs" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="UsageLogDir" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="UsageLogMaxSpaceGB" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="UsageLogCutTime" type="xs:string" minOccurs="1" maxOccurs="1" />
+                        </xs:sequence>
+                        <xs:attribute name="Compress" type="xs:boolean" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WebApplications" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="WebApplication">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Type" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ApplicationPool" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Url" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Port" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UseHostHeader" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="AddURLToLocalIntranetZone" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="GrantCurrentUserFullControl" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UseClaims" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UseBasicAuthentication" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UseOnlineWebPartCatalog" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ManagedPaths" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="ManagedPath">
+                            <xs:complexType>
+                              <xs:attribute name="relativeUrl" type="xs:string" use="required" />
+                              <xs:attribute name="explicit" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SiteCollections" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="SiteCollection">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="Description" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="HostNamedSiteCollection" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="Owner" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="CustomDatabase" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="SearchUrl" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="Template" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="LCID" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="Locale" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="Time24" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="siteUrl" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="AddURLsToHOSTS" type="xs:boolean" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ServiceApps" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ManagedMetadataServiceApp" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="UserProfileServiceApp" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="MySiteHostLocation" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="MySiteManagedPath" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="EnableNetBIOSDomainNames" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="StartProfileSync" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="CreateDefaultSyncConnection" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="SyncConnectionAccount" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="SyncConnectionAccountPassword" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ProfileDB" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="SyncDB" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="SocialDB" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EnterpriseSearchService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ContactEmail" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ConnectionTimeout" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="AcknowledgementTimeout" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyType" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="IgnoreSSLWarnings" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="InternetIdentity" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="CustomIndexLocation" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="PerformanceLevel" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ShareName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="EnterpriseSearchServiceApplications" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="EnterpriseSearchServiceApplication" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="FailoverDatabaseServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="Partitioned" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="Partitions" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="SearchServiceApplicationType" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="ContentAccessAccount" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="ContentAccessAccountPassword" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                      <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                      <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                            <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                          </xs:sequence>
+                                          <xs:attribute name="Create" type="xs:boolean" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ApplicationPool" minOccurs="1" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:attribute name="Name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="CrawlComponent" minOccurs="1" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:attribute name="Provision" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="QueryComponent" minOccurs="1" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:attribute name="Provision" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="SearchQueryAndSiteSettingsComponent" minOccurs="1" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:attribute name="Provision" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="AdminComponent" minOccurs="1" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ApplicationPool" minOccurs="1" maxOccurs="1">
+                                        <xs:complexType>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="IndexComponent" minOccurs="1" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:attribute name="Provision" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ContentProcessingComponent" minOccurs="1" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:attribute name="Provision" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="AnalyticsProcessingComponent" minOccurs="1" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:attribute name="Provision" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Proxy" minOccurs="1" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Partitioned" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                                      <xs:element name="ProxyGroup" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                    </xs:sequence>
+                                    <xs:attribute name="Name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="SearchCenterUrl" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="StateService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="WebAnalyticsService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ReportingDB" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="StagingDB" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1" >
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="SPUsageService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="SecureStoreService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="BusinessDataConnectivity" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="WordAutomationService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="AppManagementService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="AppDomain" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="SubscriptionSettingsService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="AppSiteSubscriptionName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="WorkManagementService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MachineTranslationService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PowerPointConversionService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EnterpriseServiceApps" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ExcelServices" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UnattendedIDUser" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UnattendedIDPassword" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="VisioService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UnattendedIDUser" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UnattendedIDPassword" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="AccessService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="AccessServices" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PerformancePointService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UnattendedIDUser" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UnattendedIDPassword" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OfficeWebApps" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ConfigFile" type="xs:string" minOccurs="1" maxOccurs="1" />
+              <xs:element name="PIDKeyOWA" type="xs:string" minOccurs="1" maxOccurs="1" />
+              <xs:element name="ExcelService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UnattendedIDUser" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="UnattendedIDPassword" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="WordViewingService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PowerPointService" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Install" type="xs:boolean" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProjectServer" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ConfigFile" type="xs:string" minOccurs="1" maxOccurs="1" />
+              <xs:element name="PIDKeyProjectServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+              <xs:element name="ServiceApp" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ProxyName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ManagedPath" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ServiceAccount" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="ServiceAccountPassword" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="Database" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBServer" type="xs:string" minOccurs="1" maxOccurs="1" />
+                          <xs:element name="DBAlias" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="DBInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                <xs:element name="DBPort" type="xs:string" minOccurs="1" maxOccurs="1" />
+                              </xs:sequence>
+                              <xs:attribute name="Create" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Provision" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Install" type="xs:boolean" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AdobePDF" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="iFilter" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:attribute name="Install" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Icon" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:attribute name="Configure" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MIMEType" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:attribute name="Configure" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ForeFront" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ConfigFile" type="xs:string" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute name="Install" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Environment" type="xs:string" use="required" />
+      <xs:attribute name="Version" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
