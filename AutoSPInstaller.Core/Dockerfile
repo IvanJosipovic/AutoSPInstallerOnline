@@ -4,10 +4,10 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1-sdk-alpine AS build
 WORKDIR /src
-COPY AutoSPInstaller.Core/AutoSPInstaller.Core.csproj AutoSPInstaller.Core/
-RUN dotnet restore AutoSPInstaller.Core/AutoSPInstaller.Core.csproj
+COPY AutoSPInstaller.Core.csproj ./
+RUN dotnet restore AutoSPInstaller.Core.csproj
 COPY . .
-WORKDIR /src/AutoSPInstaller.Core
+WORKDIR /src
 RUN dotnet build AutoSPInstaller.Core.csproj -c Release -o /app
 
 FROM build AS publish

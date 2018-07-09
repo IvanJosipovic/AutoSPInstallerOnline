@@ -4,7 +4,7 @@ services:
   autospinstaller.core:
     image: index.docker.io/autospinstaller/autospinstalleronline
     build:
-      context: .
-      dockerfile: AutoSPInstaller.Core/Dockerfile
+      context: AutoSPInstaller.Core
+      dockerfile: Dockerfile
     ports:
     - "80:80"
