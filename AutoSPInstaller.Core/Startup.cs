@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,7 +33,11 @@ namespace AutoSPInstaller.Core
             //    options.MinimumSameSitePolicy = SameSiteMode.None;
             //});
 
-            services.AddApplicationInsightsTelemetry();
+            if (Environment.GetEnvironmentVariable("DisableTelemetry") == "True")
+            {
+                TelemetryConfiguration.Active.DisableTelemetry = true;
+            }
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -50,18 +55,6 @@ namespace AutoSPInstaller.Core
             }
 
             //app.UseHttpsRedirection();
-
-            app.Use(async (context, next) =>
-            {
-                await next();
-                var path = context.Request.Path.Value;
-
-                if (!path.StartsWith("/error") && !Path.HasExtension(path))
-                {
-                    context.Request.Path = "/index.html";
-                    await next();
-                }
-            });
 
             app.UseStaticFiles();
             app.UseMvc();

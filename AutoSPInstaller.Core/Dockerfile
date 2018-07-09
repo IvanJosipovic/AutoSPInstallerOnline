@@ -1,4 +1,8 @@
 FROM microsoft/dotnet:2.1-aspnetcore-runtime-alpine AS base
+
+ENV DisableDisqus=True
+ENV DisableTelemetry=True
+
 WORKDIR /app
 EXPOSE 80
 
