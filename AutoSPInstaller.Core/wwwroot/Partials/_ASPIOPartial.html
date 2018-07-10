@@ -193,7 +193,7 @@
                 <div class="form-group form-group-sm" uib-tooltip="The Environment attribute appears at the top of the installation transcript, and will now also appear at the top of the SharePoint 2013 Central Administration top-left branding bar.It does not affect the SharePoint 2010 installation though.Simply leave the Environment attribute blank if you do not want to alter the branding bar in SP2013 Central Admin.">
                     <label class="control-label col-md-3">Environment Name:</label>
                     <div class="col-md-9">
-                        <input type="text" ng-model="config.value.environment" class="form-control" required />
+                        <input type="text" ng-model="config.value.environment" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group form-group-sm" uib-tooltip="Select the SharePoint version you will be installing." ng-class="{ 'has-error': installForm.config_value_install_spVersion.$invalid }">
