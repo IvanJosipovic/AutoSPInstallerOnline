@@ -19743,101 +19743,158 @@ else {
                 "visprus#0": "Visio Process Repository - visprus#0",
                 "WIKI#0": "Wiki Site - WIKI#0"
             };
+            $scope.webTemplates2016 = {
+                "ACCSRV#0": "Access Services Site - ACCSRV#0",
+                "ACCSVC#0": "Access Services Site Internal - ACCSVC#0",
+                "ACCSVC#1": "Access Services Site - ACCSVC#1",
+                "APP#0": "App Template - APP#0",
+                "APPCATALOG#0": "App Catalog Site - APPCATALOG#0",
+                "BDR#0": "Document Center - BDR#0",
+                "BICenterSite#0": "Business Intelligence Center - BICenterSite#0",
+                "BLANKINTERNET#0": "Publishing Site - BLANKINTERNET#0",
+                "BLANKINTERNET#1": "Press Releases Site - BLANKINTERNET#1",
+                "BLANKINTERNET#2": "Publishing Site with Workflow - BLANKINTERNET#2",
+                "BLANKINTERNETCONTAINER#0": "Publishing Portal - BLANKINTERNETCONTAINER#0",
+                "BLOG#0": "Blog - BLOG#0",
+                "CENTRALADMIN#0": "Central Admin Site - CENTRALADMIN#0",
+                "CMSPUBLISHING#0": "Publishing Site - CMSPUBLISHING#0",
+                "COMMUNITY#0": "Community Site - COMMUNITY#0",
+                "COMMUNITYPORTAL#0": "Community Portal - COMMUNITYPORTAL#0",
+                "DEV#0": "Developer Site - DEV#0",
+                "EDISC#0": "eDiscovery Center - EDISC#0",
+                "EDISC#1": "eDiscovery Case - EDISC#1",
+                "ENTERWIKI#0": "Enterprise Wiki - ENTERWIKI#0",
+                "GLOBAL#0": "Global template - GLOBAL#0",
+                "GROUP#0": "Group - GROUP#0",
+                "MPS#0": "Basic Meeting Workspace - MPS#0",
+                "MPS#1": "Blank Meeting Workspace - MPS#1",
+                "MPS#2": "Decision Meeting Workspace - MPS#2",
+                "MPS#3": "Social Meeting Workspace - MPS#3",
+                "MPS#4": "Multipage Meeting Workspace - MPS#4",
+                "OFFILE#0": "(obsolete) Records Center - OFFILE#0",
+                "OFFILE#1": "Records Center - OFFILE#1",
+                "OSRV#0": "Shared Services Administration Site - OSRV#0",
+                "POINTPUBLISHINGHUB#0": "PointPublishing Hub - POINTPUBLISHINGHUB#0",
+                "POINTPUBLISHINGPERSONAL#0": "PointPublishing Personal - POINTPUBLISHINGPERSONAL#0",
+                "POINTPUBLISHINGTOPIC#0": "PointPublishing Topic - POINTPUBLISHINGTOPIC#0",
+                "POLICYCTR#0": "Compliance Policy Center - POLICYCTR#0",
+                "PPSMASite#0": "PerformancePoint - PPSMASite#0",
+                "PRODUCTCATALOG#0": "Product Catalog - PRODUCTCATALOG#0",
+                "PROFILES#0": "Profiles - PROFILES#0",
+                "PROJECTSITE#0": "Project Site - PROJECTSITE#0",
+                "PWA#0": "Project Web App Site - PWA#0",
+                "PWS#0": "Microsoft Project Site - PWS#0",
+                "SGS#0": "Group Work Site - SGS#0",
+                "SPS#0": "SharePoint Portal Server Site - SPS#0",
+                "SPSCOMMU#0": "Community area template - SPSCOMMU#0",
+                "SPSMSITE#0": "Personalization Site - SPSMSITE#0",
+                "SPSMSITEHOST#0": "My Site Host - SPSMSITEHOST#0",
+                "SPSNEWS#0": "News Site - SPSNEWS#0",
+                "SPSNHOME#0": "News Site - SPSNHOME#0",
+                "SPSPERS#0": "SharePoint Portal Server Personal Space - SPSPERS#0",
+                "SPSPERS#10": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#10",
+                "SPSPERS#2": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#2",
+                "SPSPERS#3": "Storage Only SharePoint Portal Server Personal Space - SPSPERS#3",
+                "SPSPERS#4": "Social Only SharePoint Portal Server Personal Space - SPSPERS#4",
+                "SPSPERS#5": "Empty SharePoint Portal Server Personal Space - SPSPERS#5",
+                "SPSPERS#6": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#6",
+                "SPSPERS#7": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#7",
+                "SPSPERS#8": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#8",
+                "SPSPERS#9": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#9",
+                "SPSPORTAL#0": "Collaboration Portal - SPSPORTAL#0",
+                "SPSREPORTCENTER#0": "Report Center - SPSREPORTCENTER#0",
+                "SPSSITES#0": "Site Directory - SPSSITES#0",
+                "SPSTOC#0": "Contents area Template - SPSTOC#0",
+                "SPSTOPIC#0": "Topic area template - SPSTOPIC#0",
+                "SRCHCEN#0": "Enterprise Search Center - SRCHCEN#0",
+                "SRCHCENTERLITE#0": "Basic Search Center - SRCHCENTERLITE#0",
+                "SRCHCENTERLITE#1": "Basic Search Center - SRCHCENTERLITE#1",
+                "STS#0": "Team Site - STS#0",
+                "STS#1": "Blank Site - STS#1",
+                "STS#2": "Document Workspace - STS#2",
+                "TBH#0": "In-Place Hold Policy Center - TBH#0",
+                "TENANTADMIN#0": "Tenant Admin Site - TENANTADMIN#0",
+                "visprus#0": "Visio Process Repository - visprus#0",
+                "WIKI#0": "Wiki Site - WIKI#0"
+            };
+            $scope.webTemplates2019 = {
+                "ACCSRV#0": "Access Services Site - ACCSRV#0",
+                "ACCSVC#0": "Access Services Site Internal - ACCSVC#0",
+                "ACCSVC#1": "Access Services Site - ACCSVC#1",
+                "APP#0": "App Template - APP#0",
+                "APPCATALOG#0": "App Catalog Site - APPCATALOG#0",
+                "BDR#0": "Document Center - BDR#0",
+                "BICenterSite#0": "Business Intelligence Center - BICenterSite#0",
+                "BLANKINTERNET#0": "Publishing Site - BLANKINTERNET#0",
+                "BLANKINTERNET#1": "Press Releases Site - BLANKINTERNET#1",
+                "BLANKINTERNET#2": "Publishing Site with Workflow - BLANKINTERNET#2",
+                "BLANKINTERNETCONTAINER#0": "Publishing Portal - BLANKINTERNETCONTAINER#0",
+                "BLOG#0": "Blog - BLOG#0",
+                "CENTRALADMIN#0": "Central Admin Site - CENTRALADMIN#0",
+                "CMSPUBLISHING#0": "Publishing Site - CMSPUBLISHING#0",
+                "COMMUNITY#0": "Community Site - COMMUNITY#0",
+                "COMMUNITYPORTAL#0": "Community Portal - COMMUNITYPORTAL#0",
+                "DEV#0": "Developer Site - DEV#0",
+                "EDISC#0": "eDiscovery Center - EDISC#0",
+                "EDISC#1": "eDiscovery Case - EDISC#1",
+                "ENTERWIKI#0": "Enterprise Wiki - ENTERWIKI#0",
+                "GLOBAL#0": "Global template - GLOBAL#0",
+                "GROUP#0": "Group - GROUP#0",
+                "MPS#0": "Basic Meeting Workspace - MPS#0",
+                "MPS#1": "Blank Meeting Workspace - MPS#1",
+                "MPS#2": "Decision Meeting Workspace - MPS#2",
+                "MPS#3": "Social Meeting Workspace - MPS#3",
+                "MPS#4": "Multipage Meeting Workspace - MPS#4",
+                "OFFILE#0": "(obsolete) Records Center - OFFILE#0",
+                "OFFILE#1": "Records Center - OFFILE#1",
+                "OSRV#0": "Shared Services Administration Site - OSRV#0",
+                "POINTPUBLISHINGHUB#0": "PointPublishing Hub - POINTPUBLISHINGHUB#0",
+                "POINTPUBLISHINGPERSONAL#0": "PointPublishing Personal - POINTPUBLISHINGPERSONAL#0",
+                "POINTPUBLISHINGTOPIC#0": "PointPublishing Topic - POINTPUBLISHINGTOPIC#0",
+                "POLICYCTR#0": "Compliance Policy Center - POLICYCTR#0",
+                "PPSMASite#0": "PerformancePoint - PPSMASite#0",
+                "PRODUCTCATALOG#0": "Product Catalog - PRODUCTCATALOG#0",
+                "PROFILES#0": "Profiles - PROFILES#0",
+                "PROJECTSITE#0": "Project Site - PROJECTSITE#0",
+                "PWA#0": "Project Web App Site - PWA#0",
+                "PWS#0": "Microsoft Project Site - PWS#0",
+                "SGS#0": "Group Work Site - SGS#0",
+                "SPS#0": "SharePoint Portal Server Site - SPS#0",
+                "SPSCOMMU#0": "Community area template - SPSCOMMU#0",
+                "SPSMSITE#0": "Personalization Site - SPSMSITE#0",
+                "SPSMSITEHOST#0": "My Site Host - SPSMSITEHOST#0",
+                "SPSNEWS#0": "News Site - SPSNEWS#0",
+                "SPSNHOME#0": "News Site - SPSNHOME#0",
+                "SPSPERS#0": "SharePoint Portal Server Personal Space - SPSPERS#0",
+                "SPSPERS#2": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#2",
+                "SPSPERS#3": "Storage Only SharePoint Portal Server Personal Space - SPSPERS#3",
+                "SPSPERS#4": "Social Only SharePoint Portal Server Personal Space - SPSPERS#4",
+                "SPSPERS#5": "Empty SharePoint Portal Server Personal Space - SPSPERS#5",
+                "SPSPERS#6": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#6",
+                "SPSPERS#7": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#7",
+                "SPSPERS#8": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#8",
+                "SPSPERS#9": "Storage And Social SharePoint Portal Server Personal Space - SPSPERS#9",
+                "SPSPORTAL#0": "Collaboration Portal - SPSPORTAL#0",
+                "SPSREPORTCENTER#0": "Report Center - SPSREPORTCENTER#0",
+                "SPSSITES#0": "Site Directory - SPSSITES#0",
+                "SPSTOC#0": "Contents area Template - SPSTOC#0",
+                "SPSTOPIC#0": "Topic area template - SPSTOPIC#0",
+                "SRCHCEN#0": "Enterprise Search Center - SRCHCEN#0",
+                "SRCHCENTERLITE#0": "Basic Search Center - SRCHCENTERLITE#0",
+                "SRCHCENTERLITE#1": "Basic Search Center - SRCHCENTERLITE#1",
+                "STS#0": "Team Site - STS#0",
+                "STS#1": "Blank Site - STS#1",
+                "STS#2": "Document Workspace - STS#2",
+                "TBH#0": "In-Place Hold Policy Center - TBH#0",
+                "TENANTADMIN#0": "Tenant Admin Site - TENANTADMIN#0",
+                "visprus#0": "Visio Process Repository - visprus#0",
+                "WIKI#0": "Wiki Site - WIKI#0",
+                "SPSPERS#10": "OneDrive personal site - SPSPERS#10",
+                "STS#3": "Team site (modern only) - STS#3",
+                "SITEPAGEPUBLISHING#0": "Communication site - SITEPAGEPUBLISHING#0"
+            };
         }]);
 })();
-//Used by ASPIO Controller
-var ManagedAccount = /** @class */ (function () {
-    function ManagedAccount() {
-        this.username = "";
-        this.password = "";
-        this.commonName = "";
-    }
-    return ManagedAccount;
-}());
-var WebApplication = /** @class */ (function () {
-    function WebApplication() {
-        this.name = "";
-        this.type = "";
-        this.applicationPool = "";
-        this.url = "";
-        this.port = "";
-        this.useHostHeader = true;
-        this.addURLToLocalIntranetZone = true;
-        this.grantCurrentUserFullControl = true;
-        this.useClaims = true;
-        this.useBasicAuthentication = false;
-        this.useOnlineWebPartCatalog = false;
-        this.managedPaths = new ManagedPaths();
-        this.siteCollections = new SiteCollections();
-        this.database = new Database();
-    }
-    return WebApplication;
-}());
-var SiteCollections = /** @class */ (function () {
-    function SiteCollections() {
-        this.siteCollection = new Array();
-    }
-    return SiteCollections;
-}());
-var SiteCollection = /** @class */ (function () {
-    function SiteCollection() {
-        this.siteUrl = "";
-        this.hostNamedSiteCollection = false;
-        this.owner = "";
-        this.name = "";
-        this.description = "";
-        this.customDatabase = "";
-        this.searchUrl = "";
-        this.template = "";
-        this.lcid = "1033";
-        this.locale = "en-us";
-        this.time24 = false;
-    }
-    return SiteCollection;
-}());
-var ManagedPaths = /** @class */ (function () {
-    function ManagedPaths() {
-        this.managedPath = new Array();
-    }
-    return ManagedPaths;
-}());
-var ManagedPath = /** @class */ (function () {
-    function ManagedPath() {
-        this.relativeUrl = "";
-        this.explicit = false;
-    }
-    return ManagedPath;
-}());
-var Database = /** @class */ (function () {
-    function Database() {
-        this.name = "";
-        this.server = "";
-        this.dbAlias = new DBAlias();
-    }
-    return Database;
-}());
-var DBAlias = /** @class */ (function () {
-    function DBAlias() {
-        this.create = false;
-        this.dbInstance = "";
-        this.dbPort = "";
-    }
-    return DBAlias;
-}());
-// Used by Provision Directive
-var ProvisionModel = /** @class */ (function () {
-    function ProvisionModel() {
-    }
-    ProvisionModel.prototype.constricutor = function () {
-        this.servers = new Servers();
-    };
-    return ProvisionModel;
-}());
-var Servers = /** @class */ (function () {
-    function Servers() {
-    }
-    return Servers;
-}());
 /// <reference path="../../typings/tsd.d.ts" />
 (function () {
     "use strict";
@@ -20106,6 +20163,99 @@ var Servers = /** @class */ (function () {
         .module("ASPIO")
         .directive("stringToNumber", StringToNumber.factory());
 })();
+//Used by ASPIO Controller
+var ManagedAccount = /** @class */ (function () {
+    function ManagedAccount() {
+        this.username = "";
+        this.password = "";
+        this.commonName = "";
+    }
+    return ManagedAccount;
+}());
+var WebApplication = /** @class */ (function () {
+    function WebApplication() {
+        this.name = "";
+        this.type = "";
+        this.applicationPool = "";
+        this.url = "";
+        this.port = "";
+        this.useHostHeader = true;
+        this.addURLToLocalIntranetZone = true;
+        this.grantCurrentUserFullControl = true;
+        this.useClaims = true;
+        this.useBasicAuthentication = false;
+        this.useOnlineWebPartCatalog = false;
+        this.managedPaths = new ManagedPaths();
+        this.siteCollections = new SiteCollections();
+        this.database = new Database();
+    }
+    return WebApplication;
+}());
+var SiteCollections = /** @class */ (function () {
+    function SiteCollections() {
+        this.siteCollection = new Array();
+    }
+    return SiteCollections;
+}());
+var SiteCollection = /** @class */ (function () {
+    function SiteCollection() {
+        this.siteUrl = "";
+        this.hostNamedSiteCollection = false;
+        this.owner = "";
+        this.name = "";
+        this.description = "";
+        this.customDatabase = "";
+        this.searchUrl = "";
+        this.template = "";
+        this.lcid = "1033";
+        this.locale = "en-us";
+        this.time24 = false;
+    }
+    return SiteCollection;
+}());
+var ManagedPaths = /** @class */ (function () {
+    function ManagedPaths() {
+        this.managedPath = new Array();
+    }
+    return ManagedPaths;
+}());
+var ManagedPath = /** @class */ (function () {
+    function ManagedPath() {
+        this.relativeUrl = "";
+        this.explicit = false;
+    }
+    return ManagedPath;
+}());
+var Database = /** @class */ (function () {
+    function Database() {
+        this.name = "";
+        this.server = "";
+        this.dbAlias = new DBAlias();
+    }
+    return Database;
+}());
+var DBAlias = /** @class */ (function () {
+    function DBAlias() {
+        this.create = false;
+        this.dbInstance = "";
+        this.dbPort = "";
+    }
+    return DBAlias;
+}());
+// Used by Provision Directive
+var ProvisionModel = /** @class */ (function () {
+    function ProvisionModel() {
+    }
+    ProvisionModel.prototype.constricutor = function () {
+        this.servers = new Servers();
+    };
+    return ProvisionModel;
+}());
+var Servers = /** @class */ (function () {
+    function Servers() {
+    }
+    return Servers;
+}());
 /// <reference path="../../typings/tsd.d.ts" />
 (function () {
     "use strict";

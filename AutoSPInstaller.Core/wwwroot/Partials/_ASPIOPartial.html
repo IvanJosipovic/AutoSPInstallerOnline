@@ -106,7 +106,7 @@
                             <li ng-click="setView('ServiceAppsMachineTranslation')" ng-class="{ 'tree-active': view === 'ServiceAppsMachineTranslation' }">
                                 <a href=""><i class="fa fa-globe"></i> Machine Translation <i ng-if="formServiceAppsMachineTranslation.$invalid" class="fa fa-exclamation-triangle text-danger"></i><i ng-if="config.value.serviceApps.machineTranslationService.provision === 'false'" class="fa fa-minus-square text-muted"></i></a>
                             </li>
-                            <li ng-click="setView('ServiceAppsWorkManagement')" ng-class="{ 'tree-active': view === 'ServiceAppsWorkManagement' }" ng-if="config.value.install.spVersion == '2013'">
+                            <li ng-click="setView('ServiceAppsWorkManagement')" ng-class="{ 'tree-active': view === 'ServiceAppsWorkManagement' }" ng-if="config.value.install.spVersion === '2013'">
                                 <a href=""><i class="fa fa-building-o"></i> Work Management <i ng-if="formServiceAppsWorkManagement.$invalid" class="fa fa-exclamation-triangle text-danger"></i><i ng-if="config.value.serviceApps.workManagementService.provision === 'false'" class="fa fa-minus-square text-muted"></i></a>
                             </li>
                             <li ng-click="setView('ServiceAppsPowerPointConversion')" ng-class="{ 'tree-active': view === 'ServiceAppsPowerPointConversion' }">
@@ -1165,11 +1165,37 @@
                                         </div>
                                     </div>
                                     <div class="form-group" ng-class="{ 'has-error': this[subForm2].siteColl_template.$invalid }" uib-tooltip="The Site Web Template."
-                                         ng-if="config.value.install.spVersion !== '2010'">
+                                         ng-if="config.value.install.spVersion === '2013'">
                                         <label class="control-label col-md-3" uib-tooltip="">Web Template:</label>
                                         <div class="col-md-9">
                                             <select ng-model="siteColl.template" name="siteColl_template" ng-options="key as value for (key , value) in webTemplates2013"
                                                     class="form-control" ensure-expression="{required : validateWebTemplate(siteColl.template, webTemplates2013)}">
+                                                <option value="">Select Later</option>
+                                            </select>
+                                            <div ng-messages="this[subForm2].siteColl_template.$error" class="text-danger">
+                                                <div ng-messages-include="error-messages"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-class="{ 'has-error': this[subForm2].siteColl_template.$invalid }" uib-tooltip="The Site Web Template."
+                                         ng-if="config.value.install.spVersion === '2016'">
+                                        <label class="control-label col-md-3" uib-tooltip="">Web Template:</label>
+                                        <div class="col-md-9">
+                                            <select ng-model="siteColl.template" name="siteColl_template" ng-options="key as value for (key , value) in webTemplates2016"
+                                                    class="form-control" ensure-expression="{required : validateWebTemplate(siteColl.template, webTemplates2016)}">
+                                                <option value="">Select Later</option>
+                                            </select>
+                                            <div ng-messages="this[subForm2].siteColl_template.$error" class="text-danger">
+                                                <div ng-messages-include="error-messages"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-class="{ 'has-error': this[subForm2].siteColl_template.$invalid }" uib-tooltip="The Site Web Template."
+                                         ng-if="config.value.install.spVersion === '2019'">
+                                        <label class="control-label col-md-3" uib-tooltip="">Web Template:</label>
+                                        <div class="col-md-9">
+                                            <select ng-model="siteColl.template" name="siteColl_template" ng-options="key as value for (key , value) in webTemplates2019"
+                                                    class="form-control" ensure-expression="{required : validateWebTemplate(siteColl.template, webTemplates2019)}">
                                                 <option value="">Select Later</option>
                                             </select>
                                             <div ng-messages="this[subForm2].siteColl_template.$error" class="text-danger">
@@ -2896,7 +2922,7 @@
             </ng-form>
             <!--Machine Translation-->
             <ng-form ng-show="view === 'ServiceAppsWorkManagement'" name="formServiceAppsWorkManagement">
-                <div ng-if="config.value.install.spVersion == '2013' && config.value.install.sku !== 'Foundation'">
+                <div ng-if="config.value.install.spVersion === '2013' && config.value.install.sku !== 'Foundation'">
                     <span class="h2">Work Management Service Application</span>
                     <h4>Configure the Work Management Service Application</h4>
                     <hr />
