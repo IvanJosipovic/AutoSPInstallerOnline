@@ -1,5 +1,7 @@
 # AutoSPInstallerOnline
-Front end for http://AutoSPInstaller.com
+Front end of http://AutoSPInstaller.com
+
+This application facilitates creating XML configurations for the AutoSPInstaller Project https://github.com/brianlala/AutoSPInstaller
 
 Docker Image:
 
