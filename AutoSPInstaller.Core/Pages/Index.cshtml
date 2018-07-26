@@ -2,7 +2,7 @@
 @inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ASPIO">
 <head>
     <meta charset="utf-8">
     <meta name="description" content="{{description}}">
@@ -29,7 +29,7 @@
         @Html.Raw(JavaScriptSnippet.FullScript)
     }
 </head>
-<body class="container" ng-app="ASPIO">
+<body class="container">
     <a href="https://github.com/IvanJosipovic/AutoSPInstallerOnline"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/Content/forkme_left_orange_ff7600.png" alt="Fork me on GitHub"></a>
 <nav class="navbar navbar-inverse" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
