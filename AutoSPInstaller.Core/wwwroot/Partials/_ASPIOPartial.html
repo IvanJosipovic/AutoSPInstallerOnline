@@ -1433,8 +1433,7 @@
                              uib-tooltip="The URL of the WebApplication which will host MySites. Use this when you are not provisioning a WebApplication specifically for MySites. To Provision a WebApplication for Mysites set its Type to MySiteHost. EXAMPLE: If you wanted your MySite host to reside at http://sharepoint.contoso.com/people and personal sites to be created at http://sharepoint.contoso.com/people/sites, you would specify MySiteHostLocation = http://sharepoint.contoso.com/people and MySiteManagedPath=people/sites">
                             <label class="control-label col-md-3">MySite Host Location:</label>
                             <div class="col-md-9">
-                                <input type="text" ng-model="config.value.serviceApps.userProfileServiceApp.mySiteHostLocation" name="config_value_serviceApps_userProfileServiceApp_mySiteHostLocation"
-                                       class="form-control" />
+                                <input type="text" ng-model="config.value.serviceApps.userProfileServiceApp.mySiteHostLocation" name="config_value_serviceApps_userProfileServiceApp_mySiteHostLocation" class="form-control" />
                                 <div ng-messages="formServiceAppsUPS.config_value_serviceApps_userProfileServiceApp_mySiteHostLocation.$error" class="text-danger">
                                     <div ng-messages-include="error-messages"></div>
                                 </div>
@@ -1444,8 +1443,7 @@
                              uib-tooltip="The Managed Path which will be used by MySites, personal is the default. You will need to make sure the Web Application contains this Managed Path.">
                             <label class="control-label col-md-3">MySite Managed Path:</label>
                             <div class="col-md-9">
-                                <input type="text" ng-model="config.value.serviceApps.userProfileServiceApp.mySiteManagedPath" name="config_value_serviceApps_userProfileServiceApp_mySiteManagedPath"
-                                       required class="form-control" />
+                                <input type="text" ng-model="config.value.serviceApps.userProfileServiceApp.mySiteManagedPath" name="config_value_serviceApps_userProfileServiceApp_mySiteManagedPath" class="form-control" />
                                 <div ng-messages="formServiceAppsUPS.config_value_serviceApps_userProfileServiceApp_mySiteManagedPath.$error" class="text-danger">
                                     <div ng-messages-include="error-messages"></div>
                                 </div>
